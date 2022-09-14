@@ -1,4 +1,28 @@
 #pragma once
+struct EdgesList
+{
+	int First;
+	int Second;
+
+	string toString()
+	{
+		return to_string(First) + " - " + to_string(Second);
+	}
+
+	EdgesList(int First, int Second)
+	{
+		this->First = First;
+		this->Second = Second;
+	}
+
+	bool operator ==(EdgesList& el1)
+	{
+		return ((this->First == el1.First && this->Second == el1.Second) ?
+			true :
+			false);
+	}
+};
+
 class User
 {
 public:
@@ -9,6 +33,7 @@ public:
 
 	static queue<User*> ExpectedUsers;
 	static int AdjacencyMatrix[10][10];
+	static vector<EdgesList> Edges;
 
 	// Начало | Ширина
 
@@ -38,11 +63,21 @@ public:
 
 	void LinkWith(User* us)
 	{
-		us->OtherUsers.push_back(this);
-		this->OtherUsers.push_back(us);
+		User* genUs = this;
+		if (Edges.size() == 0 || !isThere(us, genUs))
+		{
+			us->OtherUsers.push_back(this);
+			this->OtherUsers.push_back(us);
 
-		AdjacencyMatrix[us->Number - 1][this->Number - 1] = 1;
-		AdjacencyMatrix[this->Number - 1][us->Number - 1] = 1;
+			AdjacencyMatrix[us->Number - 1][this->Number - 1] = 1;
+			AdjacencyMatrix[this->Number - 1][us->Number - 1] = 1;
+
+			EdgesList newList1(us->Number, this->Number);
+			EdgesList newList2(this->Number, us->Number);
+
+			Edges.push_back(newList1);
+			Edges.push_back(newList2);
+		}
 	}
 
 	void LinksWith(int N, User* us, ...)
@@ -170,6 +205,22 @@ private:
 		return nullptr;
 	}
 	// Конец | Ширина
+
+	bool isThere(User* us1, User* us2)
+	{
+		EdgesList newList(us1->Number, us2->Number);
+
+		for (auto& el : Edges)
+		{
+			if (el == newList)
+			{
+				return true;
+			}
+		}
+
+		return false;
+	}
 };
 queue<User*> User::ExpectedUsers;
 int User::AdjacencyMatrix[10][10];
+vector<EdgesList> User::Edges;

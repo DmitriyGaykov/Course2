@@ -21,6 +21,7 @@ int main()
 	User us10(10, "Julia");
 
 	us1.LinksWith(2, &us2, &us5);
+	// us1.LinkWith(&us2);
 	us2.LinksWith(2, &us7, &us8);
 	us3.LinkWith(&us8);
 	us4.LinksWith(2, &us6, &us9);
@@ -30,12 +31,19 @@ int main()
 	us9.LinkWith(&us10);
 
 	// Поиск в ширину:
-	cout << us1.ToUserBy(10)->Name << endl;
+	cout << us1.ToUserBy(6)->Name << endl;
 	cout << us1.ToUserBy(9)->Name << endl;
 
 	// Поиск в глубину:
-	cout << us1.GoDeep(10)->Name << endl;
+	cout << us1.GoDeep(6)->Name << endl;
 	cout << us1.GoDeep(9)->Name << endl;
 
+	cout << "Матрица смежности: \n";
 	us1.PrintInfoFromMatrix();
+
+	cout << "Список ребер: \n";
+	for (auto& el : us1.Edges)
+	{
+		cout << el.toString() << "\n";
+	}
 }
