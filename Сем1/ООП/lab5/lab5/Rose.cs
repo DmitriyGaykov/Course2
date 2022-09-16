@@ -4,7 +4,7 @@ namespace lab4;
 class Rose : AFlower, IPlant
 {
     #region Properties
-    public override Color Color { get; set; }
+    public override KnownColor Color { get; set; }
     public override DateTime WillBeRipen
     {
         get => WasPlanted.AddSeconds(2);
@@ -14,7 +14,7 @@ class Rose : AFlower, IPlant
 
     #region Constrs
 
-    public Rose(string Name, Color Color, int Price) : base(Name, Color, Price)
+    public Rose(string Name, KnownColor Color, int Price) : base(Name, Color, Price)
     {
         this.Name = Name;
         this.Color = Color;

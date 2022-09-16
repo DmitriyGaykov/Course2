@@ -31,12 +31,10 @@ int main()
 	us9.LinkWith(&us10);
 
 	// Поиск в ширину:
-	cout << us1.ToUserBy(6)->Name << endl;
-	cout << us1.ToUserBy(9)->Name << endl;
+	cout << us8.ToUserBy(10)->Name << endl;
 
 	// Поиск в глубину:
-	cout << us1.GoDeep(6)->Name << endl;
-	cout << us1.GoDeep(9)->Name << endl;
+	cout << us8.GoDeep(10)->Name << endl;
 
 	cout << "Матрица смежности: \n";
 	us1.PrintInfoFromMatrix();

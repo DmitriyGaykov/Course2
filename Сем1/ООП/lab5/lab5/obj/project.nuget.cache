@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Jpd/ggLCm4C0XZeWNBnbG1+AaHZ4ETgfyeQ6EwW67G/1K0MBYyyh4cgBV3l3mgWoQw/f7XrQETpSclLc21AiTw==",
+  "dgSpecHash": "nd2sIKfY+kt7x5SSuKDa6WjdQrHupULnQd/0Bac0sh8fbxKz3fEkFjdq4smcnl12q38fTRuq1UJJ0NAKhCcFow==",
   "success": true,
   "projectFilePath": "D:\\курс_2\\Сем1\\ООП\\lab5\\lab5\\lab5.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\dimag\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

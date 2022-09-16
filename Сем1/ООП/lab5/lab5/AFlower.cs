@@ -1,13 +1,11 @@
-﻿using System.Drawing;
-
-namespace lab4;
+﻿namespace lab4;
 abstract class AFlower : APlant
 {
     public abstract override DateTime WillBeRipen { get; }
-    public abstract Color Color { get; set; }
+    public abstract KnownColor Color { get; set; }
     public virtual int Price { get; init; }
     public abstract override void Plant();
-    public AFlower(string Name, Color Color, int Price) : base(Name)
+    public AFlower(string Name, KnownColor Color, int Price) : base(Name)
     {
         this.Name = Name;
         this.Color = Color;

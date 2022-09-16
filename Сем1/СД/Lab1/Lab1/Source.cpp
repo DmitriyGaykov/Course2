@@ -29,6 +29,6 @@ int main()
 
 	int Num = stoi(Test);
 
-	hanoi(1, 2, Num);
+	hanoi(1, 1, Num);
 	return 0;
 }

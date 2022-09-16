@@ -4,17 +4,17 @@ namespace lab4;
 class Gladiolus : AFlower, IPlant
 {
     #region Properties
+    public override System.Drawing.KnownColor Color { get; set; }
     public override DateTime WillBeRipen
     {
         get => WasPlanted.AddSeconds(2);
     }
-    public override System.Drawing.Color Color { get; set; }
 
     #endregion
 
     #region Constrs
 
-    public Gladiolus(string Name, Color Color, int Price) : base(Name, Color, Price)
+    public Gladiolus(string Name, KnownColor Color, int Price) : base(Name, Color, Price)
     {
         this.Name = Name;
         this.Color = Color;
@@ -60,8 +60,8 @@ class Gladiolus : AFlower, IPlant
     #region Override Methods
 
     public override string ToString() => $"{Type}: {Name}\n" +
-                                         $"Цена: {Price}" +
-                                         $"\n{Color}";
+                                         $"Цена: {Price}\n" +
+                                         $"{Color}";
 
     #endregion
 }

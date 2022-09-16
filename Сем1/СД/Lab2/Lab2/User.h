@@ -111,7 +111,6 @@ public:
 	User* GoDeep(int Number)
 	{
 		cout << this->Number << " ";
-
 		if (this->Number != Number)
 		{
 			this->IsChecked = true;
@@ -129,6 +128,10 @@ public:
 							this->IsChecked = false;
 							return Answer;
 						}
+						else
+						{
+							continue;
+						}
 					}
 				}
 			}
@@ -143,7 +146,6 @@ public:
 			this->IsChecked = false;
 			return this;
 		}
-		this->IsChecked = false;
 		return nullptr;
 	}
 

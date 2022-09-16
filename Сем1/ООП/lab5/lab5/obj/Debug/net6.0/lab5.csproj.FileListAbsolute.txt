@@ -13,3 +13,5 @@ D:\курс_2\Сем1\ООП\lab5\lab5\obj\Debug\net6.0\refint\lab5.dll
 D:\курс_2\Сем1\ООП\lab5\lab5\obj\Debug\net6.0\lab5.pdb
 D:\курс_2\Сем1\ООП\lab5\lab5\obj\Debug\net6.0\lab5.genruntimeconfig.cache
 D:\курс_2\Сем1\ООП\lab5\lab5\obj\Debug\net6.0\ref\lab5.dll
+D:\курс_2\Сем1\ООП\lab5\lab5\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\курс_2\Сем1\ООП\lab5\lab5\obj\Debug\net6.0\lab5.csproj.CopyComplete

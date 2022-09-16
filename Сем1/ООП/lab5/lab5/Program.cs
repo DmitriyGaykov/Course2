@@ -1,18 +1,15 @@
 ﻿using lab4;
 using lab5;
-using System.Xml.Linq;
-
 namespace std;
-
 class Program
 {
     public static void Main(string[] args)
     {
-        Rose Rose1 = new("Роза Пересмешница", Color.Black, 10);
-        Rose Rose2 = new("Роза Дикая", Color.Red, 200);
-        Rose Rose3 = new("Роза Недоросль", Color.Blue, 3);
-        Gladiolus Glad1 = new("Гладиолус лучезарный", Color.DarkBlue, 900);
-        Gladiolus Glad2 = new("Гладиолус лунный", Color.Cyan, 700);
+        Rose Rose1 = new("Роза Пересмешница", KnownColor.Black, 10);
+        Rose Rose2 = new("Роза Краснообразная", KnownColor.Red, 200);
+        Rose Rose3 = new("Роза Недоросль", KnownColor.Blue, 3);
+        Gladiolus Glad1 = new("Гладиолус лучезарный", KnownColor.DarkBlue, 900);
+        Gladiolus Glad2 = new("Гладиолус лунный", KnownColor.Cyan, 700);
 
         Rose1.Plant();
         Rose2.Plant();
@@ -34,5 +31,40 @@ class Program
         string? repliedColor = Console.ReadLine();
 
         Controller.FindByColor(ref Bouquet, repliedColor);
+
+        #region Additional Exercise 1
+
+        // Доп 1
+        // Controller.WriteBouquetToFile(ref Bouquet);
+
+        Console.WriteLine("\n\n\nДоп1\n");
+        var newBouquet = Controller.ReadBouquetFromFile();
+        Console.WriteLine(newBouquet.ToString());
+
+        #endregion
+
+        #region Additional Exercise 2
+
+        Console.WriteLine("\n\nДоп2\n");
+        StructBouquet strBouq = new(Bouquet.AllFlowerIn);
+
+        Controller.WriteBouquetToJson(strBouq);
+        var newBouq = Controller.ReadBouquetFromJson();
+
+        Console.WriteLine(newBouq.ToString());
+
+        #endregion
+    }
+
+    public struct StructBouquet
+    {
+        public AFlower[] Flowers { get; set; }
+        public int CurrentCount { get; set; }
+
+        public StructBouquet(AFlower[] Flowers)
+        {
+            this.Flowers = Flowers;
+            this.CurrentCount = Flowers.Length;
+        }
     }
 }
