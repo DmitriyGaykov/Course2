@@ -30,7 +30,7 @@ class Program
         Console.WriteLine("\n\nВведите цвет расстения:");
         string? repliedColor = Console.ReadLine();
 
-        Controller.FindByColor(ref Bouquet, repliedColor);
+        Controller.FindByColor(ref Bouquet, repliedColor ?? string.Empty);
 
         #region Additional Exercise 1
 

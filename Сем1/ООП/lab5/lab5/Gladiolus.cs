@@ -1,5 +1,4 @@
 ﻿using System.Drawing;
-
 namespace lab4;
 class Gladiolus : AFlower, IPlant
 {
