@@ -188,8 +188,8 @@ let basket : basketWindow = new basketWindow();
 let Milk100 : Product = new Product("Молоко", 100);
 let Bread50 : Product = new Product("Хлеб", 50);
 let Milk200 : Product = new Product("Молоко", 200);
-let Potato30 : Product = new Product("Картошка", 30);
-let Potato40 : Product = new Product("Картошка", 40);
+let Potato30 : Product = new Product("Картошка красная", 30);
+let Potato40 : Product = new Product("Картошка необычная", 40);
 let Pasta : Product = new Product("Макароны", 100);
 let Sosiska : Product = new Product("Сосиска", 100);
 
@@ -200,6 +200,7 @@ shop.addProduct(Bread50);
 shop.addProduct(Milk200);
 shop.addProduct(Potato30);
 shop.addProduct(Potato40);
+shop.addProduct(Pasta);
 shop.addProduct(Pasta);
 shop.addProduct(Sosiska);
 
