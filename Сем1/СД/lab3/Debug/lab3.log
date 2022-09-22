@@ -1,3 +1,26 @@
 ﻿  Main.cpp
 D:\курс_2\Сем1\СД\lab3\Main.cpp(10,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\курс_2\Сем1\СД\lab3\Graff.h(101,22): warning C4018: <: несоответствие типов со знаком и без знака
+D:\курс_2\Сем1\СД\lab3\Graff.h(98): message : во время компиляции функции-члена класс шаблон "void GRAFF::Graff<char>::outDistance(T *)"
+          with
+          [
+              T=char
+          ]
+D:\курс_2\Сем1\СД\lab3\Main.cpp(41): message : выполняется компиляция ссылки на экземпляр шаблон функции "void GRAFF::Graff<char>::outDistance(T *)"
+          with
+          [
+              T=char
+          ]
+D:\курс_2\Сем1\СД\lab3\Main.cpp(13): message : выполняется компиляция ссылки на экземпляр класс шаблон функции "GRAFF::Graff<char>"
+D:\курс_2\Сем1\СД\lab3\Graff.h(200,23): warning C4018: <: несоответствие типов со знаком и без знака
+D:\курс_2\Сем1\СД\lab3\Graff.h(192): message : во время компиляции функции-члена класс шаблон "std::vector<T *,std::allocator<T *>> GRAFF::Graff<T>::sortVector(std::vector<T *,std::allocator<T *>> *)"
+          with
+          [
+              T=char
+          ]
+D:\курс_2\Сем1\СД\lab3\Graff.h(55): message : выполняется компиляция ссылки на экземпляр шаблон функции "std::vector<T *,std::allocator<T *>> GRAFF::Graff<T>::sortVector(std::vector<T *,std::allocator<T *>> *)"
+          with
+          [
+              T=char
+          ]
   lab3.vcxproj -> D:\курс_2\Сем1\СД\lab3\Debug\lab3.exe

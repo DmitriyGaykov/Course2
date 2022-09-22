@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <map>
+#include <stack>
+#include <queue>
 
 using namespace std;
 
@@ -50,10 +52,26 @@ namespace GRAFF
 			dataAbout[el1]->joined_Els.push_back(el2);
 			dataAbout[el2]->joined_Els.push_back(el1);
 
+			sortVector(&dataAbout[el1]->joined_Els);
+			sortVector(&dataAbout[el2]->joined_Els);
+
 			this->distance[el1][el2] = distance;
 			this->distance[el2][el1] = distance;
 
 			return true;
+		}
+
+		bool isLinked(T* el1, T* el2)
+		{
+			for (auto i : dataAbout[el1]->joined_Els)
+			{
+				if (i == el2)
+				{
+					return true;
+				}
+			}
+
+			return false;
 		}
 
 		T* getElements()
@@ -76,27 +94,72 @@ namespace GRAFF
 			cout << " " << *result << endl;
 		}
 
-		void getDistance(T* el)
+		void outDistance(T* el)
 		{
-			map<T*, int> distBetween;
-			auto els = allElements;
-
-			els.erase(els.begin() + indexOf(el, allElements));
-
-			for (auto i : els)
+			map<T*, map<T*, int>> dists;
+			map<T*, int> resDist;
+			for (int i = 0; i < allElements.size(); i++)
 			{
-				distBetween[i] = INT_MAX;
-			}
-
-			for (auto i : els)
-			{
-				cout << "От " << *el << " до " << *i << " = " << GoDeystra(&distBetween, el, i, el) << endl;
+				els = allElements;
+				fillDist();
+				dist[allElements[i]] = 0;
+				getDistance(allElements[i]);
+				dists[allElements[i]] = dist;
 			}
 
 
+			for (auto i : allElements)
+			{
+				if (i != el)
+				{
+					resDist[i] = ((dists[i][el] > dists[el][i]) ? dists[el][i] : dists[i][el]);
+				}
+			}
+
+			dist = resDist;
+			out(el);
+		}
+
+		void getDistance(T* el, int cost = 0)
+		{
+			auto linkWith = dataAbout[el]->joined_Els;
+			els.erase(els.begin() + indexOf(el, els));
+			int min = INT_MAX;
+			T* pMin = nullptr;
+
+			for (auto i : linkWith)
+			{
+				if (dist[i] > (cost + distance[el][i]))
+				{
+					dist[i] = cost + distance[el][i];
+
+					if (dist[i] < min && indexOf(i, els) != -1)
+					{
+						min = dist[i];
+						pMin = i;
+					}
+				}
+			}
+
+			if (pMin != nullptr)
+			{
+				getDistance(pMin, dist[pMin]);
+
+				for (auto i : linkWith)
+				{
+					if (indexOf(i, els) != -1 && i != pMin)
+					{
+						getDistance(i, cost + distance[el][i]);
+					}
+				}
+			}
 		}
 
 	private:
+		map<T*, int> dist;
+		vector<T*> Visited;
+		vector<T*> els;
+
 		struct Data
 		{
 			int number;
@@ -123,6 +186,31 @@ namespace GRAFF
 			{
 				delete i;
 			}
+		}
+
+		vector<T*> sortVector(vector<T*>* pVec)
+		{
+			auto vec = *pVec;
+			bool isSorted = true;
+
+			do
+			{
+				isSorted = true;
+
+				for (int i = 0; i < vec.size() - 1; i++)
+				{
+					if (*vec[i] > *vec[i + 1])
+					{
+						auto temp = vec[i];
+						vec[i] = vec[i + 1];
+						vec[i + 1] = temp;
+						isSorted = false;
+					}
+				}
+
+			} while (!isSorted);
+
+			return vec;
 		}
 
 		T* search(T* el1, T* el2)
@@ -199,9 +287,43 @@ namespace GRAFF
 			return -1;
 		}
 
-		int GoDeystra(map<T*, int>* distBetween, T* el1, T* el2, T* baseEl, int wasWalked = 0)
+		int indexOf(T* el, queue<T*> q)
 		{
+			int index = 0;
+			while (!q.empty())
+			{
+				if (el == q.front())
+				{
+					return index;
+				}
+				index++;
+				q.pop();
+			}
+			return -1;
+		}
 
+		void outVect()
+		{
+			for (auto i : els)
+			{
+				cout << *i << " ";
+			}
+		}
+
+		void fillDist()
+		{
+			for (auto el : els)
+			{
+				dist[el] = INT_MAX;
+			}
+		}
+
+		void out(T* El)
+		{
+			for (auto el : allElements)
+			{
+				cout << "От " << *El << " до " << *el << " = " << dist[el] << endl;
+			}
 		}
 	};
 }

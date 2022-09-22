@@ -1,7 +1,7 @@
 //#include <string>
 //using namespace std;
 //#define cls system("cls")
-//#define ent cout<<endl
+#define ent cout<<endl
 //#define pause system("pause")
 //#define ru SetConsoleCP(1251);SetConsoleOutputCP(1251)
 //#define gl(str)  getline(cin,str)
