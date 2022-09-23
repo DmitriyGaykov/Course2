@@ -21,7 +21,7 @@ namespace GRAFF
 			Clear();
 		}
 
-		void add(T* el)
+		void add(T* el) // добавить один элемент в граф
 		{
 			if (dataAbout[el] != NULL)
 				return;
@@ -35,7 +35,7 @@ namespace GRAFF
 			Length++;
 		} // добавить один элемент
 
-		void adds(int n, T* el, ...)
+		void adds(int n, T* el, ...) // добавить N элементов в граф
 		{
 			auto first = &el;
 			for (int i = 0; i < n; i++)
@@ -44,7 +44,7 @@ namespace GRAFF
 			}
 		} // добавить несколько элементов
 
-		bool link(T* el1, T* el2, int distance)
+		bool link(T* el1, T* el2, int distance) // связать элементы
 		{
 			if (dataAbout[el1] == NULL || dataAbout[el2] == NULL)
 				return false;
@@ -52,16 +52,13 @@ namespace GRAFF
 			dataAbout[el1]->joined_Els.push_back(el2);
 			dataAbout[el2]->joined_Els.push_back(el1);
 
-			sortVector(&dataAbout[el1]->joined_Els);
-			sortVector(&dataAbout[el2]->joined_Els);
-
 			this->distance[el1][el2] = distance;
 			this->distance[el2][el1] = distance;
 
 			return true;
 		}
 
-		bool isLinked(T* el1, T* el2)
+		bool isLinked(T* el1, T* el2) // проверка на связаны ли вершины
 		{
 			for (auto i : dataAbout[el1]->joined_Els)
 			{

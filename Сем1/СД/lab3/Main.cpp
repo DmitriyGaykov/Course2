@@ -36,8 +36,6 @@ void main()
 	graff.link(&elF, &elH, 11);
 	graff.link(&elG, &elI, 15);
 
-	// graff.goDeep(&elA, &elI);
-
 	graff.outDistance(&elA);
 	ent; ent;
 	graff.outDistance(&elB);
