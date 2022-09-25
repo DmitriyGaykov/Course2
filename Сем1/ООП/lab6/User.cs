@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace lab6;
 class User
@@ -6,8 +7,8 @@ class User
     #region Fields
 
     private const int MAX_NAME_SIZE = 30;
-    private string name;
-    private int age;
+    private string name = "No name";
+    private int age = 0;
 
     #endregion
 
@@ -52,16 +53,29 @@ class User
 
         name = Console.ReadLine();
 
-        if (name == null)
+        try
         {
-            throw new PtrException(PtrException.ECode.ErrorNullptr);
+            if (name == null)
+            {
+                throw new PtrException(PtrException.ECode.ErrorNullptr);
+            }
+
+            if (!reg.IsMatch(name) || name.Length > MAX_NAME_SIZE)
+            {
+                throw new UserException(UserException.ECode.ErrorInCreateUserName);
+            }
         }
 
-        if (!reg.IsMatch(name) || name.Length > MAX_NAME_SIZE)
+        catch (PtrException e)
         {
-            throw new UserException(UserException.ECode.ErrorInCreateUserName);
+            Console.Write("Getname || ");
+            throw e;
         }
-
+        catch (UserException e)
+        {
+            Console.Write("Getname || ");
+            throw e;
+        }
         return name;
     }
 
@@ -71,7 +85,9 @@ class User
         string sAge;
 
         Console.WriteLine("Введите ваш возраст(18-100)");
-        sAge = Console.ReadLine() ?? "Error 1";
+        sAge = Console.ReadLine();
+
+        Debug.Assert(!string.IsNullOrWhiteSpace(sAge), "Не было введено поле возраста\nКак так можно\nГолову дома не забыли");
 
         if (!int.TryParse(sAge, out age) || age < 18 || age > 100)
         {

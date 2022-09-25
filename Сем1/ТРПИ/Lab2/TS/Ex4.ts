@@ -24,9 +24,9 @@ days = days % 365;
 
 alert
 ( `
-    Years: ${Math.floor(years)},\n
-    days: ${Math.floor(days)},\n
-    hours: ${Math.floor(hours)},\n
-    minutes: ${Math.floor(minutes)},\n
+    Years: ${Math.floor(years)},
+    days: ${Math.floor(days)},
+    hours: ${Math.floor(hours)},
+    minutes: ${Math.floor(minutes)},
     seconds: ${Math.floor(seconds)}
 ` );

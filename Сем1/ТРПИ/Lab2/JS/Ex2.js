@@ -10,13 +10,13 @@ isAgree = confirm("Вы хотите ввести третий параметр?
 
 if (isAgree) {
     paramC = prompt("Введите третий параметр: ");
-    alert(toString(paramA, paramB, paramC));
+    alert(toString(paramB, paramC));
 } else {
-    alert(toString(paramA, paramB));
+    alert(toString(paramB));
 }
 
 alert(toString())
 
-function toString(paramA = 2, paramB, paramC = "default") {
+function toString(paramA = 2, paramB, paramC) {
     return `${paramA} ${paramB} ${paramC}`;
 }

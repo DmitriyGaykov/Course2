@@ -2,9 +2,11 @@
 class Set<T>
 {
     #region Fields
+
     private T[] _Set;
     private int CountEls = 20;
     private int _NowCount = 0;
+
     #endregion
 
     #region Properties
@@ -28,6 +30,7 @@ class Set<T>
     #endregion
 
     #region Operators
+
     public static Set<T> operator +(Set<T> El1, T El2)
     {
         El1.Add(El2);
@@ -70,6 +73,7 @@ class Set<T>
 
     public static Set<T> operator &(Set<T> El1, Set<T> El2) =>
         CombineSets(El1, El2);
+
     #endregion
 
     #region Constructors
@@ -79,6 +83,7 @@ class Set<T>
     #endregion
 
     #region Methods
+
     #region Method | Public
     public void Adds(params T[] Els)
     {
@@ -156,6 +161,7 @@ class Set<T>
         return NewSet;
     }
     #endregion
+
     #endregion
 }
 

@@ -3,7 +3,7 @@
 // – округлите его до наибольшего, наименьшего и ближайшего целого. Если пользователь 
 // ввел текст, то преобразуйте его к верхнему и нижнему регистру.
 
-let datas : string = prompt("Enter data");
+let datas : string = prompt("Enter data") ?? "default";
 if(isFinite(Number(datas)) && !datas.includes(".")) 
 {
     let number : number = Number(datas);
@@ -13,7 +13,8 @@ if(isFinite(Number(datas)) && !datas.includes("."))
 else if(isFinite(Number(datas)) && Number(datas) % 1 !== 0)
 {
     let number : number = Number(datas);
-    alert(`
+    alert
+    (`
         Набольшую сторону: ${Math.ceil(number)}\n
         Наименьшую: ${Math.floor(number)}\n
         Ближайшее целое: ${Math.round(number)}\n

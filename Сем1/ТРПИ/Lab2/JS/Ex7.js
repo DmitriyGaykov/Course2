@@ -26,14 +26,14 @@ do {
 let kat2 = Number(checkVal);
 let newTriagle = new Triagle(kat1, kat2);
 alert(`
-    Катет1: ${kat1}\n
-    Катет2: ${kat2}\n
-    Гипотенуза: ${newTriagle.hypotenuse()}\n
-    Периметр: ${newTriagle.perimeter()}\n
-    Площадь: ${newTriagle.square()}\n
-    Высота: ${newTriagle.height()}\n
-    cos: ${newTriagle.cos()}\n
-    sin: ${newTriagle.sin()}\n
-    tg: ${newTriagle.tg()}\n
-    ctg: ${newTriagle.ctg()}\n
+    Катет1: ${kat1}
+    Катет2: ${kat2}
+    Гипотенуза: ${newTriagle.hypotenuse()}
+    Периметр: ${newTriagle.perimeter()}
+    Площадь: ${newTriagle.square()}
+    Высота: ${newTriagle.height()}
+    cos: ${newTriagle.cos()}
+    sin: ${newTriagle.sin()}
+    tg: ${newTriagle.tg()}
+    ctg: ${newTriagle.ctg()}
 `);

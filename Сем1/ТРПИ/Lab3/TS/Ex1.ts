@@ -49,6 +49,7 @@ function addComment() : void
             text = text.replace(/кот/g, "*");
             text = text.replace(/собак/g, "Собак");
             text = text.replace(/пес/g, "многоуважаемый пес");
+            text = text.replace(/Лукашенко/g, "Лучший президент");
 
             text = textForComment.replace("TextHere", text);
             wrapperOfComments.innerHTML  += text;

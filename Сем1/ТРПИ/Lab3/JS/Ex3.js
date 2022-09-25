@@ -2,8 +2,6 @@ let objButton = {
     class: "button",
     width: 100,
     height: 50,
-    backgroundColor: "RGBA(244, 43, 23, 0.4)",
-    textColor: "black",
 };
 let objLink = {
     class: "link",
@@ -13,7 +11,7 @@ let objLink = {
 };
 let objElement = {
     class: "element",
-    backgroundColor: "yellow",
+    backgroundColor: "yellow"
 };
 let buttons = document.querySelectorAll("." + objButton["class"]);
 let links = document.querySelectorAll("." + objLink["class"]);

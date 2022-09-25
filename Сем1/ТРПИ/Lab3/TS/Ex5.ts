@@ -191,6 +191,8 @@ let Milk200 : Product = new Product("Молоко", 200);
 let Potato30 : Product = new Product("Картошка красная", 30);
 let Potato40 : Product = new Product("Картошка необычная", 40);
 let Pasta : Product = new Product("Макароны", 100);
+let Cucumber: Product = new Product("Огурец", 50);
+let Tomato: Product = new Product("Помидор", 50);
 let Sosiska : Product = new Product("Сосиска", 100);
 
 shop.addProduct(Milk100);
@@ -203,7 +205,10 @@ shop.addProduct(Potato40);
 shop.addProduct(Pasta);
 shop.addProduct(Pasta);
 shop.addProduct(Sosiska);
-
+shop.addProduct(Cucumber);
+shop.addProduct(Tomato);
+shop.addProduct(Tomato);
+shop.addProduct(Pasta);
 
 let isClickedAdd : boolean = false;
 let isClickedRemove : boolean = false;
@@ -240,3 +245,4 @@ function initButtons()
         };
     } );
 }
+// 
