@@ -18,5 +18,10 @@ class Program
         {
             Console.WriteLine(e.Message);
         }
+        finally
+        {
+            Console.WriteLine("Нажмите любую клавишу для выхода");
+            Console.ReadKey();
+        }
     }
 }
