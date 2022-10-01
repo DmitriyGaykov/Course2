@@ -18,7 +18,7 @@ let textForComment : string =
 <div class="comment">
     <span class="comment-text">TextHere</span>
 </div>            
-`
+`;
 
 let textInput : HTMLInputElement = document.querySelector(".addCommentText");
 textInput.maxLength = MAX_LENGTH;
