@@ -46,6 +46,16 @@ class Product
 
     // #region Props
 
+    public get Sale() : number
+    {
+        return this.sale;
+    }
+
+    public set Sale(value : number)
+    {
+        this.sale = value;
+    }
+
     public get Color() : string
     {
         return this.color;
@@ -137,15 +147,80 @@ class Product
 
 let products: Product[] = 
 [
-    new Product(Sneakers, "Nike Air Forse", 150, 42, "Черный", "IMG/Кроссовки1.png"),
-    new Product(Sneakers, "Addidas 32", 200, 40, "Черный", "IMG/Кроссовки2.jpg", 20),
-    new Product(Boots, "Boot Sicker", 50, 45, "Бежевый", "IMG/Ботинки1.jpg"),
-    new Product(Sandals, "Sandals", 30, 39, "Коричневый", "IMG/Сандали1.png"),
-    new Product(Sneakers, "Nike Morse", 350, 42, "Розовый", "IMG/Кроссовки3.jpg", 30),
-    new Product(Sandals, "Sandals Calvin", 530, 41, "Коричневый", "IMG/Сандали2.jpg", 10),
-    new Product(Boots, "Boots Mamble", 50, 41, "Черный", "IMG/Ботинки2.jpeg"),
-    new Product(Boots, "Military Boot Style", 120, 42, "Черный", "IMG/Ботинки3.jpg"),
-    new Product(Sandals, "Cool Sandals", 130, 39, "Голубой", "IMG/Сандали3.png", 50),
+    new Product(
+         Sneakers,
+         "Nike Air Forse",
+         150,
+         42,
+         "Черный",
+         "IMG/Кроссовки1.png"),
+
+    new Product(
+         Sneakers,
+         "Addidas 32",
+         200,
+         40,
+         "Черный",
+         "IMG/Кроссовки2.jpg",
+         20),
+
+    new Product(
+         Boots,
+         "Boot Sicker",
+         50,
+         45,
+         "Бежевый",
+         "IMG/Ботинки1.jpg"),
+
+    new Product(
+         Sandals,
+         "Sandals",
+         30,
+         39,
+         "Коричневый",
+         "IMG/Сандали1.png"),
+
+    new Product(
+         Sneakers,
+         "Nike Morse",
+         350,
+         42,
+         "Розовый",
+         "IMG/Кроссовки3.jpg",
+         30),
+
+    new Product(
+         Sandals,
+         "Sandals Calvin",
+         530,
+         41,
+         "Коричневый", "IMG/Сандали2.jpg",
+         10),
+
+    new Product(
+         Boots,
+         "Boots Mamble",
+         50,
+         41,
+         "Черный",
+         "IMG/Ботинки2.jpeg"),
+
+    new Product(
+         Boots,
+         "Military Boot Style",
+         120,
+         42,
+         "Черный",
+         "IMG/Ботинки3.jpg"),
+
+    new Product(
+         Sandals,
+         "Cool Sandals",
+         130,
+         39,
+         "Голубой",
+         "IMG/Сандали3.png",
+         50),
 ];
 
 //#region Ex2

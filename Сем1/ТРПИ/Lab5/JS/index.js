@@ -45,6 +45,12 @@ class Product {
     }
     // #endregion
     // #region Props
+    get Sale() {
+        return this.sale;
+    }
+    set Sale(value) {
+        this.sale = value;
+    }
     get Color() {
         return this.color;
     }
