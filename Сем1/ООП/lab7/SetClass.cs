@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 namespace lab7;
 class Set<T> : IProduct<T>
+    where T : IComparable
 {
     #region Fields
 
@@ -120,7 +121,6 @@ class Set<T> : IProduct<T>
             this.Add(El);
         }
     }
-
     public void Sorting()
     {
         T[] NewArr = new T[NowCount];
@@ -135,7 +135,6 @@ class Set<T> : IProduct<T>
             Console.WriteLine(_Set[i].ToString());
         }
     }
-
     public void Remove(T El)
     {
         int Index = Array.IndexOf(_Set, El);
@@ -145,7 +144,6 @@ class Set<T> : IProduct<T>
             _Set = _Set.Where(val => !val.Equals(El)).ToArray();
         }
     }
-
     public void GetInfoAbout(T El)
     {
         int Index = Array.IndexOf(_Set, El);
@@ -158,7 +156,6 @@ class Set<T> : IProduct<T>
             Console.WriteLine($"Element {El} is not in set");
         }
     }
-
     public void ToFile()
     {
         using StreamWriter sr = new(FILEPATH);

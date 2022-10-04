@@ -36,8 +36,18 @@ class Gladiolus : AFlower, IPlant, IComparable
             return false;
         }
     }
-    public int CompareTo(object obj) =>
-        Convert.ToInt32(this.Type) - Convert.ToInt32(((Gladiolus)obj).Type);
+    public int CompareTo(object? obj)
+    {
+        if (obj is Gladiolus glad)
+        {
+            return Name.CompareTo(glad.Name);
+        }
+        else
+        {
+            throw new Exception("Невозможно сравнить два объекта");
+        }
+    }
+
     public void GetFruits()
     {
         if (IsGrow())

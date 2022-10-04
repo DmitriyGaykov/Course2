@@ -1,4 +1,0 @@
-﻿  Source.cpp
-D:\курс_2\Сем1\КПО\SEAms04\Source.cpp(8,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-D:\курс_2\Сем1\КПО\SEAms04\Source.cpp(11,7): warning C4101: unsignedVal: неиспользованная локальная переменная
-  SEAms04.vcxproj -> D:\курс_2\Сем1\КПО\SEAms04\x64\Debug\Serealize.exe

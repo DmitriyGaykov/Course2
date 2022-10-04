@@ -1,0 +1,41 @@
+﻿namespace lab8;
+internal class Program
+{
+    public static void Main(string[] args)
+    {
+        try
+        {
+            Headmaster Dima = new("Dima");
+            Person Vova = new("Vova");
+            Person Alex = new("Alex");
+            Person Alexey = new("Alexey");
+
+            Dima.AddMemberOrStudent(Vova);
+            Dima.AddMemberOrStudent(Alex);
+            Dima.AddMemberOrStudent(Alexey);
+
+            Dima.PromoteDelegate(Alex, APerson.Roles.Assistent);
+            Dima.PromoteDelegate(Alexey, APerson.Roles.Student);
+
+            Console.WriteLine(Vova.ToString());
+
+            Dima.PromoteDelegate(Vova, APerson.Roles.Teacher);
+            Console.WriteLine(Vova.ToString());
+
+            Dima.FineDelegate(Vova, 200);
+            Console.WriteLine(Vova.ToString());
+
+            Console.WriteLine("\n\n");
+            string str = "hello world a";
+            Console.WriteLine(str);
+
+            StringCorrector.str = str;
+            str = StringCorrector.ToCorrect();
+            Console.WriteLine(str);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+}
