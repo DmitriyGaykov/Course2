@@ -93,7 +93,7 @@ let products = [
     new Product(Sandals, "Sandals", 30, 39, "Коричневый", "IMG/Сандали1.png"),
     new Product(Sneakers, "Nike Morse", 350, 42, "Розовый", "IMG/Кроссовки3.jpg", 30),
     new Product(Sandals, "Sandals Calvin", 530, 41, "Коричневый", "IMG/Сандали2.jpg", 10),
-    new Product(Boots, "Boots Mamble", 50, 41, "Черный", "IMG/Ботинки2.jpeg"),
+    new Product(Boots, "Boots Mamble", 50, 41, "Черный", "IMG/Ботинки2.jpeg", 60),
     new Product(Boots, "Military Boot Style", 120, 42, "Черный", "IMG/Ботинки3.jpg"),
     new Product(Sandals, "Cool Sandals", 130, 39, "Голубой", "IMG/Сандали3.png", 50),
 ];

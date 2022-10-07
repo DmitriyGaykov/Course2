@@ -14,7 +14,7 @@ internal class Program
             Dima.AddMemberOrStudent(Alex);
             Dima.AddMemberOrStudent(Alexey);
 
-            Dima.PromoteDelegate(Alex, APerson.Roles.Assistent);
+            Dima.PromoteDelegate(Alex, APerson.Roles.Teacher);
             Dima.PromoteDelegate(Alexey, APerson.Roles.Student);
 
             Console.WriteLine(Vova.ToString());
@@ -22,7 +22,10 @@ internal class Program
             Dima.PromoteDelegate(Vova, APerson.Roles.Teacher);
             Console.WriteLine(Vova.ToString());
 
-            Dima.FineDelegate(Vova, 200);
+            Alex.FineDelegate(Alexey, 100);
+            Console.WriteLine(Alexey.ToString());
+
+            Dima.FineDelegate(Vova, 2000);
             Console.WriteLine(Vova.ToString());
 
             Console.WriteLine("\n\n");

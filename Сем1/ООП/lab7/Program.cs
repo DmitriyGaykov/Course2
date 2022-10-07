@@ -1,5 +1,6 @@
 ﻿using lab4;
 namespace lab7;
+
 class Program
 {
     public static void Main(string[] args)

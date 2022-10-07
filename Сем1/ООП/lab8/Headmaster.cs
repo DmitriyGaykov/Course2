@@ -27,8 +27,8 @@ sealed class Headmaster : APerson
 
     public Headmaster(string name) : base(name, Roles.Headmaster)
     {
-        PromoteDelegate += ToPromote;
         PromoteDelegate += ChangeSalary;
+        PromoteDelegate += ToPromote;
     }
 
     #endregion
@@ -65,7 +65,8 @@ sealed class Headmaster : APerson
         person.Role = role;
     }
 
-    private void ChangeSalary(APerson person, Roles role) => person.Salary = Salaries[role];
+    private void ChangeSalary(APerson person, Roles role) =>
+        person.Salary = Salaries[role];
 
     #endregion
 }

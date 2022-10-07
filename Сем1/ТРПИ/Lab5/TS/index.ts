@@ -144,7 +144,7 @@ class Product
 
     //#endregion
 }
-
+ 
 let products: Product[] = 
 [
     new Product(
@@ -203,7 +203,8 @@ let products: Product[] =
          50,
          41,
          "Черный",
-         "IMG/Ботинки2.jpeg"),
+         "IMG/Ботинки2.jpeg",
+         60),
 
     new Product(
          Boots,

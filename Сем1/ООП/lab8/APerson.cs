@@ -39,14 +39,20 @@ abstract class APerson
     public virtual Roles? Role
     {
         get => role;
-        set => role = value ??
-                      Roles.Nobody;
+        set
+        {
+            role = value ??
+                   Roles.Nobody;
+
+            PromoteEvent();
+        }
     }
 
     public virtual int? Salary
     {
         get => salary;
-        set => salary = value ?? 0;
+        set => salary = value ??
+                        0;
     }
 
     #endregion
@@ -57,11 +63,21 @@ abstract class APerson
                    Roles role)
     {
         Name = name;
-        Role = role;
+        this.role = role;
         Salary = Salaries[this.role];
         FineDelegate += CheckRole;
         FineDelegate += ToFine;
         ID = Guid.NewGuid().ToString("N");
+
+        PromoteEvent += NotifyWhoWasPromoted;
+        PromoteEvent += NotifyAboutPromoting;
+        PromoteEvent += NotifyAboutNewSalary;
+        PromoteEvent += NotifyAboutNewAbilities;
+
+        FineEvent += NotifyWhoWasFined;
+        FineEvent += NotifyAboutFining;
+        FineEvent += NotifyAboutFineSalary;
+        FineEvent += NotifyFineEnd;
     }
 
     #endregion
@@ -84,7 +100,56 @@ abstract class APerson
             throw new Exception("You are not allowed to do this");
         }
     }
-    protected void ToFine(APerson person, int fine) => person.Salary -= fine;
+    protected void ToFine(APerson person,
+                          int fine)
+    {
+        person.Salary -= person.Salary < fine ?
+                         person.Salary :
+                         fine;
+
+        person.FineEvent(fine);
+    }
+
+    #region Notify | Promote
+
+    protected void NotifyWhoWasPromoted() =>
+        Console.WriteLine($"\n\n--------------{Name} was promoted to {Role}--------------");
+    protected void NotifyAboutPromoting() =>
+        Console.WriteLine("Congratulations! You have been promoted!");
+
+    protected void NotifyAboutNewSalary() =>
+        Console.WriteLine($"Your new salary is {Salary}");
+
+    protected void NotifyAboutNewAbilities()
+    {
+        if (Role is (Roles.Teacher or Roles.Headmaster))
+        {
+            Console.WriteLine("You can now fine people");
+        }
+        if (Role is Roles.Headmaster)
+        {
+            Console.WriteLine("You can now add people to the school");
+        }
+        Console.WriteLine("--------------------------------------------------------\n\n");
+    }
+
+    #endregion
+
+    #region Notify | Fine
+
+    protected void NotifyWhoWasFined(int fine) =>
+        Console.WriteLine($"\n\n--------------{Name} was fined--------------");
+
+    protected void NotifyAboutFining(int fine) =>
+        Console.WriteLine($"You have been fined for {fine}");
+
+    protected void NotifyAboutFineSalary(int fine) =>
+        Console.WriteLine($"Your salary is now {Salary}");
+
+    protected void NotifyFineEnd(int fine) =>
+        Console.WriteLine("------------------------------------------------");
+
+    #endregion
 
     #endregion
 
@@ -104,6 +169,10 @@ abstract class APerson
     #region Delegates | Fine
 
     public Action<APerson, int> FineDelegate { get; set; }
+
+    public event Action PromoteEvent;
+
+    public event Action<int> FineEvent;
 
     #endregion
 }
