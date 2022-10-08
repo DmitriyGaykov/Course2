@@ -1,8 +1,11 @@
 // 6.	Реализуйте каррированную функцию, которая
 //  рассчитывает объем прямоугольного параллелепипеда. 
 
-function volume(a: number) : (b: number) => (c: number) => number {
-    return (b: number) => (c: number) => a * b * c;
+function volume(a: number) : (b: number) => (c: number) => number 
+{
+    return (b: number) => 
+                         (c: number) =>
+                                         a * b * c;
 }
 
 alert(`Volume of the parallelepiped is ${volume(2)(3)(4)}`);

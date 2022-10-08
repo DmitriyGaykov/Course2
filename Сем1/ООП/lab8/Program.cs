@@ -32,8 +32,7 @@ internal class Program
             string str = "hello world a";
             Console.WriteLine(str);
 
-            StringCorrector.str = str;
-            str = StringCorrector.ToCorrect();
+            StringCorrector.ToCorrect(ref str);
             Console.WriteLine(str);
         }
         catch (Exception e)

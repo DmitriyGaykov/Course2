@@ -1,7 +1,17 @@
 ﻿namespace lab8;
+delegate void SrtC(ref string str);
 static class StringCorrector
 {
-    #region Props
+    public static SrtC ToCorrect;
+    static StringCorrector()
+    {
+        ToCorrect += Trim;
+        ToCorrect += ToLower;
+        ToCorrect += AddDoth;
+        ToCorrect += CorrectFirstLetter;
+        ToCorrect += DellA;
+    }
+    /*#region Props
 
     public static string str
     {
@@ -29,18 +39,18 @@ static class StringCorrector
     public static Func<string> ToCorrect;
 
     #endregion
-
+    */
     #region Methods
 
-    private static string Trim() => str = StringCorrector.str.Replace(" ", "");
+    private static void Trim(ref string str) => str = str.Replace(" ", "");
 
-    private static string ToLower() => str = StringCorrector.str.ToLower();
+    private static void ToLower(ref string str) => str = str.ToLower();
 
-    private static string AddDoth() => str = StringCorrector.str + ".";
+    private static void AddDoth(ref string str) => str = str + ".";
 
-    private static string CorrectFirstLetter() => str = StringCorrector.str[0].ToString().ToUpper() + str.Substring(1);
+    private static void CorrectFirstLetter(ref string str) => str = str[0].ToString().ToUpper() + str.Substring(1);
 
-    private static string DellA() => str = StringCorrector.str.Replace("a", "");
+    private static void DellA(ref string str) => str = str.Replace("a", "");
 
     #endregion
 }

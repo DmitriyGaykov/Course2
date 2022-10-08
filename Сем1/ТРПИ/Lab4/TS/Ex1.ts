@@ -9,19 +9,26 @@
 //         Если более 7-ми – то сообщение о том, что 
 //         количество аргументов очень большое.
 
-function func(...args: any[]): string | number | void {
-    if (args.length <= 3) {
-        return args.join(', ');
-    } else if (args.length <= 5) {
-        return args.map((item) => typeof item).join(', ');
-    } else if (args.length <= 7) {
-        return args.length;
-    } else {
-        return 'Количество аргументов очень большое';
-    }
-}
-
 console.log(func(1, 2, 3));
 console.log(func(1, '2', 3, 4, 5));
 console.log(func(1, '2', 3, 4, 5, 6, 7));
 console.log(func(1, '2', 3, 4, 5, 6, 7, 8, 9, 10));
+
+function func(...args: any[]): string | number | void 
+{
+    if (args.length <= 3) 
+    {
+        return args.join(', ');
+
+    } else if (args.length <= 5) 
+    {
+        return args.map((item) => typeof item).join(', ');
+
+    } else if (args.length <= 7) 
+    {
+        return args.length;
+    } else 
+    {
+        return 'Количество аргументов очень большое';
+    }
+}

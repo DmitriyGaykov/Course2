@@ -8,6 +8,10 @@
 //        и не более 7-ми – то   количество аргументов.
 //         Если более 7-ми – то сообщение о том, что 
 //         количество аргументов очень большое.
+console.log(func(1, 2, 3));
+console.log(func(1, '2', 3, 4, 5));
+console.log(func(1, '2', 3, 4, 5, 6, 7));
+console.log(func(1, '2', 3, 4, 5, 6, 7, 8, 9, 10));
 function func(...args) {
     if (args.length <= 3) {
         return args.join(', ');
@@ -22,7 +26,3 @@ function func(...args) {
         return 'Количество аргументов очень большое';
     }
 }
-console.log(func(1, 2, 3));
-console.log(func(1, '2', 3, 4, 5));
-console.log(func(1, '2', 3, 4, 5, 6, 7));
-console.log(func(1, '2', 3, 4, 5, 6, 7, 8, 9, 10));

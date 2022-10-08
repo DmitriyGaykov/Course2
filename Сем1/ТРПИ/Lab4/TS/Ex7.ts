@@ -3,13 +3,18 @@
 //     координаты) и запрашивает новую команду. Разработайте генератор, который возвращает координаты объекта,
 //      согласно заданному направлению движения. 
 
-function* move(): Generator<number[]> {
+function* move(): Generator<number[]> 
+{
     let x: number = 0;
     let y: number = 0;
     let direction: string;
-    for (let i = 0; i < 10; i++) {
-        direction = prompt("Enter direction") ?? "default";
-        switch (direction.trim().toLowerCase()) {
+    for (let i = 0; i < 10; i++) 
+    {
+        direction = prompt("Enter direction") ??
+                    "default";
+
+        switch (direction.trim().toLowerCase()) 
+        {
             case "left":
                 x--;
                 break;
