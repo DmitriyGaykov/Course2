@@ -47,22 +47,21 @@ namespace fst
 	bool execute( // выполнить распознавание цепочки
 		FST& fst // недотерминированный конечный автомат
 	);
-	bool step(FST& fst, short*& rstates);
 
-	short* setRelState(
-		char symb,
-		FST& fst,
-		short* pNRStates,
-		short* rstates);
+	short* setRelState( // установить массив возможных состояний
+		char symb, // символ
+		FST& fst, // недотерминированный конечный автомат
+		short* pNRStates, // количество возможных состояний
+		short* rstates); // массив возможных состояний
 
-	bool isAllowed(
-		char symb,
-		short*& rstates,
-		short nRelations,
-		FST& fst);
+	bool isAllowed( // проверить, разрешено ли символу находится на данном состояние
+		char symb, // символ
+		short*& rstates, // массив возможных состояний
+		short nNRStates, // количество возможных состояний
+		FST& fst); // недотерминированный конечный автомат
 
-	bool isLastState(
-		short* rstates,
-		short length,
-		short countStates);
+	bool isLastState( // Проверка, явлеяется ли символ последним в цепочке
+		short* rstates, // массив возможных состояний
+		short length, // количество возможных состояний
+		short countStates); // количество состояний КА
 }
