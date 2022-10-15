@@ -35,7 +35,7 @@ namespace PolishNotation
 	bool checkExpression(char* expression)
 	{
 		if (
-			!checkBrackets(expression) &&
+			!checkBrackets(expression) ||
 			!checkOperations(expression)
 			)
 		{
@@ -81,21 +81,21 @@ namespace PolishNotation
 	{
 		for (int i = 0; i < strlen(expression); i++)
 		{
-			if (isOperation(expression[i]) and not isBrackets(expression[i]))
+			if (isOperation(expression[i]) && !isBrackets(expression[i]))
 			{
 				if (i == 0)
 				{
 					return false;
 				}
-				else if (i == strlen(expression) - 1 and not isBrackets(expression[i]))
+				else if (i == strlen(expression) - 1 && !isBrackets(expression[i]))
 				{
 					return false;
 				}
-				else if (isOperation(expression[i - 1]) and not isBrackets(expression[i]))
+				else if (isOperation(expression[i - 1]) && !isBrackets(expression[i - 1]))
 				{
 					return false;
 				}
-				else if (isOperation(expression[i + 1]) and not isBrackets(expression[i]))
+				else if (isOperation(expression[i + 1]) && !isBrackets(expression[i + 1]))
 				{
 					return false;
 				}

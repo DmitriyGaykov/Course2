@@ -11,7 +11,7 @@ class Program
         {
             Console.WriteLine($"\n\n--------------------------------Exersize 1--------------------------------\n\n");
             Hashtable<string, string> HT = new();
-            
+
             HT["Дима"] = "Dima";
             HT["Олег"] = "Oleg";
             HT["вася"] = "vasya";
