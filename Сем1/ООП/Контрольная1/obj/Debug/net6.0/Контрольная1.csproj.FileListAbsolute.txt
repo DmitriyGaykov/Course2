@@ -1,0 +1,15 @@
+D:\курс_2\Сем1\ООП\Контрольная1\bin\Debug\net6.0\Контрольная1.exe
+D:\курс_2\Сем1\ООП\Контрольная1\bin\Debug\net6.0\Контрольная1.deps.json
+D:\курс_2\Сем1\ООП\Контрольная1\bin\Debug\net6.0\Контрольная1.runtimeconfig.json
+D:\курс_2\Сем1\ООП\Контрольная1\bin\Debug\net6.0\Контрольная1.dll
+D:\курс_2\Сем1\ООП\Контрольная1\bin\Debug\net6.0\Контрольная1.pdb
+D:\курс_2\Сем1\ООП\Контрольная1\obj\Debug\net6.0\Контрольная1.csproj.AssemblyReference.cache
+D:\курс_2\Сем1\ООП\Контрольная1\obj\Debug\net6.0\Контрольная1.GeneratedMSBuildEditorConfig.editorconfig
+D:\курс_2\Сем1\ООП\Контрольная1\obj\Debug\net6.0\Контрольная1.AssemblyInfoInputs.cache
+D:\курс_2\Сем1\ООП\Контрольная1\obj\Debug\net6.0\Контрольная1.AssemblyInfo.cs
+D:\курс_2\Сем1\ООП\Контрольная1\obj\Debug\net6.0\Контрольная1.csproj.CoreCompileInputs.cache
+D:\курс_2\Сем1\ООП\Контрольная1\obj\Debug\net6.0\Контрольная1.dll
+D:\курс_2\Сем1\ООП\Контрольная1\obj\Debug\net6.0\refint\Контрольная1.dll
+D:\курс_2\Сем1\ООП\Контрольная1\obj\Debug\net6.0\Контрольная1.pdb
+D:\курс_2\Сем1\ООП\Контрольная1\obj\Debug\net6.0\Контрольная1.genruntimeconfig.cache
+D:\курс_2\Сем1\ООП\Контрольная1\obj\Debug\net6.0\ref\Контрольная1.dll

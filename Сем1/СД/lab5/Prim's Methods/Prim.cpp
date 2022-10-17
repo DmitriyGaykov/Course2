@@ -39,8 +39,7 @@ int getMin(
 	int* poxY,
 	map<pair<int, int>, bool>& visited,
 	set<int>& set,
-	int** matrix
-);
+	int** matrix);
 
 void fillArr(
 	int* arr,
