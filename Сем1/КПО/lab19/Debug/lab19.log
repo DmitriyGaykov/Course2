@@ -1,0 +1,5 @@
+﻿  Main.cpp
+D:\курс_2\Сем1\КПО\lab19\Main.cpp(6,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\курс_2\Сем1\КПО\lab19\Main.cpp(34,27): warning C4305: аргумент: усечение из "int" в "char"
+D:\курс_2\Сем1\КПО\lab19\Main.cpp(34,20): warning C4309: аргумент: усечение константного значения
+  lab19.vcxproj -> D:\курс_2\Сем1\КПО\lab19\Debug\lab19.exe

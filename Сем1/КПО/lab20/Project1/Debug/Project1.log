@@ -1,0 +1,8 @@
+﻿  Main.cpp
+  Out.cpp
+  Parm.cpp
+D:\курс_2\Сем1\КПО\lab20\Project1\Parm.cpp(76,22): warning C4018: <: несоответствие типов со знаком и без знака
+D:\курс_2\Сем1\КПО\lab20\Project1\Parm.cpp(84,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\курс_2\Сем1\КПО\lab20\Project1\Parm.cpp(92,20): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+  Project1.vcxproj -> D:\курс_2\Сем1\КПО\lab20\Project1\Debug\Lab20.exe

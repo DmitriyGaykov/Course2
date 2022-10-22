@@ -1,0 +1,3 @@
+﻿  Prim.cpp
+D:\курс_2\Сем1\СД\lab5\Prim's Methods\Prim.cpp(50,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+  Prim's Methods.vcxproj -> D:\курс_2\Сем1\СД\lab5\Prim's Methods\Debug\Prim's Methods.exe
