@@ -5,46 +5,60 @@ class Program
 {
     public static void Main(string[] args)
     {
-        // ex1
+        string str = Console.ReadLine() ?? "default";
+        string last = str[str.Length - 1].ToString();
 
-        Console.WriteLine(float.MaxValue);
+        str += last;
+        Console.WriteLine(str);
 
-        int[][] matrix = new int[2][];
-        matrix[0] = new int[3] { 1, 2, 3 };
-        matrix[1] = new int[5] { 1, 2, 3, 4, 5 };
+        /* задан двумерный массив целых чисел
+ проинициализируйте его
+ посчитайте общее число положительных*/
 
-        for (int i = 0; i < matrix.Length; i++)
+
+        int[,] matr = new int[3, 3]
         {
-            for (int j = 0; j < matrix[i].Length; j++)
+
+            { 1, -2, 3 },
+            { 4, 5, -6 },
+            { 7, 8, 9 }
+        };
+
+        int count = 0;
+
+        for (int i = 0; i < matr.GetLength(0); i++)
+        {
+            for (int j = 0; j < matr.GetLength(1); j++)
             {
-                Console.Write(matrix[i][j] + " ");
+                if (matr[i, j] >= 0)
+                {
+                    count++;
+                }
             }
-            Console.WriteLine();
         }
 
-        // ex2
+        Console.WriteLine("Количество положительных  = " + count);
 
-        Plant plant1 = new("Ягоды",
-                           KnownColor.RebeccaPurple);
+        Bag bag1 = new Bag(12, "Bag 1");
+        Bag bag2 = new Bag(23, "Bag 2");
 
-        Plant plant2 = new("Ягоды",
-                           KnownColor.Pink);
 
-        Console.WriteLine(plant1 + "\n"
-                        + plant2);
+        // Сравнение объектов
+        Console.WriteLine(bag1.CompareTo(bag2));
 
-        Console.WriteLine($"plant1 == plant2 = {plant1 == plant2}");
+        // обнуление суммы
+        Console.WriteLine(bag1.Sum);
+        bag1.NullSum();
+        Console.WriteLine(bag1.Sum);
+        // сравнение объектов
 
-        //  ex3
-
-        Flower fl1 = new("Цветок",
-                         KnownColor.Plum);
-
-        IWater ref1 = plant1;
-        IWater ref2 = fl1;
-
-        ref2.WaterPlant();
-        ((Plant)ref2).WaterPlant();
 
     }
+}
+
+// класс расширений
+static class Extention
+{
+    // метод расширения
+    public static void NullSum(this Bag bag) => bag.Sum = 0;
 }

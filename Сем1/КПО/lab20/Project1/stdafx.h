@@ -9,6 +9,9 @@
 using namespace std;
 
 typedef char _TCHAR;
+typedef unsigned char uchar;
+typedef unsigned int uint;
+typedef unsigned short ushort;
 
 #include "Error.h"
 #include "Parm.h"
@@ -16,3 +19,7 @@ typedef char _TCHAR;
 #include "In.h"
 #include "FST.h"
 #include "Out.h"
+#include "LT.h"
+#include "IT.h"
+#include "Test.h"
+#include "Lex.h"

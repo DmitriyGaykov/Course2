@@ -28,7 +28,9 @@ body {
   justify-content: center;
   gap: 15px;
   width: 100%;
+  min-height: 200px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .wrapper .Add {
@@ -48,11 +50,45 @@ body {
   color: white;
 }
 
+.wrapper .ChangeBack,
+.wrapper .Remove,
+.wrapper .AddReady {
+  align-self: flex-end;
+  box-sizing: border-box;
+  padding: 4px 5px;
+  max-width: 110px;
+  font-size: .6em;
+  background: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: black;
+}
+
+.wrapper .ChangeBack:hover,
+.wrapper .Remove:hover,
+.wrapper .AddReady:hover {
+  background-color: black;
+  color: white;
+}
+
+.wrapper .basket {
+  border-top: 1px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  min-height: 200px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .product {
   display: flex;
   flex-direction: column;
   padding: 5px 4px;
   max-width: 160px;
+  flex: 1;
+  white-space: nowrap;
   box-sizing: border-box;
   border: 1px solid #232323;
   border-radius: 5px;
@@ -115,7 +151,7 @@ body {
   background-color: #f5f5f5;
   color: RGBA(0, 0, 240, 0.9);
   font-weight: 600;
-  transform: scale(1.1);
+  transform: scale(1.06);
 }
 
 .product .product-btn-in {
@@ -133,7 +169,7 @@ body {
   background-color: #f5f5f5;
   color: RGBA(240, 0, 40, 0.9);
   font-weight: 600;
-  transform: scale(1.1);
+  transform: scale(1.06);
 }
 
 button {

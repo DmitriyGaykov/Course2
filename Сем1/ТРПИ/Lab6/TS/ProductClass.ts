@@ -4,7 +4,7 @@ class Product
 {
     //#region Fields
 
-    private wrapper : HTMLElement = document.querySelector(".wrapper");
+    private wrapper : HTMLElement = document.querySelector(".products");
 
     private readonly id: number;
     private name : string;
@@ -67,6 +67,11 @@ class Product
         return this.isInABasket;
     }
 
+    public set IsInABasket(value : boolean)
+    {
+        this.isInABasket = value;
+    }
+
     //#endregion
 
     //#region Constructors
@@ -92,7 +97,7 @@ class Product
             <img class="product-img" src="${this.pathToImg}" alt="${this.Name}">
             <div class="product-name">${this.Name}</div>
             <div class="product-price">$${this.price}</div>
-            ${this.IsInABasket ? `<button class="product-btn-in">Remove from basket</button>` : `<button class="product-btn-to">Add to basket</button>`}
+            ${this.IsInABasket ? (new ButtonClass("product-btn-in product-btn", "Вынуть из корзины")).toHTML() : (new ButtonClass("product-btn-to product-btn", "В корзину")).toHTML() }
         `
     }
 
@@ -105,16 +110,16 @@ class Product
 
         product.innerHTML = this.ToString();
 
-        console.log();
-
-        this.Wrapper.appendChild(product);
+        this.Wrapper.innerHTML += product.outerHTML;
 
         this.htmlElement = product;
+
+        buttonsAddToBasket = document.querySelectorAll(".product-btn");
     }
 
     public Remove() : void
     {
-        this.Wrapper.removeChild(this.htmlElement);
+        this.Wrapper.removeChild(document.getElementById(this.id.toString()));
     }
 
     //#endregion

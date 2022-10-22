@@ -1,17 +1,13 @@
 let idMaker = makeID();
 class Product {
-    //#endregion
-    //#region Constructors
-    constructor(name, price, pathToImg) {
-        //#region Fields
-        this.wrapper = document.querySelector(".wrapper");
-        this.isInABasket = false;
-        this.id = idMaker.next().value;
-        this.Name = name;
-        this.Price = price;
-        this.PathToImg = pathToImg;
-        this.Wrapper = document.querySelector(".products");
-    }
+    //#region Fields
+    wrapper = document.querySelector(".products");
+    id;
+    name;
+    price;
+    pathToImg;
+    isInABasket = false;
+    htmlElement;
     //#endregion
     //#region Properties
     get ID() {
@@ -44,6 +40,18 @@ class Product {
     get IsInABasket() {
         return this.isInABasket;
     }
+    set IsInABasket(value) {
+        this.isInABasket = value;
+    }
+    //#endregion
+    //#region Constructors
+    constructor(name, price, pathToImg) {
+        this.id = idMaker.next().value;
+        this.Name = name;
+        this.Price = price;
+        this.PathToImg = pathToImg;
+        this.Wrapper = document.querySelector(".products");
+    }
     //#endregion
     //#region Methods
     ToString() {
@@ -51,7 +59,7 @@ class Product {
             <img class="product-img" src="${this.pathToImg}" alt="${this.Name}">
             <div class="product-name">${this.Name}</div>
             <div class="product-price">$${this.price}</div>
-            ${this.IsInABasket ? `<button class="product-btn-in">Remove from basket</button>` : `<button class="product-btn-to">Add to basket</button>`}
+            ${this.IsInABasket ? (new ButtonClass("product-btn-in product-btn", "Вынуть из корзины")).toHTML() : (new ButtonClass("product-btn-to product-btn", "В корзину")).toHTML()}
         `;
     }
     toHTML() {
@@ -59,12 +67,12 @@ class Product {
         product.classList.add("product");
         product.id = this.id.toString();
         product.innerHTML = this.ToString();
-        console.log();
-        this.Wrapper.appendChild(product);
+        this.Wrapper.innerHTML += product.outerHTML;
         this.htmlElement = product;
+        buttonsAddToBasket = document.querySelectorAll(".product-btn");
     }
     Remove() {
-        this.Wrapper.removeChild(this.htmlElement);
+        this.Wrapper.removeChild(document.getElementById(this.id.toString()));
     }
 }
 function* makeID() {

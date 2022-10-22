@@ -59,6 +59,7 @@ let figures : object[] =
     cyrcle2,
     triangle2
 ];
+
 ////////////////////////////////
 let propsOfGreenCyrcle : string[] = Object.keys(cyrcle2);
 

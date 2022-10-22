@@ -10,16 +10,12 @@ int main(int argc, _TCHAR* argv[])
 
 	try
 	{
-		parm = Parm::getparm(argc, argv); // получение параметров
-
+		parm = Parm::getparm(argc, argv); // получение параметро
 		Log::Close(log);
 
 		log = Log::getlog(parm.log); // получение лога
 		In::IN in = In::getin(parm.in); // получение входных данных
 
-		cout << endl
-			<< in.text // вывод входных данных
-			<< endl;
 
 		//Log::WriteLine(log, (wchar_t*)L"Текст:", (wchar_t*)L" без ошибок\n", (wchar_t*)L""); // запись в лог об ошибке
 		//Log::WriteLine(log, (char*)"Текст: ", (char*)" без ошибок\n", (char*)""); // запись в лог об ошибке

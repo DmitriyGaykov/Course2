@@ -1,0 +1,138 @@
+lab11, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+
+Публичные конструкторы
+Void .ctor(System.String)
+
+
+Публичные методы
+lab8.APerson[] get_Staff()
+System.Action`2[lab8.APerson,lab8.APerson+Roles] get_PromoteDelegate()
+Void set_PromoteDelegate(System.Action`2[lab8.APerson,lab8.APerson+Roles])
+Void TestHeadmaster(System.String)
+Void AddMemberOrStudent(lab8.APerson)
+System.String get_ID()
+Void set_ID(System.String)
+System.String get_Name()
+Void set_Name(System.String)
+System.Nullable`1[lab8.APerson+Roles] get_Role()
+Void set_Role(System.Nullable`1[lab8.APerson+Roles])
+System.Nullable`1[System.Int32] get_Salary()
+Void set_Salary(System.Nullable`1[System.Int32])
+System.String ToString()
+Boolean Equals(System.Object)
+System.Action`2[lab8.APerson,System.Int32] get_FineDelegate()
+Void set_FineDelegate(System.Action`2[lab8.APerson,System.Int32])
+Void add_PromoteEvent(System.Action)
+Void remove_PromoteEvent(System.Action)
+Void add_FineEvent(System.Action`1[System.Int32])
+Void remove_FineEvent(System.Action`1[System.Int32])
+System.Type GetType()
+Int32 GetHashCode()
+
+
+Поля и свойства
+lab8.APerson[] Staff
+System.Action`2[lab8.APerson,lab8.APerson+Roles] PromoteDelegate
+System.String ID
+System.String Name
+System.Nullable`1[lab8.APerson+Roles] Role
+System.Nullable`1[System.Int32] Salary
+System.Action`2[lab8.APerson,System.Int32] FineDelegate
+
+
+Реализованные интерфейсы
+
+
+Методы, содержащие заданный тип параметра
+Void TestHeadmaster(System.String)
+Void set_ID(System.String)
+Void set_Name(System.String)
+
+
+lab11, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+
+Публичные конструкторы
+Void .ctor(System.String)
+
+
+Публичные методы
+System.String get_ID()
+Void set_ID(System.String)
+System.String get_Name()
+Void set_Name(System.String)
+System.Nullable`1[lab8.APerson+Roles] get_Role()
+Void set_Role(System.Nullable`1[lab8.APerson+Roles])
+System.Nullable`1[System.Int32] get_Salary()
+Void set_Salary(System.Nullable`1[System.Int32])
+System.String ToString()
+Boolean Equals(System.Object)
+System.Action`2[lab8.APerson,System.Int32] get_FineDelegate()
+Void set_FineDelegate(System.Action`2[lab8.APerson,System.Int32])
+Void add_PromoteEvent(System.Action)
+Void remove_PromoteEvent(System.Action)
+Void add_FineEvent(System.Action`1[System.Int32])
+Void remove_FineEvent(System.Action`1[System.Int32])
+System.Type GetType()
+Int32 GetHashCode()
+
+
+Поля и свойства
+System.String ID
+System.String Name
+System.Nullable`1[lab8.APerson+Roles] Role
+System.Nullable`1[System.Int32] Salary
+System.Action`2[lab8.APerson,System.Int32] FineDelegate
+
+
+Реализованные интерфейсы
+
+
+Методы, содержащие заданный тип параметра
+Void set_ID(System.String)
+Void set_Name(System.String)
+
+
+System.IO.FileSystem.DriveInfo, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+
+Публичные конструкторы
+Void .ctor(System.String)
+
+
+Публичные методы
+System.String get_Name()
+Boolean get_IsReady()
+System.IO.DirectoryInfo get_RootDirectory()
+System.String ToString()
+System.IO.DriveType get_DriveType()
+System.String get_DriveFormat()
+Int64 get_AvailableFreeSpace()
+Int64 get_TotalFreeSpace()
+Int64 get_TotalSize()
+System.IO.DriveInfo[] GetDrives()
+System.String get_VolumeLabel()
+Void set_VolumeLabel(System.String)
+System.Type GetType()
+Boolean Equals(System.Object)
+Int32 GetHashCode()
+
+
+Поля и свойства
+System.String Name
+Boolean IsReady
+System.IO.DirectoryInfo RootDirectory
+System.IO.DriveType DriveType
+System.String DriveFormat
+Int64 AvailableFreeSpace
+Int64 TotalFreeSpace
+Int64 TotalSize
+System.String VolumeLabel
+
+
+Реализованные интерфейсы
+System.Runtime.Serialization.ISerializable
+
+
+Методы, содержащие заданный тип параметра
+Void set_VolumeLabel(System.String)
+
+
