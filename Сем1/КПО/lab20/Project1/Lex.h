@@ -13,7 +13,26 @@ namespace Lex
 	);
 
 	void checkLine( // проверка строку на соответствие типу/ключевому слову
-		char* word // слово
+		string& word, // слово
+		ushort nLine, // номер строки
+		LT::LexTable& lextable, // таблица лексем
+		IT::IdTable& idtable // таблица идентификаторов
 	);
+
+	bool isStopSymb( // проверка на стоп-символ
+		char symb // символ
+	);
+
+	string defineWord( // определение типа слова
+		string& word, // слово
+		ushort nLine, // номер строки
+		LT::LexTable& lextable, // таблица лексем
+		IT::IdTable& idtable, // таблица идентификаторов
+		string preWord // предыдущее слово
+	);
+
+	void to_pchar( // преобразование string в char*
+		string str, // строка
+		char* pStr); // указатель на строку
 };
 

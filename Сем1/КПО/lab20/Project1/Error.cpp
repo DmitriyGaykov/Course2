@@ -29,7 +29,7 @@ namespace Error
 		ERROR_ENTRY(116, "Ошибка при создании таблицы идентификаторов. Превышена емкость таблицы идентификаторов"),
 		ERROR_ENTRY(117, "Ошибка при добавлении идентификатора в таблицу. Таблица идентификаторов заполнена"),
 		ERROR_ENTRY(118, "Ошибка при получении записи из таблицы идентификаторов. Недопустимый номер идентификатора"),
-		ERROR_ENTRY_NODEF(119),
+		ERROR_ENTRY(119, "Превышено название идентификатора"),
 		ERROR_ENTRY_NODEF10(120),ERROR_ENTRY_NODEF10(130),ERROR_ENTRY_NODEF10(140),ERROR_ENTRY_NODEF10(150),
 		ERROR_ENTRY_NODEF10(160),ERROR_ENTRY_NODEF10(170),ERROR_ENTRY_NODEF10(180),ERROR_ENTRY_NODEF10(190),
 		ERROR_ENTRY_NODEF100(200),ERROR_ENTRY_NODEF100(300),ERROR_ENTRY_NODEF100(400),ERROR_ENTRY_NODEF100(500),

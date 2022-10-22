@@ -3,6 +3,7 @@
 #define LEXEMA_FIXSIZE 1   // фиксированный размер лексемы
 #define LT_MAXSIZE  4096 // максимальное количество строк в таблице лексем
 #define LT_TI_NULLIDX 0xffffffff // нет элемента таблицы индентификаторов
+
 #define LEX_INTEGER 't' // лексема для integer
 #define LEX_STRING 't' // лексема для string
 #define LEX_ID 'i' // лексема для идентификатора
@@ -26,7 +27,7 @@ namespace LT // таблица лексем
 {
 	struct Entry
 	{
-		char lexema[LEXEMA_FIXSIZE]; // лексема
+		char lexema; // лексема
 		int sn; // номер строки
 		int idxTI; // индекс в таблице идентификаторов
 	};
