@@ -67,6 +67,7 @@ void searchLexsAndIdns(
 	string word;
 	LT::Entry lex;
 	IT::Entry idn;
+	char str[MAX_LEN_LINE];
 
 	for (auto i : words)
 	{
@@ -269,5 +270,99 @@ void searchLexsAndIdns(
 
 			LT::Add(lextable, lex);
 		}
+		else if (word == "=")
+		{
+			lex.lexema = '=';
+			lex.sn = nLine;
+			lex.idxTI = -1;
+
+			word = "";
+			word.push_back(lex.lexema);
+
+			LT::Add(lextable, lex);
+		}
+		else
+		{
+
+			to_pchar(word, str);
+			strcpy_s(idn.id, str);
+
+			if (
+				words[i - 1] == "function" &&
+				words[i - 2] == "integer")
+			{
+				idn.iddatatype = IT::INT;
+				idn.idtype = IT::F;
+				idn.idxfirstLE = lextable.size;
+
+				lex.idxTI = idtable.size;
+				lex.lexema = LEX_ID;
+				lex.sn = nLine;
+
+				LT::Add(lextable, lex);
+				IT::Add(idtable, idn);
+			}
+			else if (
+				words[i - 1] == "function" &&
+				words[i - 2] == "string"
+				)
+			{
+				idn.iddatatype = IT::STR;
+				idn.idtype = IT::F;
+				idn.idxfirstLE = lextable.size;
+
+				lex.idxTI = idtable.size;
+				lex.lexema = LEX_ID;
+				lex.sn = nLine;
+
+				LT::Add(lextable, lex);
+				IT::Add(idtable, idn);
+			}
+			else if (
+				(words[i - 1] == "string" || words[i - 1] == "integer")
+				&&
+				(words[i - 2] == "(" || words[i - 2] == ",")
+				)
+			{
+				idn.iddatatype = (words[i - 1] == "string" ? IT::STR : IT::INT);
+				idn.idtype = IT::P;
+				idn.idxfirstLE = lextable.size;
+
+				lex.idxTI = idtable.size;
+				lex.lexema = LEX_ID;
+				lex.sn = nLine;
+
+				LT::Add(lextable, lex);
+				IT::Add(idtable, idn);
+			}
+			else if (
+				words[i - 1] == "string" ||
+				words[i - 1] == "integer")
+			{
+				idn.iddatatype = (words[i - 1] == "string" ? IT::STR : IT::INT);
+				idn.idtype = IT::V;
+				idn.idxfirstLE = lextable.size;
+
+				lex.idxTI = idtable.size;
+				lex.lexema = LEX_ID;
+				lex.sn = nLine;
+
+				LT::Add(lextable, lex);
+				IT::Add(idtable, idn);
+			}
+			else
+			{
+
+			}
+		}
 	}
+}
+
+void to_pchar(string str, char* pchar)
+{
+	for (ushort i = 0; i < str.size(); i++)
+	{
+		pchar[i] = str[i];
+	}
+	pchar[str.size()] = '\0';
 }

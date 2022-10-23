@@ -15,3 +15,8 @@ void searchLexsAndIdns( // поиск лексем и идентификаторов
 	IT::IdTable& idtable, // таблица идентификаторов
 	ushort& nLine // номер строки
 );
+
+void to_pchar( // перевод строки в массив символов
+	string str, // строка
+	char* pchar // массив символов
+);
