@@ -8,6 +8,7 @@ namespace In
 		this->add('a', 'z', IN::T);
 		this->add('A', 'Z', IN::T);
 		this->add('а', 'я', IN::T);
+		this->add('А', 'Я', IN::T);
 		this->add('0', '9', IN::T);
 
 		this->code[(unsigned int)' '] = IN::T;
@@ -23,6 +24,14 @@ namespace In
 		this->code[(unsigned int)']'] = IN::T;
 		this->code[(unsigned int)';'] = IN::T;
 		this->code[(unsigned int)':'] = IN::T;
+		this->code[(unsigned int)'\''] = IN::T;
+		this->code[(unsigned int)','] = IN::T;
+		this->code[(unsigned int)'.'] = IN::T;
+		this->code[(unsigned int)'+'] = IN::T;
+		this->code[(unsigned int)'-'] = IN::T;
+		this->code[(unsigned int)'*'] = IN::T;
+		this->code[(unsigned int)'/'] = IN::T;
+		this->code[(unsigned int)'='] = IN::T;
 	}
 
 	IN getin(wchar_t infile[]) // Функция проверки входных данных

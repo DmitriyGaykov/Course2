@@ -1,4 +1,5 @@
 #include "stdafx.h"
+#include "Analize.h"
 
 int main(int argc, _TCHAR* argv[])
 {
@@ -16,9 +17,15 @@ int main(int argc, _TCHAR* argv[])
 		log = Log::getlog(parm.log); // получение лога
 		In::IN in = In::getin(parm.in); // получение входных данных
 
+		LT::LexTable lextable = LT::Create(in.size); // создание таблицы лексем
+		IT::IdTable idtable = IT::Create(in.size); // создание таблицы идентификаторов
 
-		//Log::WriteLine(log, (wchar_t*)L"“екст:", (wchar_t*)L" без ошибок\n", (wchar_t*)L""); // запись в лог об ошибке
-		//Log::WriteLine(log, (char*)"“екст: ", (char*)" без ошибок\n", (char*)""); // запись в лог об ошибке
+		LexAnalize(in, lextable, idtable); // лексический анализ
+
+		for (ushort i = 0; i < lextable.size; i++)
+		{
+			cout << lextable.table[i].lexema;
+		}
 
 		Log::WriteLog(log); // запись в лог
 		Log::WriteParm(log, parm); // запись процесса проверки параметров

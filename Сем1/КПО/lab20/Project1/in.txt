@@ -1,4 +1,4 @@
-п»їinteger integer string function fi(integer x, integer y)
+integer function fi(integer x, integer y)
 {
 integer z;
 z= x*(x+y);
@@ -29,7 +29,7 @@ sa = '12345   67890';
 sb = '1234567890';
 z = fi(x,y);
 sc = fs(sa,sb);
-print 'ГЄГ®Г­ГІГ°Г®Г«ГјГ­Г»Г©     ГЇГ°ГЁГ¬ГҐГ°';
+print 'Контрольный пример';
 print z;
 print sc;
 print strlen(sc);

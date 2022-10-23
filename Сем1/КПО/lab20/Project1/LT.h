@@ -15,7 +15,7 @@
 #define LEX_SEMICOLON ';' // лексема для ;
 #define LEX_COMMA ',' // лексема для ,
 #define LEX_LEFTBRACE '{' // лексема для {
-#define LEX_BRACELET '}' // лексема для }
+#define LEX_RIGHTBRACE '}' // лексема для }
 #define LEX_LEFTHESIS '(' // лексема для (
 #define LEX_RIGHTHESIS ')' // лексема для )
 #define LEX_PLUS '+' // лексема для +

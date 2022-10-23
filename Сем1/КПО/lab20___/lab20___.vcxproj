@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ec92590a-7018-4f2d-b446-0c3799305f73}</ProjectGuid>
-    <RootNamespace>Project1</RootNamespace>
+    <ProjectGuid>{4575bd4e-09c1-4f1d-9cc5-b99dbd9b2940}</ProjectGuid>
+    <RootNamespace>lab20</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Lab20</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,12 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Analize.cpp" />
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="FST.cpp" />
     <ClCompile Include="In.cpp" />
     <ClCompile Include="IT.cpp" />
-    <ClCompile Include="Lex.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="LT.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -141,7 +138,6 @@
     <ClCompile Include="Parm.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Analize.h" />
     <ClInclude Include="Error.h" />
     <ClInclude Include="FST.h" />
     <ClInclude Include="In.h" />
@@ -156,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="in.txt" />
-    <Text Include="in.txt.log" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

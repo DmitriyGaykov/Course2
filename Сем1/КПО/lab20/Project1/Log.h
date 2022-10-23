@@ -3,6 +3,8 @@
 #include "stdafx.h"
 #include "In.h"
 #include "Parm.h"
+#include "LT.h"
+#include "Lex.h"
 
 namespace Log
 {
@@ -22,3 +24,4 @@ namespace Log
 	void WriteError(LOG log, Error::ERROR error);
 	void Close(LOG log);
 }
+

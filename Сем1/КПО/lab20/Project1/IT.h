@@ -1,5 +1,4 @@
 #pragma once
-#include "stdafx.h"
 
 #define ID_MAXSIZE 20 // максимальное количество символов в идентификаторе
 #define TI_MAXSIZE 4096 // максимальное количество записей в таблице идентификаторов
@@ -39,6 +38,7 @@ namespace IT
 			{
 				char len; // количество символов в string
 				char str[TI_STR_MAXSIZE - 1]; // символы string
+
 			} vstr[TI_STR_MAXSIZE]; // значение для типа string
 
 		} value;
