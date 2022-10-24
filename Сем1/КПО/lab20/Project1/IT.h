@@ -4,7 +4,7 @@
 #define TI_MAXSIZE 4096 // максимальное количество записей в таблице идентификаторов
 #define TI_INT_DEFAULT 0x00000000 // значение по умолчанию для типа integer
 #define TT_STR_DEFAULT 0x00 // значение по умолчанию для типа string
-#define TI_NULLIDX 0xffffffff // нет элемента в таблицы идентификаторов
+#define TI_NULLIDX (ushort)0xffffffff // нет элемента в таблицы идентификаторов
 #define TI_STR_MAXSIZE 255 
 
 namespace IT
@@ -63,7 +63,7 @@ namespace IT
 		int n // номер записи в таблице идентификаторов
 	);
 
-	int IsId( // поиск идентификатора в таблице идентификаторов
+	int IsId( // поиск идентификатора в таблице идентификаторов вернуть индекс или TI_NULLIDX
 		IdTable& idtable, // таблица идентификаторов
 		char id[ID_MAXSIZE] // идентификатор
 	);

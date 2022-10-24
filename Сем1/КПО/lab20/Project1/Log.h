@@ -4,7 +4,6 @@
 #include "In.h"
 #include "Parm.h"
 #include "LT.h"
-#include "Lex.h"
 
 namespace Log
 {

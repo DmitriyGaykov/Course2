@@ -133,7 +133,6 @@
     <ClCompile Include="FST.cpp" />
     <ClCompile Include="In.cpp" />
     <ClCompile Include="IT.cpp" />
-    <ClCompile Include="Lex.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="LT.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -146,7 +145,6 @@
     <ClInclude Include="FST.h" />
     <ClInclude Include="In.h" />
     <ClInclude Include="IT.h" />
-    <ClInclude Include="Lex.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="LT.h" />
     <ClInclude Include="Out.h" />

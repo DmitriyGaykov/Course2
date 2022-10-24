@@ -1,4 +1,5 @@
 #include "Analize.h"
+#include <stack>
 
 void LexAnalize(
 	In::IN in,
@@ -89,6 +90,10 @@ void searchLexsAndIdns(
 	ushort& nLine)
 {
 	string word;
+	stack<string> scope;
+	
+	scope.push("");
+	
 	LT::Entry lex;
 	IT::Entry idn;
 	char str[TI_MAXSIZE];
@@ -182,6 +187,8 @@ void searchLexsAndIdns(
 			word = "";
 			word.push_back(lex.lexema);
 			
+			scope.push("main");
+			
 			LT::Add(lextable, lex);
 		}
 		else if (word == ";")
@@ -227,6 +234,8 @@ void searchLexsAndIdns(
 			word.push_back(lex.lexema);
 
 			LT::Add(lextable, lex);
+			
+			scope.pop();
 		}
 		else if (word == "(")
 		{
@@ -249,6 +258,15 @@ void searchLexsAndIdns(
 			word.push_back(lex.lexema);
 
 			LT::Add(lextable, lex);
+
+			if (
+				(words[i - 3] == "(" ||
+				words[i - 3] == ",") &&
+				words[i+1] != "\n"
+				)
+			{
+				scope.pop();
+			}
 		}
 		else if (word == "+")
 		{
@@ -311,9 +329,15 @@ void searchLexsAndIdns(
 		else if (word == "=")
 		{
 			char* _id = new char[TI_MAXSIZE];
-			to_pchar(words[i - 1], _id);
+			to_pchar(scope.top() + words[i - 1], _id);
 
 			ushort _index = IT::IsId(idtable, _id);
+
+			if (_index == TI_NULLIDX || _index > 5000)
+			{
+				throw ERROR_THROW_IN(244, nLine, 0);
+			}
+			
 			auto _idx = idtable.table[_index];
 
 			lex.lexema = LEX_ID;
@@ -328,8 +352,6 @@ void searchLexsAndIdns(
 			lex.sn = nLine;
 			lex.idxTI = -1;
 
-
-
 			word = "";
 			word.push_back(lex.lexema);
 
@@ -337,7 +359,6 @@ void searchLexsAndIdns(
 		}
 		else
 		{
-
 			to_pchar(word, str);
 			strcpy_s(idn.id, str);
 
@@ -345,6 +366,7 @@ void searchLexsAndIdns(
 				words[i - 1] == "function" &&
 				words[i - 2] == "integer")
 			{
+				scope.push(word);
 				idn.iddatatype = IT::INT;
 				idn.idtype = IT::F;
 				idn.idxfirstLE = lextable.size;
@@ -370,6 +392,7 @@ void searchLexsAndIdns(
 				words[i - 2] == "string"
 				)
 			{
+				scope.push(word);
 				idn.iddatatype = IT::STR;
 				idn.idtype = IT::F;
 				idn.idxfirstLE = lextable.size;
@@ -404,6 +427,11 @@ void searchLexsAndIdns(
 				lex.lexema = LEX_ID;
 				lex.sn = nLine;
 
+				word = scope.top() + word;
+
+				to_pchar(word, str);
+				strcpy_s(idn.id, str);
+
 				if (idn.iddatatype == IT::INT)
 				{
 					idn.value.vint = 0;
@@ -423,6 +451,10 @@ void searchLexsAndIdns(
 				idn.iddatatype = (words[i - 1] == "string" ? IT::STR : IT::INT);
 				idn.idtype = IT::V;
 				idn.idxfirstLE = lextable.size;
+
+				word = scope.top() + word;
+				to_pchar(word, str);
+				strcpy_s(idn.id, str);
 
 				lex.idxTI = idtable.size;
 				lex.lexema = LEX_ID;
@@ -449,11 +481,16 @@ void searchLexsAndIdns(
 					((_isNum && words[i + 1] == ";") || (word == "'" && words[i + 3] == ";"))
 					)
 				{
-					char* _id = new char[TI_MAXSIZE];
-					to_pchar(words[i - 2], _id);
+					char* _id = new char[TI_STR_MAXSIZE];
+					to_pchar(scope.top() + words[i - 2], _id);
 
 					ushort _index = IT::IsId(idtable, _id);
+					cout << _id << endl;
 					
+					if (_index == TI_NULLIDX)
+					{
+						throw ERROR_THROW_IN(225, nLine, 0); // переделать
+					}
 
 					strcpy_s(idn.id, _id);
 
@@ -490,6 +527,16 @@ void searchLexsAndIdns(
 					regex_match(word.begin(), word.end(), regex(REG_WORD))
 					)
 				{
+					to_pchar(word, str);
+					if (
+						word != "strlen" && 
+						word != "substr" &&
+						IT::IsId(idtable,str) == TI_NULLIDX
+						)
+					{
+						
+							throw ERROR_THROW_IN(225, nLine, 0); // переделать
+					}
 					lex.lexema = LEX_FUNCTION;
 					lex.sn = nLine;
 					lex.idxTI = -1;
@@ -502,6 +549,7 @@ void searchLexsAndIdns(
 					)
 				{
 					strcpy_s(idn.id, "noname");
+					
 					idn.iddatatype = _isNum ? IT::INT : IT::STR;
 					idn.idtype = IT::L;
 					idn.idxfirstLE = nLine;
@@ -531,7 +579,7 @@ void searchLexsAndIdns(
 					words[i+1] != "="
 					)
 				{
-					to_pchar(word, str);
+					to_pchar(scope.top() + word, str);
 					ushort _index = IT::IsId(idtable, str);
 
 					if (_index != TI_NULLIDX)
@@ -560,7 +608,7 @@ void searchLexsAndIdns(
 					}
 					else
 					{
-						ERROR_THROW_IN(223, nLine, 0); // переделать
+						throw ERROR_THROW_IN(223, nLine, 0); // переделать
 					}
 				}
 			}

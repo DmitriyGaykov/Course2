@@ -29,8 +29,6 @@ int main(int argc, _TCHAR* argv[])
 		}
 		lexs[lextable.size] = '\0';
 
-		
-
 		Log::WriteLog(log); // запись в лог
 		Log::WriteParm(log, parm); // запись процесса проверки параметров
 		Log::WriteIn(log, in); // запись процесса обработки входных данных
@@ -53,7 +51,7 @@ int main(int argc, _TCHAR* argv[])
 
 		// вывод таблицы идентификаторов
 		
-		cout << "Таблица идентификаторов:" << endl;
+		cout << "\n\nТаблица идентификаторов:" << endl;
 		
 		for (ushort i = 0; i < idtable.size; i++)
 		{
