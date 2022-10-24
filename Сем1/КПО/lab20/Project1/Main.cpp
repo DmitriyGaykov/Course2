@@ -21,11 +21,15 @@ int main(int argc, _TCHAR* argv[])
 		IT::IdTable idtable = IT::Create(in.size); // создание таблицы идентификаторов
 
 		LexAnalize(in, lextable, idtable); // лексический анализ
-
+		char* lexs = new char[lextable.size];
+		
 		for (ushort i = 0; i < lextable.size; i++)
 		{
-			cout << lextable.table[i].lexema;
+			lexs[i] = lextable.table[i].lexema;
 		}
+		lexs[lextable.size] = '\0';
+
+		
 
 		Log::WriteLog(log); // запись в лог
 		Log::WriteParm(log, parm); // запись процесса проверки параметров
@@ -33,7 +37,42 @@ int main(int argc, _TCHAR* argv[])
 		Log::Close(log); // закрытие лога
 
 		Out::OUT out(parm.out);
-		out.Write((char*)in.text);
+		out.Write(lexs);
+
+		// вывод таблицы лексем
+
+		cout << "“аблица лексем:" << endl;
+		
+		for (ushort i = 0; i < lextable.size; i++)
+		{
+			cout << "lexema: " << lextable.table[i].lexema << "\t\t\t";
+			cout << "sn: " << lextable.table[i].sn << "\t\t\t";
+			cout << "idxTI: " << lextable.table[i].idxTI << "\t\t\t";
+			cout << endl;
+		}
+
+		// вывод таблицы идентификаторов
+		
+		cout << "“аблица идентификаторов:" << endl;
+		
+		for (ushort i = 0; i < idtable.size; i++)
+		{
+			cout << "id: " << idtable.table[i].id << "\t\t\t";
+			cout << "iddatatype: " << idtable.table[i].iddatatype << "\t\t\t";
+			cout << "idxfirstLE: " << idtable.table[i].idxfirstLE << "\t\t\t";
+			cout << "idtype: " << idtable.table[i].idtype << "\t\t\t";
+			
+			if (idtable.table[i].iddatatype == IT::INT)
+			{
+				cout << "value: " << idtable.table[i].value.vint << "\t\t\t";
+			}
+			else
+			{
+				cout << "value: " << idtable.table[i].value.vstr->str << "\t\t\t";
+			}
+			
+			cout << endl;
+		}
 	}
 	catch (Error::ERROR e)
 	{

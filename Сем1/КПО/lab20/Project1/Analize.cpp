@@ -7,11 +7,10 @@ void LexAnalize(
 {
 	string text = "";
 
-	for (ushort i = 0; i < in.size; i++)
+	for (ushort i = 0; i < strlen((char*)in.text); i++)
 	{
 		text.push_back(in.text[i]);
 	}
-
 	ushort nLine = 1;
 
 	vector<string> words;
@@ -84,7 +83,7 @@ bool isStopSymb(char symb)
 }
 
 void searchLexsAndIdns(
-	vector<string> words,
+	vector<string>& words,
 	LT::LexTable& lextable,
 	IT::IdTable& idtable,
 	ushort& nLine)
@@ -94,10 +93,10 @@ void searchLexsAndIdns(
 	IT::Entry idn;
 	char str[TI_MAXSIZE];
 
-	for (auto i : words)
+	/*for (auto i : words)
 	{
 		cout << i << "\n";
-	}
+	}*/
 
 	for (ushort i = 0; i < words.size(); i++)
 	{
@@ -172,6 +171,17 @@ void searchLexsAndIdns(
 			word = "";
 			word.push_back(lex.lexema);
 
+			LT::Add(lextable, lex);
+		}
+		else if (word == "main")
+		{
+			lex.lexema = LEX_MAIN;
+			lex.sn = nLine;
+			lex.idxTI = -1;
+			
+			word = "";
+			word.push_back(lex.lexema);
+			
 			LT::Add(lextable, lex);
 		}
 		else if (word == ";")
@@ -286,14 +296,17 @@ void searchLexsAndIdns(
 		}
 		else if (word == "\n")
 		{
-			lex.lexema = '\n';
-			lex.sn = nLine;
-			lex.idxTI = -1;
+			if (words[i - 1] != "\n")
+			{
+				lex.lexema = '\n';
+				lex.sn = nLine;
+				lex.idxTI = -1;
 
-			word = "";
-			word.push_back(lex.lexema);
+				word = "";
+				word.push_back(lex.lexema);
 
-			LT::Add(lextable, lex);
+				LT::Add(lextable, lex);
+			}
 		}
 		else if (word == "=")
 		{
@@ -340,6 +353,15 @@ void searchLexsAndIdns(
 				lex.lexema = LEX_ID;
 				lex.sn = nLine;
 
+				if (idn.iddatatype == IT::INT)
+				{
+					idn.value.vint = 0;
+				}
+				else
+				{
+					strcpy_s(idn.value.vstr->str, "");
+				}
+
 				LT::Add(lextable, lex);
 				IT::Add(idtable, idn);
 			}
@@ -355,6 +377,15 @@ void searchLexsAndIdns(
 				lex.idxTI = idtable.size;
 				lex.lexema = LEX_ID;
 				lex.sn = nLine;
+
+				if (idn.iddatatype == IT::INT)
+				{
+					idn.value.vint = 0;
+				}
+				else
+				{
+					strcpy_s(idn.value.vstr->str, "");
+				}
 
 				LT::Add(lextable, lex);
 				IT::Add(idtable, idn);
@@ -373,6 +404,15 @@ void searchLexsAndIdns(
 				lex.lexema = LEX_ID;
 				lex.sn = nLine;
 
+				if (idn.iddatatype == IT::INT)
+				{
+					idn.value.vint = 0;
+				}
+				else
+				{
+					strcpy_s(idn.value.vstr->str, "");
+				}
+
 				LT::Add(lextable, lex);
 				IT::Add(idtable, idn);
 			}
@@ -388,26 +428,36 @@ void searchLexsAndIdns(
 				lex.lexema = LEX_ID;
 				lex.sn = nLine;
 
+				if (idn.iddatatype == IT::INT)
+				{
+					idn.value.vint = 0;
+				}
+				else
+				{
+					strcpy_s(idn.value.vstr->str, "");
+				}
+
 				LT::Add(lextable, lex);
 				IT::Add(idtable, idn);
 			}
 			else
 			{
+				bool _isNum = isProved(word);
 				if (
 					i - 1 >= 0 &&
 					words[i - 1] == "=" &&
-					((isProved(word) && words[i + 1] == ";") || (word == "'" && words[i + 3] == ";"))
+					((_isNum && words[i + 1] == ";") || (word == "'" && words[i + 3] == ";"))
 					)
 				{
 					char* _id = new char[TI_MAXSIZE];
 					to_pchar(words[i - 2], _id);
 
 					ushort _index = IT::IsId(idtable, _id);
-					auto _idx = idtable.table[_index];
+					
 
 					strcpy_s(idn.id, _id);
 
-					idn.iddatatype = _idx.iddatatype;
+					idn.iddatatype = idtable.table[_index].iddatatype;
 					idn.idtype = IT::V;
 					idn.idxfirstLE = _index;
 
@@ -419,7 +469,7 @@ void searchLexsAndIdns(
 					if (isProved(word))
 					{
 						idn.value.vint = stoi(word);
-						_idx.value.vint = stoi(word);
+						idtable.table[_index].value.vint = stoi(word);
 					}
 					else
 					{
@@ -427,26 +477,92 @@ void searchLexsAndIdns(
 						strcpy_s(idn.value.vstr->str, str);
 						idn.value.vstr->len = strlen(str);
 
-						strcpy_s(_idx.value.vstr->str, str);
-						_idx.value.vstr->len = strlen(str);
+						strcpy_s(idtable.table[_index].value.vstr->str, str);
+						idtable.table[_index].value.vstr->len = strlen(str);
+						i += 2;
 					}
 
 					IT::Add(idtable, idn);
 					delete[] _id;
 				}
-
-
-				// TODO: сделать для функции
-
-				else
+				else if (
+					words[i + 1] == "(" &&
+					regex_match(word.begin(), word.end(), regex(REG_WORD))
+					)
 				{
-					/*lex.idxTI = TI_NULLIDX;
+					lex.lexema = LEX_FUNCTION;
+					lex.sn = nLine;
+					lex.idxTI = -1;
+
+					LT::Add(lextable, lex);
+				}
+				else if (
+					_isNum || 
+					(word == "'" && words[i+2] == "'")
+					)
+				{
+					strcpy_s(idn.id, "noname");
+					idn.iddatatype = _isNum ? IT::INT : IT::STR;
+					idn.idtype = IT::L;
+					idn.idxfirstLE = nLine;
+					
+					if (_isNum)
+					{
+						idn.value.vint = stoi(word);
+					}
+					else
+					{
+						to_pchar(words[i + 1], str);
+						strcpy_s(idn.value.vstr->str, str);
+						idn.value.vstr->len = words[i + 1].size();
+
+						i += 2;
+					}
+
 					lex.lexema = LEX_LITERAL;
 					lex.sn = nLine;
+					lex.idxTI = idtable.size;
 
-					LT::Add(lextable, lex);*/
+					LT::Add(lextable, lex);
+					IT::Add(idtable, idn);
 				}
+				else if (
+					regex_match(word.begin(), word.end(), regex(REG_WORD)) &&
+					words[i+1] != "="
+					)
+				{
+					to_pchar(word, str);
+					ushort _index = IT::IsId(idtable, str);
 
+					if (_index != TI_NULLIDX)
+					{
+						auto _idn = idtable.table[_index];
+						lex.lexema = LEX_ID;
+						lex.sn = nLine;
+						lex.idxTI = _index;
+
+						strcpy_s(idn.id, str);
+						idn.iddatatype = _idn.iddatatype;
+						idn.idtype = _idn.idtype;
+						idn.idxfirstLE = _index;
+
+						if (idn.iddatatype == IT::INT)
+						{
+							idn.value.vint = 0;
+						}
+						else
+						{
+							strcpy_s(idn.value.vstr->str, "");
+						}
+
+						LT::Add(lextable, lex);
+						IT::Add(idtable, idn);
+					}
+					else
+					{
+						ERROR_THROW_IN(223, nLine, 0); // переделать
+					}
+				}
 			}
 		}
 	}

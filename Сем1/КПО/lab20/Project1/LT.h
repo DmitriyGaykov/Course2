@@ -3,6 +3,8 @@
 #define LEXEMA_FIXSIZE 1   // фиксированный размер лексемы
 #define LT_MAXSIZE  4096 // максимальное количество строк в таблице лексем
 #define LT_TI_NULLIDX 0xffffffff // нет элемента таблицы индентификаторов
+#define REG_WORD "[A-Za-z_]+[A-Za-z0-9_]*" // регулярное выражение для слова
+
 
 #define LEX_INTEGER 't' // лексема для integer
 #define LEX_STRING 't' // лексема для string
@@ -22,6 +24,7 @@
 #define LEX_MINUS '-' // лексема для -
 #define LEX_STAR '*' // лексема для *
 #define LEX_DIRSLASH '/' // лексема для /
+#define LEX_MAIN 'm' // лексема для main
 
 namespace LT // таблица лексем
 {

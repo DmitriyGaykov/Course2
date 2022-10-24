@@ -10,7 +10,7 @@ bool isStopSymb(char symb); //проверка на стоп-символы
 
 
 void searchLexsAndIdns( // поиск лексем и идентификаторов
-	vector<string> words, // вектор слов
+	vector<string>& words, // вектор слов
 	LT::LexTable& lextable, // таблица лексем
 	IT::IdTable& idtable, // таблица идентификаторов
 	ushort& nLine // номер строки

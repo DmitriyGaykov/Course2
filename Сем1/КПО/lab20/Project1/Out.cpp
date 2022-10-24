@@ -15,9 +15,19 @@ namespace Out
 
 	void OUT::Write(char* str)
 	{
+		ushort line = 1;
+		file << "0" << line++ << " ";
 		if (file.is_open())
 		{
-			file << str;
+			for (ushort i = 0; i < strlen(str); i++)
+			{
+				file << str[i];
+				
+				if (str[i] == '\n')
+				{
+					file << (line < 10 ?  "0" : "") << line++ << " ";
+				}
+			}
 		}
 	}
 }

@@ -1,6 +1,7 @@
 ﻿  Analize.cpp
-D:\курс_2\Сем1\КПО\lab20\Project1\Analize.cpp(428,40): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
-D:\курс_2\Сем1\КПО\lab20\Project1\Analize.cpp(431,41): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
-D:\курс_2\Сем1\КПО\lab20\Project1\Analize.cpp(467,20): warning C4018: <: несоответствие типов со знаком и без знака
-D:\курс_2\Сем1\КПО\lab20\Project1\Analize.cpp(469,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\курс_2\Сем1\КПО\lab20\Project1\Analize.cpp(478,40): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
+D:\курс_2\Сем1\КПО\lab20\Project1\Analize.cpp(481,58): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
+D:\курс_2\Сем1\КПО\lab20\Project1\Analize.cpp(517,48): warning C4267: =: преобразование из "size_t" в "char"; возможна потеря данных
+D:\курс_2\Сем1\КПО\lab20\Project1\Analize.cpp(587,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\курс_2\Сем1\КПО\lab20\Project1\Analize.cpp(589,21): warning C4018: <: несоответствие типов со знаком и без знака
   Project1.vcxproj -> D:\курс_2\Сем1\КПО\lab20\Project1\Debug\Lab20.exe

@@ -91,4 +91,7 @@
     <Text Include="in.txt" />
     <Text Include="in.txt.log" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="in.txt.out" />
+  </ItemGroup>
 </Project>

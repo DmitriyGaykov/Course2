@@ -97,6 +97,7 @@ namespace In
 		in.ignore = ignors;
 		in.lines = lines;
 		in.text = code;
+		in.size = strlen((char*)in.text);
 
 		file.close();
 		delete[] str;
@@ -128,9 +129,7 @@ namespace In
 	{
 		for (int i = 0; i < strlen(str); i++)
 		{
-			if (
-				str[i] == ' ' &&
-				str[i + 1] == ' ')
+			if (str[i] == ' ' && str[i + 1] == ' ')
 			{
 				dell_in(str, i);
 				i--;
