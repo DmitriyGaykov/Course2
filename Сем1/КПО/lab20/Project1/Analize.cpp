@@ -1,6 +1,5 @@
 #include "Analize.h"
 
-
 void LexAnalize(
 	In::IN in,
 	LT::LexTable& lextable,
@@ -17,25 +16,51 @@ void LexAnalize(
 
 	vector<string> words;
 	string word = "";
+	bool isStrLit = false;
 
-	for (char el : text)
+	for (ushort i = 0; i < in.size; i++)
 	{
-		if (!isStopSymb(el))
+		if (!isStrLit)
 		{
-			word.push_back(el);
+			if (!isStopSymb((char)in.text[i]))
+			{
+				word.push_back((char)in.text[i]);
+			}
+			else
+			{
+				if (word != "")
+				{
+					words.push_back(word);
+					word = "";
+				}
+				if (
+					(char)in.text[i] != ' ' &&
+					(char)in.text[i] != '\t'
+					)
+				{
+					word.push_back((char)in.text[i]);
+					words.push_back(word);
+					word = "";
+				}
+
+				if ((char)in.text[i] == '\'')
+				{
+					isStrLit = true;
+				}
+			}
 		}
 		else
 		{
-			words.push_back(word);
-			word = "";
-			if (
-				el != ' ' &&
-				el != '\t'
-				)
+			if ((char)in.text[i] == '\'')
 			{
-				word.push_back(el);
 				words.push_back(word);
 				word = "";
+				words.push_back("'");
+				isStrLit = false;
+			}
+			else
+			{
+				word.push_back((char)in.text[i]);
 			}
 		}
 	}
@@ -45,7 +70,7 @@ void LexAnalize(
 
 bool isStopSymb(char symb)
 {
-	char stopSymbs[] = " ,;(){}[]+-*/='\n\t";
+	char stopSymbs[] = " ,;'(){}[]+-*/=\n\t";
 
 	for (ushort i = 0; i < strlen(stopSymbs); i++)
 	{
@@ -67,7 +92,7 @@ void searchLexsAndIdns(
 	string word;
 	LT::Entry lex;
 	IT::Entry idn;
-	char str[MAX_LEN_LINE];
+	char str[TI_MAXSIZE];
 
 	for (auto i : words)
 	{
@@ -272,9 +297,25 @@ void searchLexsAndIdns(
 		}
 		else if (word == "=")
 		{
+			char* _id = new char[TI_MAXSIZE];
+			to_pchar(words[i - 1], _id);
+
+			ushort _index = IT::IsId(idtable, _id);
+			auto _idx = idtable.table[_index];
+
+			lex.lexema = LEX_ID;
+			lex.sn = nLine;
+			lex.idxTI = idtable.size;
+
+			LT::Add(lextable, lex);
+
+			delete[] _id;
+
 			lex.lexema = '=';
 			lex.sn = nLine;
 			lex.idxTI = -1;
+
+
 
 			word = "";
 			word.push_back(lex.lexema);
@@ -352,6 +393,59 @@ void searchLexsAndIdns(
 			}
 			else
 			{
+				if (
+					i - 1 >= 0 &&
+					words[i - 1] == "=" &&
+					((isProved(word) && words[i + 1] == ";") || (word == "'" && words[i + 3] == ";"))
+					)
+				{
+					char* _id = new char[TI_MAXSIZE];
+					to_pchar(words[i - 2], _id);
+
+					ushort _index = IT::IsId(idtable, _id);
+					auto _idx = idtable.table[_index];
+
+					strcpy_s(idn.id, _id);
+
+					idn.iddatatype = _idx.iddatatype;
+					idn.idtype = IT::V;
+					idn.idxfirstLE = _index;
+
+					lex.lexema = LEX_LITERAL;
+					lex.sn = lextable.size;
+
+					LT::Add(lextable, lex);
+
+					if (isProved(word))
+					{
+						idn.value.vint = stoi(word);
+						_idx.value.vint = stoi(word);
+					}
+					else
+					{
+						to_pchar(words[i + 1], str);
+						strcpy_s(idn.value.vstr->str, str);
+						idn.value.vstr->len = strlen(str);
+
+						strcpy_s(_idx.value.vstr->str, str);
+						_idx.value.vstr->len = strlen(str);
+					}
+
+					IT::Add(idtable, idn);
+					delete[] _id;
+				}
+
+
+				// TODO: сделать для функции
+
+				else
+				{
+					/*lex.idxTI = TI_NULLIDX;
+					lex.lexema = LEX_LITERAL;
+					lex.sn = nLine;
+
+					LT::Add(lextable, lex);*/
+				}
 
 			}
 		}
@@ -365,4 +459,40 @@ void to_pchar(string str, char* pchar)
 		pchar[i] = str[i];
 	}
 	pchar[str.size()] = '\0';
+}
+
+bool isProved(string num)
+{
+	if (num == "")
+		return false;
+	char nums[] = "-0123456789";
+	bool isNotNum = false;
+
+	for (int i = 0; i < num.size(); i++)
+	{
+		for (int j = 0; j < strlen(nums); j++)
+		{
+			if (num[i] == nums[j])
+			{
+				if (num[i] == '-' && i != 0)
+					return false;
+				if (num[i] == '-' && i == 0 && num.size() == 1)
+					return false;
+
+				isNotNum = false;
+				break;
+			}
+			else
+			{
+				isNotNum = true;
+			}
+		}
+
+		if (isNotNum)
+		{
+			return false;
+		}
+	}
+
+	return true;
 }

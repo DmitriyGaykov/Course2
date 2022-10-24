@@ -20,3 +20,5 @@ void to_pchar( // перевод строки в массив символов
 	string str, // строка
 	char* pchar // массив символов
 );
+
+bool isProved(string num); // проверка на число
