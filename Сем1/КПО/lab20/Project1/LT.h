@@ -5,7 +5,6 @@
 #define LT_TI_NULLIDX 0xffffffff // нет элемента таблицы индентификаторов
 #define REG_WORD "[A-Za-z_]+[A-Za-z0-9_]*" // регул€рное выражение дл€ слова
 
-
 #define LEX_INTEGER 't' // лексема дл€ integer
 #define LEX_STRING 't' // лексема дл€ string
 #define LEX_ID 'i' // лексема дл€ идентификатора

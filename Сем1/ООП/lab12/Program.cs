@@ -26,6 +26,8 @@ class Program
 
             GDVFileManager.CreateArchive("GDVFiles");
 
+            GDVFileManager.ExtractArchive("GDVFiles.zip");
+
             GDVLog.Write("Main", "End");
 
             var datas = GDVLog.Find(DateTime.Now.AddMinutes(-40), DateTime.Now.AddMinutes(-20));

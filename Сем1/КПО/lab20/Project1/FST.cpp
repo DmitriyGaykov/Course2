@@ -27,6 +27,7 @@ namespace fst
 		n_relation = n;
 		RELATION* p = &rel;
 		relations = new RELATION[n];
+		
 		for (short i = 0; i < n; i++)
 		{
 			relations[i] = p[i];

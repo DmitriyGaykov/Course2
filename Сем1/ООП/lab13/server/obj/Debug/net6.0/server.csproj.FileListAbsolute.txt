@@ -1,0 +1,15 @@
+D:\курс_2\Сем1\ООП\lab13\server\bin\Debug\net6.0\server.exe
+D:\курс_2\Сем1\ООП\lab13\server\bin\Debug\net6.0\server.deps.json
+D:\курс_2\Сем1\ООП\lab13\server\bin\Debug\net6.0\server.runtimeconfig.json
+D:\курс_2\Сем1\ООП\lab13\server\bin\Debug\net6.0\server.dll
+D:\курс_2\Сем1\ООП\lab13\server\bin\Debug\net6.0\server.pdb
+D:\курс_2\Сем1\ООП\lab13\server\obj\Debug\net6.0\server.csproj.AssemblyReference.cache
+D:\курс_2\Сем1\ООП\lab13\server\obj\Debug\net6.0\server.GeneratedMSBuildEditorConfig.editorconfig
+D:\курс_2\Сем1\ООП\lab13\server\obj\Debug\net6.0\server.AssemblyInfoInputs.cache
+D:\курс_2\Сем1\ООП\lab13\server\obj\Debug\net6.0\server.AssemblyInfo.cs
+D:\курс_2\Сем1\ООП\lab13\server\obj\Debug\net6.0\server.csproj.CoreCompileInputs.cache
+D:\курс_2\Сем1\ООП\lab13\server\obj\Debug\net6.0\server.dll
+D:\курс_2\Сем1\ООП\lab13\server\obj\Debug\net6.0\refint\server.dll
+D:\курс_2\Сем1\ООП\lab13\server\obj\Debug\net6.0\server.pdb
+D:\курс_2\Сем1\ООП\lab13\server\obj\Debug\net6.0\server.genruntimeconfig.cache
+D:\курс_2\Сем1\ООП\lab13\server\obj\Debug\net6.0\ref\server.dll

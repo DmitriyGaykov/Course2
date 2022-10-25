@@ -8,6 +8,7 @@ lab12.runtimeconfig.json
 
 
 GDVFiles
+GDVFilesExtract
 GDVInspect
 
 

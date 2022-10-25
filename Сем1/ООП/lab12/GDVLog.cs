@@ -82,9 +82,29 @@ static class GDVLog
 
         return data.Where(el => el.DT >= sDt && el.DT <= eDt).ToList();
     }
+
+    public static int CountRecord()
+    {
+        var data = Read();
+        return data.Count;
+    }
+    
+    public static void RemoveBefore(DateTime? bDt)
+    {
+        var data = Read();
+        var dataNew = data.Where(el => el.DT >= bDt).ToList();
+
+        using StreamWriter writer = new(logfile, false);
+
+        foreach (var el in dataNew)
+        {
+            var textJson = JsonSerializer.Serialize(el);
+            writer.WriteLine(textJson);
+        }
+    }
 }
 
-internal struct Data
+internal record Data
 {
     public DateTime DT { get; set; }
     public string Action { get; set; }

@@ -143,4 +143,34 @@ static class GDVFileManager
 
         GDVLog.Write("GDVFileManager", MethodBase.GetCurrentMethod()!.Name);
     }
+
+    public static void ExtractArchive(string path)
+    {
+        if (path is null)
+        {
+            throw new ArgumentNullException(nameof(path));
+        }
+
+        FileInfo file = new(path);
+
+        DirectoryInfo dir = file.Directory ??
+                            throw new ArgumentNullException("Directory is not found");
+
+        string pathTo = $"{dir.FullName}\\{file.Name.Replace(".zip", "Extract")}";
+
+        DirectoryInfo directory = new(pathTo);
+        
+        foreach(var f in directory.GetFiles())
+        {
+            f.Delete();
+        }
+        
+        directory.Delete();
+
+        Remove(pathTo);
+
+        ZipFile.ExtractToDirectory(file.FullName, pathTo);
+
+        GDVLog.Write("GDVFileManager", MethodBase.GetCurrentMethod()!.Name);
+    }
 }

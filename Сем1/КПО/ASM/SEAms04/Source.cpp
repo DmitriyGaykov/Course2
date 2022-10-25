@@ -13,19 +13,13 @@ void main()
 	char unsignedVal[30];
 	unsigned short Unsigned;
 
-	do
-	{
 		cout << "Enter long value(long name value ): ";
 		cin.getline(longVal, 50);
-	} while (!regex_match(longVal, longVal + strlen(longVal), regex("long [A-Za-z]+ (-|\\+|)([0-9]){1,10}")));
 
 	Long = atol(longVal + indexNumIn(longVal));
 
-	do
-	{
 		cout << "Enter unsigned value(unsigned name value ): ";
 		cin.getline(unsignedVal, 30);
-	} while (!regex_match(unsignedVal, unsignedVal + strlen(unsignedVal), regex("unsigned [A-Za-z]+ [0-9]{1,3}")) && (Unsigned = strtoul(unsignedVal + 9, NULL, 10)) <= 255);
 
 	Unsigned = strtoul(unsignedVal + indexNumIn(unsignedVal), NULL, 10);
 

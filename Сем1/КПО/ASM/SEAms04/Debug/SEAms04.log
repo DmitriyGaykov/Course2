@@ -1,1 +1,5 @@
-﻿  SEAms04.vcxproj -> D:\курс_2\Сем1\КПО\SEAms04\Debug\Serealize.exe
+﻿  Source.cpp
+D:\курс_2\Сем1\КПО\ASM\SEAms04\Source.cpp(8,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\курс_2\Сем1\КПО\ASM\SEAms04\Source.cpp(24,20): warning C4244: =: преобразование "unsigned long" в "unsigned short", возможна потеря данных
+D:\курс_2\Сем1\КПО\ASM\SEAms04\Source.cpp(34,11): warning C4018: <: несоответствие типов со знаком и без знака
+  SEAms04.vcxproj -> D:\курс_2\Сем1\КПО\ASM\SEAms04\Debug\Serealize.exe

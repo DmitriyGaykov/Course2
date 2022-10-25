@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Analize.h"
+using namespace fst;
 
 int main(int argc, _TCHAR* argv[])
 {
@@ -37,40 +38,64 @@ int main(int argc, _TCHAR* argv[])
 		Out::OUT out(parm.out);
 		out.Write(lexs);
 
+		// Проверка инициализации
+
+		FST init(
+			(char*)"dti=(ivi)vivf(i,i);",
+			10,
+			NODE(1, RELATION('d', 1)), // 0
+			NODE(1, RELATION('t', 2)), // 1
+			NODE(1, RELATION('i', 3)), // 2
+			NODE(2, RELATION(';', 9), RELATION('=', 4)), // 3
+				
+			NODE(5, RELATION('l', 5), RELATION('i', 5), RELATION('f', 6), RELATION('(', 4)), // 4
+			NODE(3, RELATION(')', 5), RELATION(';', 9), RELATION('v', 4)), // 5
+
+			NODE(1, RELATION('(', 7)), // 6
+			NODE(3, RELATION(')', 5), RELATION('l', 8), RELATION('i', 8)), // 7
+			NODE(2, RELATION(')', 5), RELATION(',', 7)), // 8
+			
+			NODE() // 9
+		);
+
+		
+		
 		// вывод таблицы лексем
 
-		cout << "Таблица лексем:" << endl;
-		
-		for (ushort i = 0; i < lextable.size; i++)
-		{
-			cout << "lexema: " << lextable.table[i].lexema << "\t\t\t";
-			cout << "sn: " << lextable.table[i].sn << "\t\t\t";
-			cout << "idxTI: " << lextable.table[i].idxTI << "\t\t\t";
-			cout << endl;
-		}
 
-		// вывод таблицы идентификаторов
 		
-		cout << "\n\nТаблица идентификаторов:" << endl;
-		
-		for (ushort i = 0; i < idtable.size; i++)
-		{
-			cout << "id: " << idtable.table[i].id << "\t\t\t";
-			cout << "iddatatype: " << idtable.table[i].iddatatype << "\t\t\t";
-			cout << "idxfirstLE: " << idtable.table[i].idxfirstLE << "\t\t\t";
-			cout << "idtype: " << idtable.table[i].idtype << "\t\t\t";
-			
-			if (idtable.table[i].iddatatype == IT::INT)
-			{
-				cout << "value: " << idtable.table[i].value.vint << "\t\t\t";
-			}
-			else
-			{
-				cout << "value: " << idtable.table[i].value.vstr->str << "\t\t\t";
-			}
-			
-			cout << endl;
-		}
+		//cout << "Таблица лексем:" << endl;
+		//
+		//for (ushort i = 0; i < lextable.size; i++)
+		//{
+		//	cout << "lexema: " << lextable.table[i].lexema << "\t\t\t";
+		//	cout << "sn: " << lextable.table[i].sn << "\t\t\t";
+		//	cout << "idxTI: " << lextable.table[i].idxTI << "\t\t\t";
+		//	cout << endl;
+		//}
+		//
+		//// вывод таблицы идентификаторов
+		//
+		//cout << "\n\nТаблица идентификаторов:" << endl;
+		//
+		//for (ushort i = 0; i < idtable.size; i++)
+		//{
+		//	cout << "id: " << idtable.table[i].id << "\t\t\t";
+		//	cout << "iddatatype: " << idtable.table[i].iddatatype << "\t\t\t";
+		//	cout << "idxfirstLE: " << idtable.table[i].idxfirstLE << "\t\t\t";
+		//	cout << "idtype: " << idtable.table[i].idtype << "\t\t\t";
+		//	
+		//	if (idtable.table[i].iddatatype == IT::INT)
+		//	{
+		//		cout << "value: " << idtable.table[i].value.vint << "\t\t\t";
+		//	}
+		//	else
+		//	{
+		//		cout << "value: " << idtable.table[i].value.vstr->str << "\t\t\t";
+		//	}
+		//	
+		//	cout << endl;
+		//}
 	}
 	catch (Error::ERROR e)
 	{

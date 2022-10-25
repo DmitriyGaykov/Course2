@@ -89,6 +89,10 @@ void searchLexsAndIdns(
 	IT::IdTable& idtable,
 	ushort& nLine)
 {
+	// TODO: проверка на скобки
+	// TODO: цепочки
+	// TODO: более умные ошибки
+
 	string word;
 	stack<string> scope;
 	
@@ -270,7 +274,7 @@ void searchLexsAndIdns(
 		}
 		else if (word == "+")
 		{
-			lex.lexema = LEX_PLUS;
+		lex.lexema = 'v'; //LEX_PLUS;
 			lex.sn = nLine;
 			lex.idxTI = -1;
 
@@ -281,7 +285,7 @@ void searchLexsAndIdns(
 		}
 		else if (word == "-")
 		{
-			lex.lexema = LEX_MINUS;
+		lex.lexema = 'v';// LEX_MINUS;
 			lex.sn = nLine;
 			lex.idxTI = -1;
 
@@ -292,7 +296,7 @@ void searchLexsAndIdns(
 		}
 		else if (word == "*")
 		{
-			lex.lexema = LEX_STAR;
+		lex.lexema = 'v';// LEX_STAR;
 			lex.sn = nLine;
 			lex.idxTI = -1;
 
@@ -303,7 +307,7 @@ void searchLexsAndIdns(
 		}
 		else if (word == "/")
 		{
-			lex.lexema = LEX_DIRSLASH;
+		lex.lexema = 'v';// LEX_DIRSLASH;
 			lex.sn = nLine;
 			lex.idxTI = -1;
 
@@ -456,9 +460,14 @@ void searchLexsAndIdns(
 				to_pchar(word, str);
 				strcpy_s(idn.id, str);
 
-				lex.idxTI = idtable.size;
-				lex.lexema = LEX_ID;
-				lex.sn = nLine;
+				if (words[i +1 ] != "=")
+				{
+					lex.idxTI = idtable.size;
+					lex.lexema = LEX_ID;
+					lex.sn = nLine;
+
+					LT::Add(lextable, lex);
+				}
 
 				if (idn.iddatatype == IT::INT)
 				{
@@ -469,7 +478,6 @@ void searchLexsAndIdns(
 					strcpy_s(idn.value.vstr->str, "");
 				}
 
-				LT::Add(lextable, lex);
 				IT::Add(idtable, idn);
 			}
 			else
@@ -485,7 +493,6 @@ void searchLexsAndIdns(
 					to_pchar(scope.top() + words[i - 2], _id);
 
 					ushort _index = IT::IsId(idtable, _id);
-					cout << _id << endl;
 					
 					if (_index == TI_NULLIDX)
 					{
