@@ -77,26 +77,40 @@ int main(int argc, _TCHAR* argv[])
 		);
 
 		FST funcBody(
-			(char*)"{dti;dti=lvfi()viv(ivl);rl;};",
+			(char*)"{dti;dti=lvfi(l,l,fi(i,i))viv(ivl);rl;};",
 			18,
-			NODE(1, RELATION('{', 1)),
-			NODE(3, RELATION('d', 2), RELATION('i', 4), RELATION('r', 13)),
-			NODE(1, RELATION('t', 3)),
-			NODE(2, RELATION('i', 4), RELATION('f', 7)),
-			NODE(2, RELATION(';', 1), RELATION('=', 5)),
-			NODE(4, RELATION('l', 6), RELATION('i', 6), RELATION('(', 5), RELATION('f', 7)),
-			NODE(3, RELATION(')', 6), RELATION(';', 1), RELATION('v', 5)),
-			NODE(1, RELATION('i', 8)),
-			NODE(2, RELATION('(', 9), RELATION('(', 11)),
-			NODE(5, RELATION('i', 10), RELATION('l', 10), RELATION('f', 7), RELATION('i', 11), RELATION('l', 11)),
-			NODE(1, RELATION(',', 9)),
-			NODE(4, RELATION(')', 12), RELATION(')', 6), RELATION(')', 10), RELATION(')', 11)),
-			NODE(1, RELATION(';', 1)),
-			NODE(2, RELATION('l', 14), RELATION('i', 14)),
-			NODE(1, RELATION(';', 15)),
-			NODE(1, RELATION('}', 16)),
-			NODE(1, RELATION(';', 17)),
+			//////////////////////////////////////////////
+			NODE(1, RELATION('{', 1)), // 0
+			NODE(3, RELATION('d', 2), RELATION('i', 4), RELATION('r', 13)), // 1
+			//////////////////////////////////////////////
+			
+			//////////////////////////////////////////////
+			NODE(1, RELATION('t', 3)), // 2
+			NODE(2, RELATION('i', 4), RELATION('f', 7)), // 3
+			//////////////////////////////////////////////
+			
+			//////////////////////////////////////////////
+			NODE(2, RELATION(';', 1), RELATION('=', 5)), // 4
+			NODE(4, RELATION('l', 6), RELATION('i', 6), RELATION('(', 5), RELATION('f', 7)), // 5
+			NODE(3, RELATION(')', 6), RELATION(';', 1), RELATION('v', 5)), // 6
+			//////////////////////////////////////////////
+			
+			//////////////////////////////////////////////
+			NODE(1, RELATION('i', 8)), // 7
+			NODE(2, RELATION('(', 9), RELATION('(', 11)), // 8
+			NODE(5, RELATION('i', 10), RELATION('l', 10), RELATION('f', 7), RELATION('i', 11), RELATION('l', 11)), // 9
+			NODE(1, RELATION(',', 9)), // 10
+			NODE(4, RELATION(')', 12), RELATION(')', 6), RELATION(')', 10), RELATION(')', 11)), // 11
+			NODE(1, RELATION(';', 1)), // 12
+			//////////////////////////////////////////////
+
+			//////////////////////////////////////////////
+			NODE(2, RELATION('l', 14), RELATION('i', 14)), // 13
+			NODE(1, RELATION(';', 15)), // 14
+			NODE(1, RELATION('}', 16)), // 15
+			NODE(1, RELATION(';', 17)), // 16
 			NODE()
+			//////////////////////////////////////////////
 		);
 		
 		cout << execute(funcBody);
