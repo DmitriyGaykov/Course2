@@ -1,0 +1,15 @@
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\bin\Debug\net6.0\Lab13Re.exe
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\bin\Debug\net6.0\Lab13Re.deps.json
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\bin\Debug\net6.0\Lab13Re.runtimeconfig.json
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\bin\Debug\net6.0\Lab13Re.dll
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\bin\Debug\net6.0\Lab13Re.pdb
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\obj\Debug\net6.0\Lab13Re.csproj.AssemblyReference.cache
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\obj\Debug\net6.0\Lab13Re.GeneratedMSBuildEditorConfig.editorconfig
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\obj\Debug\net6.0\Lab13Re.AssemblyInfoInputs.cache
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\obj\Debug\net6.0\Lab13Re.AssemblyInfo.cs
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\obj\Debug\net6.0\Lab13Re.csproj.CoreCompileInputs.cache
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\obj\Debug\net6.0\Lab13Re.dll
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\obj\Debug\net6.0\refint\Lab13Re.dll
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\obj\Debug\net6.0\Lab13Re.pdb
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\obj\Debug\net6.0\Lab13Re.genruntimeconfig.cache
+D:\курс_2\Сем1\ООП\Lab13\Lab13Re\obj\Debug\net6.0\ref\Lab13Re.dll
