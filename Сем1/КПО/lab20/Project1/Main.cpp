@@ -41,23 +41,65 @@ int main(int argc, _TCHAR* argv[])
 		// ѕроверка инициализации
 
 		FST init(
-			(char*)"dti=(ivi)vivf(i,i);",
-			10,
+			(char*)"dti=ivivfi(l,l,fi(i,i));",
+			13,
 			NODE(1, RELATION('d', 1)), // 0
 			NODE(1, RELATION('t', 2)), // 1
-			NODE(1, RELATION('i', 3)), // 2
-			NODE(2, RELATION(';', 9), RELATION('=', 4)), // 3
-				
-			NODE(5, RELATION('l', 5), RELATION('i', 5), RELATION('f', 6), RELATION('(', 4)), // 4
-			NODE(3, RELATION(')', 5), RELATION(';', 9), RELATION('v', 4)), // 5
-
-			NODE(1, RELATION('(', 7)), // 6
-			NODE(3, RELATION(')', 5), RELATION('l', 8), RELATION('i', 8)), // 7
-			NODE(2, RELATION(')', 5), RELATION(',', 7)), // 8
+			NODE(2, RELATION('i', 3), RELATION('i', 11)), // 2
+			NODE(1, RELATION('=', 4)), // 3
 			
-			NODE() // 9
+			NODE(4, RELATION('(', 4), RELATION('i', 5), RELATION('l', 5), RELATION('f', 6)), // 4
+			NODE(3, RELATION(')', 5), RELATION(';', 12), RELATION('v', 4)), // 5
+			
+			NODE(1, RELATION('i', 7)), // 6
+			NODE(2, RELATION('(', 8), RELATION('(', 10)), // 7
+			NODE(5, RELATION('i', 9), RELATION('f', 6), RELATION('l', 9), RELATION('i', 10), RELATION('l', 10)), // 8
+			NODE(1, RELATION(',', 8)), // 9
+			NODE(2, RELATION(')', 9), RELATION(')', 5)), // 10
+			
+			NODE(1, RELATION(';', 12)), // 11
+			
+			NODE() // 12
 		);
 
+		FST initFunc(
+			(char*)"tfi(ti,ti,ti)",
+			9,
+			NODE(1, RELATION('t', 1)),
+			NODE(1, RELATION('f', 2)),
+			NODE(1, RELATION('i', 3)),
+			NODE(2, RELATION('(', 4), RELATION('(', 7)),
+			NODE(1, RELATION('t', 5)),
+			NODE(2, RELATION('i', 6), RELATION('i', 7)),
+			NODE(1, RELATION(',', 4)),
+			NODE(1, RELATION(')', 8)),
+			NODE()
+		);
+
+		FST funcBody(
+			(char*)"{dti;dti=lvfi()viv(ivl);rl;};",
+			18,
+			NODE(1, RELATION('{', 1)),
+			NODE(3, RELATION('d', 2), RELATION('i', 4), RELATION('r', 13)),
+			NODE(1, RELATION('t', 3)),
+			NODE(2, RELATION('i', 4), RELATION('f', 7)),
+			NODE(2, RELATION(';', 1), RELATION('=', 5)),
+			NODE(4, RELATION('l', 6), RELATION('i', 6), RELATION('(', 5), RELATION('f', 7)),
+			NODE(3, RELATION(')', 6), RELATION(';', 1), RELATION('v', 5)),
+			NODE(1, RELATION('i', 8)),
+			NODE(2, RELATION('(', 9), RELATION('(', 11)),
+			NODE(5, RELATION('i', 10), RELATION('l', 10), RELATION('f', 7), RELATION('i', 11), RELATION('l', 11)),
+			NODE(1, RELATION(',', 9)),
+			NODE(4, RELATION(')', 12), RELATION(')', 6), RELATION(')', 10), RELATION(')', 11)),
+			NODE(1, RELATION(';', 1)),
+			NODE(2, RELATION('l', 14), RELATION('i', 14)),
+			NODE(1, RELATION(';', 15)),
+			NODE(1, RELATION('}', 16)),
+			NODE(1, RELATION(';', 17)),
+			NODE()
+		);
+		
+		cout << execute(funcBody);
 		
 		
 		// вывод таблицы лексем

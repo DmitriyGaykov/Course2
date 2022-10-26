@@ -9,7 +9,7 @@
 09 {
 10 dti;
 11 dtfi(ti,ti,ti);
-12 i=f(i,l,l)vi;
+12 i=fi(i,l,l)vivfi();
 13 ri;
 14 };
 15 m
@@ -25,12 +25,12 @@
 25 i=l;
 26 i=l;
 27 i=l;
-28 i=f(i,i);
-29 i=f(i,i);
+28 i=fi(i,i);
+29 i=fi(i,i);
 30 pl;
 31 pi;
 32 pi;
-33 pf(i);
+33 pfi(i);
 34 rl;
 35 };
 36 

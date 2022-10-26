@@ -535,16 +535,33 @@ void searchLexsAndIdns(
 					)
 				{
 					to_pchar(word, str);
+					int index = IT::IsId(idtable, str);
 					if (
 						word != "strlen" && 
 						word != "substr" &&
-						IT::IsId(idtable,str) == TI_NULLIDX
+						index == TI_NULLIDX
 						)
 					{
 						
 							throw ERROR_THROW_IN(225, nLine, 0); // переделать
 					}
+					auto _idn = IT::GetEntry(idtable, index);
+					
 					lex.lexema = LEX_FUNCTION;
+					lex.sn = nLine;
+					lex.idxTI = idtable.size;
+
+					LT::Add(lextable, lex);
+					
+					strcpy_s(idn.id, str);
+					idn.iddatatype = _idn.iddatatype;
+					idn.idtype = IT::F;
+					idn.idxfirstLE = index;
+					
+					IT::Add(idtable, idn);
+					
+					
+					lex.lexema = LEX_ID;
 					lex.sn = nLine;
 					lex.idxTI = -1;
 
