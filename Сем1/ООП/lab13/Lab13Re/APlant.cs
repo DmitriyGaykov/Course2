@@ -21,6 +21,7 @@ public abstract class APlant
         get => _type;
         set => _type = value;
     }
+
     [JsonIgnore]
     [XmlIgnore]
     public virtual string Name 

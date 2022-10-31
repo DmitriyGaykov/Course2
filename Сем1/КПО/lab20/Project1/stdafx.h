@@ -23,3 +23,4 @@ typedef unsigned short ushort;
 #include "IT.h"
 #include "Log.h"
 #include "Analize.h"
+#include "Check.h"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\курс_2\\Сем1\\ООП\\Lab13\\Lab13Re\\Lab13Re.csproj": {}
+    "D:\\курс_2\\Сем1\\ООП\\lab13\\Lab13Re\\Lab13Re.csproj": {}
   },
   "projects": {
-    "D:\\курс_2\\Сем1\\ООП\\Lab13\\Lab13Re\\Lab13Re.csproj": {
+    "D:\\курс_2\\Сем1\\ООП\\lab13\\Lab13Re\\Lab13Re.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\курс_2\\Сем1\\ООП\\Lab13\\Lab13Re\\Lab13Re.csproj",
+        "projectUniqueName": "D:\\курс_2\\Сем1\\ООП\\lab13\\Lab13Re\\Lab13Re.csproj",
         "projectName": "Lab13Re",
-        "projectPath": "D:\\курс_2\\Сем1\\ООП\\Lab13\\Lab13Re\\Lab13Re.csproj",
+        "projectPath": "D:\\курс_2\\Сем1\\ООП\\lab13\\Lab13Re\\Lab13Re.csproj",
         "packagesPath": "C:\\Users\\dimag\\.nuget\\packages\\",
-        "outputPath": "D:\\курс_2\\Сем1\\ООП\\Lab13\\Lab13Re\\obj\\",
+        "outputPath": "D:\\курс_2\\Сем1\\ООП\\lab13\\Lab13Re\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

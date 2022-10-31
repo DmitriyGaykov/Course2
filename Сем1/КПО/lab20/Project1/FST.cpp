@@ -84,6 +84,7 @@ namespace fst
 			}
 		}
 
+		fst.string = nullptr;
 		delete [] fst.rstates;
 		
 		return false;

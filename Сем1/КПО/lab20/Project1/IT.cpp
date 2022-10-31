@@ -37,7 +37,7 @@ namespace IT
 		int n)
 	{
 		if (
-			n >= idtable.size ||
+			n >= idtable.maxsize ||
 			n < 0)
 		{
 			throw ERROR_THROW(118);

@@ -539,7 +539,7 @@ void searchLexsAndIdns(
 					if (
 						word != "strlen" && 
 						word != "substr" &&
-						index == TI_NULLIDX
+						index > 30000
 						)
 					{
 						
