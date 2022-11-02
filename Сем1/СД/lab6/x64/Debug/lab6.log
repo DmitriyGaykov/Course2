@@ -1,0 +1,27 @@
+﻿  Hafner.cpp
+D:\курс_2\Сем1\СД\lab6\Hafner.h(10,22): error C2871: GRAFF: пространство имен с таким именем не существует
+D:\курс_2\Сем1\СД\lab6\Hafner.h(44,6): error C2182: "add_to_graff": недопустимое использование "void"
+D:\курс_2\Сем1\СД\lab6\Hafner.h(45,2): error C2065: Graff: необъявленный идентификатор
+D:\курс_2\Сем1\СД\lab6\Hafner.h(45,9): error C2065: graff: необъявленный идентификатор
+D:\курс_2\Сем1\СД\lab6\Hafner.h(46,15): error C2065: symbs: необъявленный идентификатор
+D:\курс_2\Сем1\СД\lab6\Hafner.h(46,2): error C2275: "std::set<std::string,std::less<std::string>,std::allocator<std::string>>": ожидается выражение вместо типа
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(17,29): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(25,25): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(27,35): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(119,6): error C2182: "add_to_graff": недопустимое использование "void"
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(119,6): error C2374: add_to_graff: переопределение; множественная инициализация
+D:\курс_2\Сем1\СД\lab6\Hafner.h(44): message : см. объявление "add_to_graff"
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(120,2): error C2065: Graff: необъявленный идентификатор
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(120,9): error C2065: graff: необъявленный идентификатор
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(121,15): error C2065: symbs: необъявленный идентификатор
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(121,2): error C2275: "std::set<std::string,std::less<std::string>,std::allocator<std::string>>": ожидается выражение вместо типа
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(122,1): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+D:\курс_2\Сем1\СД\lab6\Hafner.cpp(122,1): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+  Source.cpp
+D:\курс_2\Сем1\СД\lab6\Hafner.h(10,22): error C2871: GRAFF: пространство имен с таким именем не существует
+D:\курс_2\Сем1\СД\lab6\Hafner.h(44,6): error C2182: "add_to_graff": недопустимое использование "void"
+D:\курс_2\Сем1\СД\lab6\Hafner.h(45,2): error C2065: Graff: необъявленный идентификатор
+D:\курс_2\Сем1\СД\lab6\Hafner.h(45,9): error C2065: graff: необъявленный идентификатор
+D:\курс_2\Сем1\СД\lab6\Hafner.h(46,15): error C2065: symbs: необъявленный идентификатор
+D:\курс_2\Сем1\СД\lab6\Hafner.h(46,2): error C2275: "std::set<std::string,std::less<std::string>,std::allocator<std::string>>": ожидается выражение вместо типа
+  Создание кода...

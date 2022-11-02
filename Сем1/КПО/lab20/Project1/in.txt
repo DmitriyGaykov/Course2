@@ -25,7 +25,7 @@ y = 5;
 sa = '12345   67890';
 sb = '1234567890';
 z = fi(x,y);
-sc = fs(sa,sb);
+sc = fs(z,sb);
 print 'Контрольный пример';
 print z;
 print sc;

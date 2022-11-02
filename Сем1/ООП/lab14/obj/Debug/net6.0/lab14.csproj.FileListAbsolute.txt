@@ -1,0 +1,15 @@
+D:\курс_2\Сем1\ООП\lab14\bin\Debug\net6.0\lab14.exe
+D:\курс_2\Сем1\ООП\lab14\bin\Debug\net6.0\lab14.deps.json
+D:\курс_2\Сем1\ООП\lab14\bin\Debug\net6.0\lab14.runtimeconfig.json
+D:\курс_2\Сем1\ООП\lab14\bin\Debug\net6.0\lab14.dll
+D:\курс_2\Сем1\ООП\lab14\bin\Debug\net6.0\lab14.pdb
+D:\курс_2\Сем1\ООП\lab14\obj\Debug\net6.0\lab14.csproj.AssemblyReference.cache
+D:\курс_2\Сем1\ООП\lab14\obj\Debug\net6.0\lab14.GeneratedMSBuildEditorConfig.editorconfig
+D:\курс_2\Сем1\ООП\lab14\obj\Debug\net6.0\lab14.AssemblyInfoInputs.cache
+D:\курс_2\Сем1\ООП\lab14\obj\Debug\net6.0\lab14.AssemblyInfo.cs
+D:\курс_2\Сем1\ООП\lab14\obj\Debug\net6.0\lab14.csproj.CoreCompileInputs.cache
+D:\курс_2\Сем1\ООП\lab14\obj\Debug\net6.0\lab14.dll
+D:\курс_2\Сем1\ООП\lab14\obj\Debug\net6.0\refint\lab14.dll
+D:\курс_2\Сем1\ООП\lab14\obj\Debug\net6.0\lab14.pdb
+D:\курс_2\Сем1\ООП\lab14\obj\Debug\net6.0\lab14.genruntimeconfig.cache
+D:\курс_2\Сем1\ООП\lab14\obj\Debug\net6.0\ref\lab14.dll
