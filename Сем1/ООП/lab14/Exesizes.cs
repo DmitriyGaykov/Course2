@@ -2,8 +2,6 @@
 
 static class Exesizes
 {
-    public static Mutex mut = new();
-    
     private static void OutN(object n)
     {
         string nums = string.Empty;
@@ -35,17 +33,50 @@ static class Exesizes
 
         // Вызовите методы управления потоком (запуск, приостановка, возобновление и т.д.)
 
+        // Thread.Sleep(1000);
+        // thr.Abort();
+    }
 
-        Console.WriteLine(Thread.CurrentThread.ThreadState);
-        mut.WaitOne(10000);
-        Console.WriteLine(Thread.CurrentThread.ThreadState);
+    private static uint N;
 
-        Console.WriteLine($"После запуска!\n" +
-                          $"Имя потока: {thr.Name},\t" +
-                          $"Статус потока: {thr.ThreadState}," +
-                          $"\t Приоритет потока: {thr.Priority}," +
-                          $"\t Идентификатор потока: {thr.ManagedThreadId}");
-        mut.Dispose();
+    private static readonly Mutex mut = new();
+    public static void Ex4(uint n = 10000)
+    { 
+        Thread thr1 = new(new ParameterizedThreadStart(outN));
+        Thread thr2 = new(new ParameterizedThreadStart(outN));
+
+        N = n;
+       
+        thr2.Start(false);
+        thr1.Start(true);
+        
+        // thr1.Start(n);
+        
+        // thr2.Priority = ThreadPriority.Highest;
+        
+        // thr2.Start(n);
+
+    }
+
+    private static object locker = new();
+    private static void outN(object isEvenNum)
+    {
+        for (int i = 1; i <= (uint)N; i++)
+        {
+            mut.WaitOne();
+            if ((bool)isEvenNum &&
+                i % 2 == 0)
+            {
+                Console.WriteLine(i);
+            }
+            else if (!(bool)isEvenNum &&
+                     i % 2 != 0)
+            {
+                Console.WriteLine(i);
+            }
+         mut.ReleaseMutex();
+        }
+ 
     }
 
 }

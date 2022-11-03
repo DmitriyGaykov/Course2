@@ -1,0 +1,15 @@
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\obj\Debug\net6.0\Exesize5_2.csproj.AssemblyReference.cache
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\obj\Debug\net6.0\Exesize5_2.GeneratedMSBuildEditorConfig.editorconfig
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\obj\Debug\net6.0\Exesize5_2.AssemblyInfoInputs.cache
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\obj\Debug\net6.0\Exesize5_2.AssemblyInfo.cs
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\obj\Debug\net6.0\Exesize5_2.csproj.CoreCompileInputs.cache
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\bin\Debug\net6.0\Exesize5_2.exe
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\bin\Debug\net6.0\Exesize5_2.deps.json
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\bin\Debug\net6.0\Exesize5_2.runtimeconfig.json
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\bin\Debug\net6.0\Exesize5_2.dll
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\bin\Debug\net6.0\Exesize5_2.pdb
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\obj\Debug\net6.0\Exesize5_2.dll
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\obj\Debug\net6.0\refint\Exesize5_2.dll
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\obj\Debug\net6.0\Exesize5_2.pdb
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\obj\Debug\net6.0\Exesize5_2.genruntimeconfig.cache
+D:\курс_2\Сем1\ООП\lab14\Exesize5_2\obj\Debug\net6.0\ref\Exesize5_2.dll

@@ -5,6 +5,7 @@ global using System.Reflection;
 namespace lab14;
 internal class Program
 {
+    private static System.Timers.Timer timer;
     static void Main(string[] args)
     {
         try
@@ -14,17 +15,17 @@ internal class Program
             // Определите и выведите на консоль/в файл все запущенные процессы:id, имя, приоритет,
             // время запуска, текущее состояние, сколько всего времени использовал процессор и т.д.
 
-           /* Process[] processes = Process.GetProcesses("Dima");
+            /* Process[] processes = Process.GetProcesses("Dima");
 
-            foreach (var process in processes)
-            {
-                Console.WriteLine($"Id: {process.Id},\n" +
-                                  $"Name: {process.ProcessName},\n" +
-                                  $"Priority: {process.BasePriority},\n" +
-                                  $"StartTime: {process.StartTime},\n" +
-                                  $"State: {process.Responding},\n" +
-                                  $"TotalProcessorTime: {process.TotalProcessorTime}");
-            }*/
+             foreach (var process in processes)
+             {
+                 Console.WriteLine($"Id: {process.Id},\n" +
+                                   $"Name: {process.ProcessName},\n" +
+                                   $"Priority: {process.BasePriority},\n" +
+                                   $"StartTime: {process.StartTime},\n" +
+                                   $"State: {process.Responding},\n" +
+                                   $"TotalProcessorTime: {process.TotalProcessorTime}");
+             }*/
 
             #endregion
 
@@ -48,9 +49,17 @@ internal class Program
 
             #region Ex3
 
-            Exesizes.Ex3(10000);
+            // Exesizes.Ex3(10000);
 
             #endregion
+
+            #region Ex4
+
+            Exesizes.Ex4(10);
+
+            #endregion
+
+       
         }
         catch (Exception ex)
         {
