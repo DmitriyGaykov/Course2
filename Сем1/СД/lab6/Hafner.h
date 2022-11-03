@@ -1,13 +1,6 @@
 #pragma once
-#include <iostream>
-#include <algorithm>
-#include <map>
-#include <string>
-#include <vector>
-#include <set>
-#include "Graff.h"
+#include "stdafx.h"
 
-using namespace GRAFF;
 using namespace std;
 
 struct Node
@@ -41,6 +34,12 @@ void sort(
 	Node* arr,
 	int length);
 
-void add_to_graff(
+void out_table(
+	set<string> symbs,
+	map<string, int> count_in_str);
+
+void out_table(
+	set<string> symbs,
 	Graff& graff,
-	set<string>& symbs);
+	string str
+);
