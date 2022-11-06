@@ -7,4 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Exesize5\**" />
+    <Compile Remove="Exesize5_2\**" />
+    <EmbeddedResource Remove="Exesize5\**" />
+    <EmbeddedResource Remove="Exesize5_2\**" />
+    <None Remove="Exesize5\**" />
+    <None Remove="Exesize5_2\**" />
+  </ItemGroup>
+
 </Project>

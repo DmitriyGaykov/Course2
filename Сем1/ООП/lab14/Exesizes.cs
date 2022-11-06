@@ -14,7 +14,6 @@ static class Exesizes
         Console.WriteLine(nums);
         File.WriteAllText("nums.txt", nums);
     }
-
     public static void Ex3(uint n)
     {
         Thread thr = new(new ParameterizedThreadStart(OutN));
@@ -78,5 +77,4 @@ static class Exesizes
         }
  
     }
-
 }

@@ -52,6 +52,7 @@ try {
         let price = 2220;
         let pathToImg = "https://fk.by/uploads/images/cache/2022/04/03/noutbuk-asus-x515fa-br037-1100x500.jpeg";
         let product = new Product(name, price, pathToImg);
+        product.Name += " " + product.ID;
         product.Wrapper = document.querySelector(".products");
         products.set(product.ID, product);
         product.toHTML();

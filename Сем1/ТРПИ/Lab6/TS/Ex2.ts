@@ -90,6 +90,8 @@ try
 
         let product : Product = new Product(name, price, pathToImg);
         
+        product.Name += " " + product.ID;
+
         product.Wrapper = document.querySelector(".products");
         
         products.set(product.ID, product);
