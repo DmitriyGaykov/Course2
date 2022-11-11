@@ -1,4 +1,6 @@
-﻿namespace lab6;
+﻿using System.Collections;
+
+namespace lab6;
 
 class Program
 {
@@ -11,7 +13,7 @@ class Program
 
             Console.WriteLine("Введите маску: ");
             string? Mask = Console.ReadLine();
-            
+
             IPM ipm = new(IP, Mask);
 
             Console.WriteLine($"Информация:\n" +
@@ -20,6 +22,7 @@ class Program
                               $"Network ID\t\t\t{ipm.IPInfo.NetworkIp}\n" +
                               $"Host ID\t\t\t\t{ipm.IPInfo.HostIp}\n" +
                               $"Broadcast IP\t\t\t{ipm.IPInfo.BroadcastIp}");
+
         } 
         catch(Exception ex)
         {

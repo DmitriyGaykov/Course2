@@ -58,7 +58,7 @@ vector<int> find(
 
 	for (int i = 1; i < N; i++)
 	{
-		if (arr[0] <= arr[i])
+		if (arr[0] < arr[i])
 		{
 			find(arr + i, N - i, subseqs, seq);
 		}
