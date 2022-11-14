@@ -64,7 +64,7 @@ class IPM
     public static bool CheckIP(string ip,
                                string mask)
     {
-        Regex regex = new(@"[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}");
+        Regex regex = new(@"[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}");
 
         if (!regex.IsMatch(ip))
         {
@@ -148,9 +148,10 @@ class IPM
                                   IpClass ic)
     {
         Regex regClA = new("(1{1,8}0{24,31})");
-        Regex regClB = new("(1{8,16}0{16,23})");
-        Regex regClC = new("(1{16,24}0{8,15})");
-
+        Regex regClB = new("(1{9,16}0{16,23})");
+        Regex regClC = new("(1{17,24}0{8,15})");
+        Regex regClD = new("(1{25,32}0{0,7})");
+        
         string binMask = string.Empty;
         string binView;
         int num;
@@ -195,9 +196,17 @@ class IPM
 
                 break;
 
+            case IpClass.D:
+
+                if (!regClD.IsMatch(binMask))
+                {
+                    throw new Exception($"Нарушена последовательность единиц в маске({binMask})");
+                }
+
+                break;
+
             default:
                 throw new Exception("Масска не поддерживается!");
-                break;
         }
 
         return true;
