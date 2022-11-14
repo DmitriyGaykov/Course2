@@ -1,34 +1,73 @@
-const mainWrapper : HTMLElement = document.querySelector('.game-block');
+const dart : HTMLElement = document.querySelector('.dart');
+const wrapper : HTMLElement = document.querySelector('.game-block');
 
-const dart : HTMLElement = document.querySelector(".dart");
-const dartWrapper : HTMLElement = document.querySelector(".block-with-dart");
+let startX : number = -100;
+let startY : number = -100;
 
-dart.onmousedown = event => 
-{
-    let shiftX : number = event.clientX - dart.getBoundingClientRect().left;
-    let shiftY : number = event.clientY - dart.getBoundingClientRect().top;
+let x : number = startX;
+let y : number = startY;
 
-    dart.style.position = 'absolute';
+let wasClicked : boolean = false;
+
+dart.onmousedown = function(event : MouseEvent) {
+    
+
+    if(wasClicked) {
+        wrapper.onmousemove = null;
+        document.body.onclick = () => animate(x, y, startX, startY);
+        return;
+    }
+
     dart.style.zIndex = '1000';
+    document.body.append(dart);
 
-    moveAt(event.pageX, event.pageY);
+    wasClicked = wasClicked ? false : true;
 
-    function moveAt(pageX, pageY) 
-    {
-        dart.style.left = pageX -  shiftX + 'px';
-        dart.style.top = pageY - shiftY + 'px';
-    }
+    document.body.onmousemove = function(event : MouseEvent) {
 
-    function onMouseMove(event) 
-    {
-        moveAt(event.pageX, event.pageY);
-    }
+        if(startX === -100 && startY === -100) {
 
-    document.addEventListener('mousemove', onMouseMove);
+            startX = event.clientX - 5;
+            dart.style.left = `${startX}px`;
+            startY = event.clientY - 20;
+            dart.style.top = `${startY}px`;
+    
+            dart.style.cursor = "none";
+        }
+        else
+        {
+            if(Math.abs(startX - event.clientX ) < 100) 
+            {
+                x = event.clientX - 5;
+            }
+            if(Math.abs(startY - event.clientY ) < 100) 
+            {
+                y = event.clientY - 5;
+            }
 
-    dart.onmouseup = function() 
-    {
-        document.removeEventListener('mousemove', onMouseMove);
-        dart.onmouseup = null;
+            // alert(`event.clientX: ${event.clientX}, x: ${x}, y:${y}, startX: ${startX}, startY: ${startY}`);
+
+            dart.style.left = `${x}px`;
+            dart.style.top = `${y}px`;
+        }
     };
+};
+
+function animate(x : number,
+                 y : number,
+                 startX : number,
+                 startY : number)
+{
+    let dx : number = (startX - x);
+    let dy : number = (startY - y);
+
+    let tg : number = dy / dx;
+
+    startX = dx < 0 ? startX - 3 * Math.abs(dx) : startX + 3 * Math.abs(dx);
+    startY = dy < 0 ? startY - 3 * Math.abs(tg * dx) : startY + 3 * Math.abs(tg * dx);
+    
+    // alert(`x: ${x}, y:${y}, dx: ${dx}, dy: ${dy}, tg: ${tg}, startX: ${startX}, startY: ${startY}`);
+
+    dart.style.left = `${startX}px`;
+    dart.style.top = `${startY}px`;
 }

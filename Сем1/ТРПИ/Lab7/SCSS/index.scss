@@ -34,13 +34,15 @@ body {
         justify-content: center;
         height: 300px;
         align-items: center;
-        position: relative;
         background-color: #12349823;
-        .dart {
-            height: 20px;
-            width: 20px;
-            border-radius: 50px;
-            background-color: #00aa00;
-        }
     }
+}
+
+.dart {
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background-color: #0aaa00;
+    position: absolute;
+    transition: all .2s ease-out;
 }
