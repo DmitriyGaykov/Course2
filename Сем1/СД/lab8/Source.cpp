@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <string>
 #include <Windows.h>
 
@@ -19,10 +19,10 @@ void main()
 	int N;
 	int maxWeight;
 	
-	cout << "Ââåäèòå ìàêñèìàëüíóþ âìåñòèìîñòü ðþêçàêà: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼Ð°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½ÑƒÑŽ Ð²Ð¼ÐµÑÑ‚Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ñ€ÑŽÐºÐ·Ð°ÐºÐ°: ";
 	cin >> maxWeight;
 	
-	cout << "Ââåäèòå, ñêîëüêî òîâàðîâ áóäåò: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ, ÑÐºÐ¾Ð»ÑŒÐºÐ¾ Ñ‚Ð¾Ð²Ð°Ñ€Ð¾Ð² Ð±ÑƒÐ´ÐµÑ‚: ";
 	cin >> N;
 
 	auto products = new Product[N];
@@ -42,7 +42,7 @@ void autoInit(Product* prods, int N)
 		prods[i].SetPrice(rand() % 100 + 1);
 		prods[i].SetAmount(rand() % 10 + 1);
 
-		cout << "Òîâàð " << prods[i].GetName() << " ñòîèò " << prods[i].GetPrice() << " è âåñèò " << prods[i].GetAmount() << endl;
+		cout << "Ð¢Ð¾Ð²Ð°Ñ€ " << prods[i].GetName() << " ÑÑ‚Ð¾Ð¸Ñ‚ " << prods[i].GetPrice() << " Ð¸ Ð²ÐµÑÐ¸Ñ‚ " << prods[i].GetAmount() << endl;
 	}
 }
 
@@ -65,11 +65,11 @@ void initProds(Product* prods, int N)
 
 	for (int i = 0; i < N; i++)
 	{
-		cout << "\n\nÂâåäèòå íàçâàíèå òîâàðà: ";
+		cout << "\n\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ Ñ‚Ð¾Ð²Ð°Ñ€Ð°: ";
 		cin >> name;
-		cout << "\nÂâåäèòå öåíó òîâàðà: ";
+		cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ†ÐµÐ½Ñƒ Ñ‚Ð¾Ð²Ð°Ñ€Ð°: ";
 		cin >> price;
-		cout << "\nÂâåäèòå âìåñòèìîñòü òîâàðà: ";
+		cout << "\nÐ’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ð¼ÐµÑÑ‚Ð¸Ð¼Ð¾ÑÑ‚ÑŒ Ñ‚Ð¾Ð²Ð°Ñ€Ð°: ";
 		cin >> amount;
 
 		prods[i] = Product(name, price, amount);
@@ -116,7 +116,7 @@ int calcMaxPrice(Product* prods, int N, int maxWeight)
 		ent;
 	}
 
-	cout << "\nÒîâàðû, êîòîðûå íóæíî âçÿòü: " << endl;
+	cout << "\nÐ¢Ð¾Ð²Ð°Ñ€Ñ‹, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ðµ Ð½ÑƒÐ¶Ð½Ð¾ Ð²Ð·ÑÑ‚ÑŒ: " << endl;
 	
 	int i = rows - 1;
 	int j = cols - 1;
