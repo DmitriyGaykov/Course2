@@ -151,6 +151,7 @@ class IPM
         Regex regClB = new("(1{9,16}0{16,23})");
         Regex regClC = new("(1{17,24}0{8,15})");
         Regex regClD = new("(1{25,32}0{0,7})");
+        Regex regMask = new("(1{1,32}0{0,31})");
         
         string binMask = string.Empty;
         string binView;
@@ -169,44 +170,9 @@ class IPM
             binMask += binView;
         }
 
-        switch(ic)
+        if (!regMask.IsMatch(binMask))
         {
-            case IpClass.A:
-
-                if (!regClA.IsMatch(binMask))
-                {
-                    throw new Exception($"Нарушена последовательность единиц в маске({binMask})");
-                }
-
-                break;
-            case IpClass.B:
-
-                if(!regClB.IsMatch(binMask))
-                {
-                    throw new Exception($"Нарушена последовательность единиц в маске({binMask})");
-                }
-
-                break;
-            case IpClass.C:
-
-                if (!regClC.IsMatch(binMask))
-                {
-                    throw new Exception($"Нарушена последовательность единиц в маске({binMask})");
-                }
-
-                break;
-
-            case IpClass.D:
-
-                if (!regClD.IsMatch(binMask))
-                {
-                    throw new Exception($"Нарушена последовательность единиц в маске({binMask})");
-                }
-
-                break;
-
-            default:
-                throw new Exception("Масска не поддерживается!");
+            return false;
         }
 
         return true;

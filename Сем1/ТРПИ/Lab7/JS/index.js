@@ -5,37 +5,39 @@ let startY = -100;
 let x = startX;
 let y = startY;
 let wasClicked = false;
-dart.onmousedown = function (event) {
+
+dart.onmousedown = function(event) {
     if (wasClicked) {
-        wrapper.onmousemove = null;
+        document.body.onmousemove = null;
         document.body.onclick = () => animate(x, y, startX, startY);
         return;
     }
     dart.style.zIndex = '1000';
-    document.body.append(dart);
     wasClicked = wasClicked ? false : true;
-    document.body.onmousemove = function (event) {
+    document.body.onmousemove = function(event) {
         if (startX === -100 && startY === -100) {
             startX = event.clientX - 5;
             dart.style.left = `${startX}px`;
             startY = event.clientY - 20;
             dart.style.top = `${startY}px`;
             dart.style.cursor = "none";
+            document.body.append(dart);
         }
-        else {
-            if (Math.abs(startX - event.clientX) < 100) {
-                x = event.clientX - 5;
-            }
-            if (Math.abs(startY - event.clientY) < 100) {
-                y = event.clientY - 5;
-            }
-            // alert(`event.clientX: ${event.clientX}, x: ${x}, y:${y}, startX: ${startX}, startY: ${startY}`);
-            dart.style.left = `${x}px`;
-            dart.style.top = `${y}px`;
+        if (Math.abs(startX - event.clientX) < 100) {
+            x = event.clientX - 5;
         }
+        if (Math.abs(startY - event.clientY) < 100) {
+            y = event.clientY - 5;
+            dart.style.backgroundColor = `#${Math.abs(startY - event.clientY)}${100 - Math.abs(startY - event.clientY)}00`;
+        }
+        // alert(`event.clientX: ${event.clientX}, x: ${x}, y:${y}, startX: ${startX}, startY: ${startY}`);
+        dart.style.left = `${x}px`;
+        dart.style.top = `${y}px`;
     };
 };
+
 function animate(x, y, startX, startY) {
+    dart.style.backgroundColor = `#009900`;
     let dx = (startX - x);
     let dy = (startY - y);
     let tg = dy / dx;

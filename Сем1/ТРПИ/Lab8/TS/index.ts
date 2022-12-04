@@ -1,71 +1,120 @@
-let form : HTMLFormElement = document.querySelector('form');
-let spanMistake : HTMLSpanElement = document.querySelector('.mistake');
-
-spanMistake.style.transform = "scale(.04)";
-
-let inputName : HTMLInputElement = document.querySelector('.inputName');
-let inputSurname : HTMLInputElement = document.querySelector('.inputSurname');
-let inputEmail : HTMLInputElement = document.querySelector('.inputEmail');
-let inputPassword : HTMLInputElement = document.querySelector('.inputPassword');
-let inputBithday : HTMLInputElement = document.querySelector('.inputBirthday');
-let inputSubmit : HTMLInputElement = document.querySelector('.submit');
-
-inputSubmit.onclick = checkForm;
-
-function checkForm()
+interface IRegs
 {
-    spanMistake.style.transform = "scale(.04)";
-    spanMistake.innerHTML = "";
+    email : RegExp;
+    password : RegExp;
+    name : RegExp;
+}
 
-    let mistake : string = '';
+const stateReg : HTMLElement = document.querySelector('.reg');
+const stateAuto : HTMLElement = document.querySelector('.auto');
 
-    let name : string = inputName.value;
-    let surname : string = inputSurname.value;
-    let email : string = inputEmail.value;
-    let password : string = inputPassword.value;
-    let birthday : string = inputBithday?.value;
+let _email : HTMLInputElement;
+let _password : HTMLInputElement;
+let _name : HTMLInputElement;
+let inputs : Array<HTMLInputElement>;
+let buttonReg : HTMLButtonElement;
 
-    let regName : RegExp = /[A-Z]([a-z]){1,20}/;
-    let regEmail : RegExp = /[a-z0-9A-Z_]{1,50}@[a-z]{1,10}.[a-z]{1,10}/;
-    let regPassword : RegExp = /[a-z0-9A-Z]{8,20}/;
+let isClicked : boolean = false;
 
-    if (!regName.test(name))
+const regs : IRegs = 
+{
+    email : new RegExp(/^[a-zA-Z0-9_.]+@[a-z]+\.[a-z]+$/),
+    name : new RegExp(/^[a-zA-Z]{2,}$/),
+    password : new RegExp(/^[a-zA-Z0-9_.]{8,64}$/)
+}
+
+stateAuto.onclick = () =>
+{
+    isClicked = false;
+}
+
+stateReg.onclick = () => 
+{ 
+    if(!isClicked)
     {
-        mistake += 'Name is not correct.<br>';
+        isClicked = true;
+        regestration();
     }
+};
 
-    if(!regName.test(surname))
-    {
-        mistake += 'Surname is not correct.<br>';
-    }
 
-    if(!regEmail.test(email))
-    {
-        mistake += 'Email is not correct.<br>';
-    }
+function regestration() : void
+{
+    let resEmail : boolean;
+    let resPassword : boolean;
+    let resName : boolean;
 
-    if(!regPassword.test(password))
-    {
-        mistake += 'Password is not correct.<br>';
-    }
+    inputs = Array.from(document.querySelectorAll('.input'));
 
-    if(birthday == '')
-    {
-        mistake += 'Birthday is not correct.<br>';
-    }
+    _email = inputs.find(el => el.type == "email");
+    _password = inputs.find(el => el.type == "password");
+    _name = inputs.find(el => el.type == "text");
 
-    if(mistake.length != 0)
+    buttonReg = document.querySelector('.button-reg') as HTMLButtonElement;
+
+    buttonReg.onclick = () => 
     {
-        spanMistake.innerHTML = mistake;
-        spanMistake.style.transform = "scale(1)";
-        setTimeout(() => {
-            spanMistake.style.transform = "scale(.0001)";
-            setTimeout(() => spanMistake.innerHTML = '', 400);
-        }, 2000);
+        resEmail = testEmail(_email);
+        resPassword = testPassword(_password);
+        resName = testName(_name);
+
+        console.log(resEmail, resPassword, resName);
+
+        if(!resPassword)
+        {
+            _password.value = "";
+            _password.placeholder = "Password is not valid";
+
+            setTimeout(() =>
+            {
+                if(_password.placeholder == "Password is not valid")
+                {
+                    _password.placeholder = "Введите пароль";
+                }
+            }
+            , 2000);
+        }
+
+        if(!resEmail)
+        {
+            _email.value = "Ошибка в емаиле";
+
+            setTimeout(() =>
+            {
+                if(_email.value == "Ошибка в емаиле")
+                {
+                    _email.value = "";
+                }
+            }
+            , 2000);
+        }
+
+        if(!resName)
+        {
+            _name.value = "Ошибка в имени";
+            setTimeout(() =>
+            {
+                if(_name.value == "Ошибка в имени")
+                {
+                    _name.value = "";
+                }
+            }
+            , 2000);
+        }
     }
-    else
-    {
-        alert("All is correct");
-        form.submit();
-    }
+}
+
+function testEmail(email : HTMLInputElement) : boolean
+{
+    return regs.email.test(email.value);
+}
+
+function testPassword(password : HTMLInputElement) : boolean
+{
+    return regs.password.test(password.value);
+}
+
+function testName(name : HTMLInputElement) : boolean
+{
+    return regs.name.test(name.value);
 }

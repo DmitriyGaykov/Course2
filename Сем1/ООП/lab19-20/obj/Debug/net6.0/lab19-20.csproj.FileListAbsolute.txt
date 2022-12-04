@@ -1,0 +1,15 @@
+D:\курс_2\Сем1\ООП\lab19-20\bin\Debug\net6.0\lab19-20.exe
+D:\курс_2\Сем1\ООП\lab19-20\bin\Debug\net6.0\lab19-20.deps.json
+D:\курс_2\Сем1\ООП\lab19-20\bin\Debug\net6.0\lab19-20.runtimeconfig.json
+D:\курс_2\Сем1\ООП\lab19-20\bin\Debug\net6.0\lab19-20.dll
+D:\курс_2\Сем1\ООП\lab19-20\bin\Debug\net6.0\lab19-20.pdb
+D:\курс_2\Сем1\ООП\lab19-20\obj\Debug\net6.0\lab19-20.csproj.AssemblyReference.cache
+D:\курс_2\Сем1\ООП\lab19-20\obj\Debug\net6.0\lab19-20.GeneratedMSBuildEditorConfig.editorconfig
+D:\курс_2\Сем1\ООП\lab19-20\obj\Debug\net6.0\lab19-20.AssemblyInfoInputs.cache
+D:\курс_2\Сем1\ООП\lab19-20\obj\Debug\net6.0\lab19-20.AssemblyInfo.cs
+D:\курс_2\Сем1\ООП\lab19-20\obj\Debug\net6.0\lab19-20.csproj.CoreCompileInputs.cache
+D:\курс_2\Сем1\ООП\lab19-20\obj\Debug\net6.0\lab19-20.dll
+D:\курс_2\Сем1\ООП\lab19-20\obj\Debug\net6.0\refint\lab19-20.dll
+D:\курс_2\Сем1\ООП\lab19-20\obj\Debug\net6.0\lab19-20.pdb
+D:\курс_2\Сем1\ООП\lab19-20\obj\Debug\net6.0\lab19-20.genruntimeconfig.cache
+D:\курс_2\Сем1\ООП\lab19-20\obj\Debug\net6.0\ref\lab19-20.dll

@@ -1,50 +1,72 @@
-let form = document.querySelector('form');
-let spanMistake = document.querySelector('.mistake');
-spanMistake.style.transform = "scale(.04)";
-let inputName = document.querySelector('.inputName');
-let inputSurname = document.querySelector('.inputSurname');
-let inputEmail = document.querySelector('.inputEmail');
-let inputPassword = document.querySelector('.inputPassword');
-let inputBithday = document.querySelector('.inputBirthday');
-let inputSubmit = document.querySelector('.submit');
-inputSubmit.onclick = checkForm;
-function checkForm() {
-    spanMistake.style.transform = "scale(.04)";
-    spanMistake.innerHTML = "";
-    let mistake = '';
-    let name = inputName.value;
-    let surname = inputSurname.value;
-    let email = inputEmail.value;
-    let password = inputPassword.value;
-    let birthday = inputBithday?.value;
-    let regName = /[A-Z]([a-z]){1,20}/;
-    let regEmail = /[a-z0-9A-Z_]{1,50}@[a-z]{1,10}.[a-z]{1,10}/;
-    let regPassword = /[a-z0-9A-Z]{8,20}/;
-    if (!regName.test(name)) {
-        mistake += 'Name is not correct.<br>';
+const stateReg = document.querySelector('.reg');
+const stateAuto = document.querySelector('.auto');
+let _email;
+let _password;
+let _name;
+let inputs;
+let buttonReg;
+let isClicked = false;
+const regs = {
+    email: new RegExp(/^[a-zA-Z0-9_.]+@[a-z]+\.[a-z]+$/),
+    name: new RegExp(/^[a-zA-Z]{2,}$/),
+    password: new RegExp(/^[a-zA-Z0-9_.]{8,64}$/)
+};
+stateAuto.onclick = () => {
+    isClicked = false;
+};
+stateReg.onclick = () => {
+    if (!isClicked) {
+        isClicked = true;
+        regestration();
     }
-    if (!regName.test(surname)) {
-        mistake += 'Surname is not correct.<br>';
-    }
-    if (!regEmail.test(email)) {
-        mistake += 'Email is not correct.<br>';
-    }
-    if (!regPassword.test(password)) {
-        mistake += 'Password is not correct.<br>';
-    }
-    if (birthday == '') {
-        mistake += 'Birthday is not correct.<br>';
-    }
-    if (mistake.length != 0) {
-        spanMistake.innerHTML = mistake;
-        spanMistake.style.transform = "scale(1)";
-        setTimeout(() => {
-            spanMistake.style.transform = "scale(.0001)";
-            setTimeout(() => spanMistake.innerHTML = '', 400);
-        }, 2000);
-    }
-    else {
-        alert("All is correct");
-        form.submit();
-    }
+};
+function regestration() {
+    let resEmail;
+    let resPassword;
+    let resName;
+    inputs = Array.from(document.querySelectorAll('.input'));
+    _email = inputs.find(el => el.type == "email");
+    _password = inputs.find(el => el.type == "password");
+    _name = inputs.find(el => el.type == "text");
+    buttonReg = document.querySelector('.button-reg');
+    buttonReg.onclick = () => {
+        resEmail = testEmail(_email);
+        resPassword = testPassword(_password);
+        resName = testName(_name);
+        console.log(resEmail, resPassword, resName);
+        if (!resPassword) {
+            _password.value = "";
+            _password.placeholder = "Password is not valid";
+            setTimeout(() => {
+                if (_password.placeholder == "Password is not valid") {
+                    _password.placeholder = "Введите пароль";
+                }
+            }, 2000);
+        }
+        if (!resEmail) {
+            _email.value = "Ошибка в емаиле";
+            setTimeout(() => {
+                if (_email.value == "Ошибка в емаиле") {
+                    _email.value = "";
+                }
+            }, 2000);
+        }
+        if (!resName) {
+            _name.value = "Ошибка в имени";
+            setTimeout(() => {
+                if (_name.value == "Ошибка в имени") {
+                    _name.value = "";
+                }
+            }, 2000);
+        }
+    };
+}
+function testEmail(email) {
+    return regs.email.test(email.value);
+}
+function testPassword(password) {
+    return regs.password.test(password.value);
+}
+function testName(name) {
+    return regs.name.test(name.value);
 }

@@ -26,13 +26,14 @@ void main()
 	cin >> N;
 
 	auto products = new Product[N];
-	
-	autoInit(products, N);
+	initProds(products, N);
 	
 	ent;
 	ent;
 	
 	int maxPrice = calcMaxPrice(products, N, maxWeight);
+
+	delete[] products;
 }
 void autoInit(Product* prods, int N)
 {
@@ -120,6 +121,7 @@ int calcMaxPrice(Product* prods, int N, int maxWeight)
 	
 	int i = rows - 1;
 	int j = cols - 1;
+	int sum = 0;
 
 	while (i > 0 && j > 0)
 	{
@@ -127,14 +129,20 @@ int calcMaxPrice(Product* prods, int N, int maxWeight)
 		{
 			cout << prods[i - 1].GetName() << endl;
 			j -= prods[i - 1].GetAmount();
+
+			sum += prods[i - 1].GetPrice();
 		}
 		i--;
 	}
+
+	cout << "\nМаксимальная сумма: " << sum;
+	result = sum;
 
 	for (int i = 0; i < rows; i++)
 	{
 		delete[] matrix[i];
 	}
 	delete[] matrix;
+
 	return result;
 }

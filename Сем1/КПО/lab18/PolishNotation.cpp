@@ -9,18 +9,17 @@ namespace PolishNotation
 	{
 		{'(', 1},
 		{')', 1},
-		{'+', 2},
-		{'-', 2},
-		{'*', 3},
-		{'/', 3}
+		{'|', 2},
+		{'&', 3},
+		{'~', 4}
 	};
 
 	bool PolishNotation(char* expression)
 	{
-		if (!checkExpression(expression))
+		/*if (!checkExpression(expression))
 		{
 			return false;
-		}
+		}*/
 
 		char* polishExpression = new char[strlen(expression)];
 		strcpy_s(polishExpression, strlen(expression), "");
@@ -177,11 +176,10 @@ namespace PolishNotation
 
 	bool isOperation(char symb)
 	{
-		return symb ==
-			'+' ||
-			symb == '-' ||
-			symb == '*' ||
-			symb == '/' ||
+		return 
+			symb == '&' ||
+			symb == '|' ||
+			symb == '~' ||
 			isBrackets(symb);
 	}
 
