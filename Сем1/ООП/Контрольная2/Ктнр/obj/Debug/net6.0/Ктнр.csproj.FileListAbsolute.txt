@@ -1,0 +1,15 @@
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\bin\Debug\net6.0\Ктнр.exe
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\bin\Debug\net6.0\Ктнр.deps.json
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\bin\Debug\net6.0\Ктнр.runtimeconfig.json
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\bin\Debug\net6.0\Ктнр.dll
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\bin\Debug\net6.0\Ктнр.pdb
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\obj\Debug\net6.0\Ктнр.csproj.AssemblyReference.cache
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\obj\Debug\net6.0\Ктнр.GeneratedMSBuildEditorConfig.editorconfig
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\obj\Debug\net6.0\Ктнр.AssemblyInfoInputs.cache
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\obj\Debug\net6.0\Ктнр.AssemblyInfo.cs
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\obj\Debug\net6.0\Ктнр.csproj.CoreCompileInputs.cache
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\obj\Debug\net6.0\Ктнр.dll
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\obj\Debug\net6.0\refint\Ктнр.dll
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\obj\Debug\net6.0\Ктнр.pdb
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\obj\Debug\net6.0\Ктнр.genruntimeconfig.cache
+D:\Course2\Сем1\ООП\Контрольная2\Ктнр\obj\Debug\net6.0\ref\Ктнр.dll
