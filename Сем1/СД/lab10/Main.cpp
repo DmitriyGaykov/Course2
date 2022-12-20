@@ -68,8 +68,8 @@ Way antAlgorithm(
 void main()
 {
 	setlocale(LC_ALL, "Ru");
-	size_t nIters = 100;
-	size_t N = 20;
+	size_t nIters = 1000;
+	size_t N = 5;
 	Matrix cities = createMatrix(N);
 	outputMatrix(cities);
 
