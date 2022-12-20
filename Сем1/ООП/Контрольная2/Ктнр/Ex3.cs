@@ -31,6 +31,7 @@ class Artist
         {
             isInvited = value;
             Invite = () => { Console.WriteLine($"{Name} is invited"); };
+            
             if (isInvited)
             {
                 Invite?.Invoke();

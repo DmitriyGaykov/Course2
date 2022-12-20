@@ -1,29 +1,78 @@
-﻿using ex1;
-using ex2;
-using ex3;
-
-try
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+namespace Program
 {
-    NextList<int> nl = new()
+   
+    class GoodStack<T> : Stack<T>
+        where T: new()
     {
-        23,
-        2323
-    };
-
-    if (nl.Find(23))
-    {
-        Console.WriteLine("Found");
+        public T Pop() => throw new InsufficientExecutionStackException();
+        public bool Remove() => throw new InsufficientExecutionStackException();
     }
 
-    Ex2.Run();
+    struct Point
+    {
+        public int x;
+        public int y;
 
-    Circ c = new();
+        public Point(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
 
-    Artist a1 = new("Andrey");
-    Artist a2 = new("Dima");
-    c.NewYear(a1, a2);
-}
-catch(Exception e)
-{
-    Console.WriteLine(e.Message);
+        public override string ToString() => $"({x}, {y})";
+    }
+    
+    class _Program
+    {
+        static void Main()
+        {
+            #region Ex1
+
+            var _gs = new GoodStack<Point>();
+
+            _gs.Push(new Point(1, 23));
+            _gs.Push(new Point(2, 23));
+            _gs.Push(new Point(3, 23));
+            _gs.Push(new Point(4, 23));
+
+            foreach (var item in _gs)
+            {
+                Console.WriteLine(item);
+            }
+
+            try
+            {
+                _gs.Pop();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            #endregion
+
+            #region Ex2
+
+            string[] arr = new string[]
+            {
+                "skdfkdsf.",
+                "Asdodsk.",
+                "Влад"
+            };
+
+            int count = arr.Where(el => el.Last() is ('.' or ',' or '!' or '?') && el.First() is ('A' or 'W')).Count();
+
+            Console.WriteLine($"Количество: {count}");
+
+            #endregion
+        }
+    }
 }

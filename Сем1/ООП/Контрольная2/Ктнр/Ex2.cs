@@ -5,7 +5,7 @@ static class Ex2
 {
     public static void Run()
     {
-        List<string> arrStr = new()
+        string[] arrStr = new string[]
         {
             "andrey",
             "dima",
