@@ -5,6 +5,8 @@
 
 using namespace std;
 
+#define MAX_DIST 100
+
 typedef vector<vector<int>> Matrix;
 typedef vector<int> Path;
 
@@ -68,8 +70,8 @@ Way antAlgorithm(
 void main()
 {
 	setlocale(LC_ALL, "Ru");
-	size_t nIters = 1000;
-	size_t N = 5;
+	size_t nIters = 100;
+	size_t N = 10;
 	Matrix cities = createMatrix(N);
 	outputMatrix(cities);
 
@@ -218,7 +220,7 @@ Matrix createMatrix(size_t N, size_t spread)
 
 		for (size_t j = i + 1; j < N; j++)
 		{
-			matrix[i][j] = matrix[j][i] = rand() % 100 + 1;
+			matrix[i][j] = matrix[j][i] = rand() % MAX_DIST + 1;
 		}
 	}
 
@@ -231,21 +233,21 @@ void fillPheramons(Matrix& matrix)
 	{
 		for (auto& el : i)
 		{
-			if (el < matrix.size() * 0.3)
+			if (el < (double)MAX_DIST * 0.25)
 			{
-				el = matrix.size() * 0.3;
+				el = (double)MAX_DIST * 0.25;
 			}
-			else if (el < matrix.size() * 0.6)
+			else if (el < (double)MAX_DIST * 0.5)
 			{
-				el = matrix.size() * 0.6;
+				el = (double)MAX_DIST * 0.5;
 			}
-			else if (el < matrix.size() * 0.8)
+			else if (el < (double)MAX_DIST * 0.75)
 			{
-				el = matrix.size() * 0.8;
+				el = (double)MAX_DIST * 0.75;
 			}
 			else
 			{
-				el = matrix.size();
+				el = (double)MAX_DIST;
 			}
 		}
 	}
