@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+body .table {
+  display: flex;
+  flex-wrap: wrap;
+  width: 900px;
+}
+body .table input {
+  width: 90px;
+  height: 90px;
+  font-size: 47px;
+  text-align: center;
+}
