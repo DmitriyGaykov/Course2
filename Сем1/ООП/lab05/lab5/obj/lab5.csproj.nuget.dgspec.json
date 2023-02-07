@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\курс_2\\Сем1\\ООП\\lab5\\lab5\\lab5.csproj": {}
+    "D:\\курс_2\\Сем1\\ООП\\lab05\\lab5\\lab5.csproj": {}
   },
   "projects": {
-    "D:\\курс_2\\Сем1\\ООП\\lab5\\lab5\\lab5.csproj": {
+    "D:\\курс_2\\Сем1\\ООП\\lab05\\lab5\\lab5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\курс_2\\Сем1\\ООП\\lab5\\lab5\\lab5.csproj",
+        "projectUniqueName": "D:\\курс_2\\Сем1\\ООП\\lab05\\lab5\\lab5.csproj",
         "projectName": "lab5",
-        "projectPath": "D:\\курс_2\\Сем1\\ООП\\lab5\\lab5\\lab5.csproj",
+        "projectPath": "D:\\курс_2\\Сем1\\ООП\\lab05\\lab5\\lab5.csproj",
         "packagesPath": "C:\\Users\\dimag\\.nuget\\packages\\",
-        "outputPath": "D:\\курс_2\\Сем1\\ООП\\lab5\\lab5\\obj\\",
+        "outputPath": "D:\\курс_2\\Сем1\\ООП\\lab05\\lab5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -66,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -3,9 +3,34 @@ using lab5;
 namespace std;
 class Program
 {
+    interface IProduct
+    {
+        int id { get; set; }
+        string name { get; set; }
+        int price { get; set; }
+        string description { get; set; }
+        string img { get; set; }
+    }
+
+    class Product : IProduct
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public int price { get; set; }
+        public string description { get; set; }
+        public string img { get; set; }
+    }
     public static void Main(string[] args)
     {
-        Rose Rose1 = new("Роза Пересмешница", KnownColor.Black, 10);
+        IProduct[] products = new Product[]
+        {
+            new Product { id = 1, name = "Product 1", description = "d1", price = 100, img = "2323"},
+            new Product { id = 1, name = "Product 1", description = "d1", price = 100, img = "2323"},
+        };
+
+        string json = JsonConvert.SerializeObject(products);
+        File.WriteAllText("products.json",json);
+        /*Rose Rose1 = new("Роза Пересмешница", KnownColor.Black, 10);
         Rose Rose2 = new("Роза Краснообразная", KnownColor.Red, 200);
         Rose Rose3 = new("Роза Недоросль", KnownColor.Blue, 3);
         Gladiolus Glad1 = new("Гладиолус лучезарный", KnownColor.DarkBlue, 900);
@@ -53,7 +78,7 @@ class Program
 
         Console.WriteLine(newBouq.ToString());
 
-        #endregion
+        #endregion*/
     }
 
     public struct StructBouquet
