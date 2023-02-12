@@ -5,16 +5,16 @@ buttonCheck.onclick = () =>
 {
     try
     {
-    let isSudoku = checkSudoku();
-
-    if(isSudoku)
-    {
-        alert('Sudoku is correct');
-    }
-    else
-    {
-        alert('Sudoku is incorrect');
-    }
+        let isSudoku = checkSudoku();
+        
+        if(isSudoku)
+        {
+            alert('Sudoku is correct');
+        }
+        else
+        {
+            alert('Sudoku is incorrect');
+        }
     }
     catch(e : any)
     {
@@ -31,7 +31,7 @@ const checkSudoku = () : boolean => {
     {
         for(let j = 0; j < SIZE; j++)
         {
-            if(!checkRow(numbers, i, j) || !checkColumn(numbers, i, j))
+            if(!checkRow(numbers, i, j) || !checkColumn(numbers, i, j) || !checkInASquare(numbers, i, j))
             {
                 isSudoku = false;
                 break;
@@ -69,6 +69,79 @@ const fillArray = () : number[][] => {
     }
 
     return array;
+}
+
+const checkInASquare = (numbers : number[][], i : number, j : number) : boolean => {
+    let numberOfSquare : number = getNumberOfSquare(i, j);
+    console.log(numberOfSquare)
+
+    let set = new Set<number>();
+
+    for(let k = 0; k < SIZE; k++)
+    {
+        for(let m = 0; m < SIZE; m++)
+        {
+            if(
+                getNumberOfSquare(k, m) === numberOfSquare && 
+                i !== k && 
+                j !== m && 
+                numbers[k][m] === numbers[i][j] &&
+                numbers[k][m] !== -1)
+            {
+                return false;
+            }
+        }
+    }
+
+    return true;
+}
+
+const getNumberOfSquare = (i : number, j : number) : number => {
+    let numberOfSquare : number;
+    if(i < 3)
+    {
+        if(j < 3)
+        {
+            numberOfSquare = 0;
+        }
+        else if(j < 6)
+        {
+            numberOfSquare = 1;
+        }
+        else
+        {
+            numberOfSquare = 2;
+        }
+    } else if (i < 6)
+    {
+        if(j < 3)
+        {
+            numberOfSquare = 3;
+        }
+        else if(j < 6)
+        {
+            numberOfSquare = 4;
+        }
+        else
+        {
+            numberOfSquare = 5;
+        }
+    } else
+    {
+        if(j < 3)
+        {
+            numberOfSquare = 6;
+        }
+        else if(j < 6)
+        {
+            numberOfSquare = 7;
+        }
+        else
+        {
+            numberOfSquare = 8;
+        }
+    }
+    return numberOfSquare;
 }
 
 const checkRow = (numbers : number[][], i : number, j : number) : boolean => {

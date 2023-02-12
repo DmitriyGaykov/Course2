@@ -5,7 +5,8 @@ let nums2 = [2];
 let nums3 = [1, 2];
 let nums4 = [3, 4];
 function findMedianSortedArrays(nums1, nums2) {
-    let nums = nums1.concat(nums2).sort((a, b) => a - b);
+    //let nums = nums1.concat(nums2).sort((a, b) => a - b);
+    let nums = [...nums1, ...nums2].sort((a, b) => a - b);
     let len = nums.length;
     return len % 2 === 0 ?
         (nums[len / 2] + nums[len / 2 - 1]) / 2 :

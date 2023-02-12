@@ -1,0 +1,89 @@
+
+Активные подключения
+
+  Имя    Локальный адрес        Внешний адрес          Состояние
+  TCP    0.0.0.0:135            Dima:0                 LISTENING
+  RpcSs
+ [svchost.exe]
+  TCP    0.0.0.0:445            Dima:0                 LISTENING
+ Не удается получить сведения о владельце
+  TCP    0.0.0.0:554            Dima:0                 LISTENING
+ [wmpnetwk.exe]
+  TCP    0.0.0.0:2179           Dima:0                 LISTENING
+ [vmms.exe]
+  TCP    0.0.0.0:2343           Dima:0                 LISTENING
+ [lkads.exe]
+  TCP    0.0.0.0:2869           Dima:0                 LISTENING
+ Не удается получить сведения о владельце
+  TCP    0.0.0.0:3580           Dima:0                 LISTENING
+ [nisvcloc.exe]
+  TCP    0.0.0.0:3582           Dima:0                 LISTENING
+ [SystemWebServer.exe]
+  TCP    0.0.0.0:5040           Dima:0                 LISTENING
+  CDPSvc
+ [svchost.exe]
+  TCP    0.0.0.0:8080           Dima:0                 LISTENING
+ [ApplicationWebServer.exe]
+  TCP    0.0.0.0:10243          Dima:0                 LISTENING
+ Не удается получить сведения о владельце
+  TCP    0.0.0.0:49664          Dima:0                 LISTENING
+ [lsass.exe]
+  TCP    0.0.0.0:49665          Dima:0                 LISTENING
+ Не удается получить сведения о владельце
+  TCP    0.0.0.0:49666          Dima:0                 LISTENING
+  EventLog
+ [svchost.exe]
+  TCP    0.0.0.0:49667          Dima:0                 LISTENING
+  Schedule
+ [svchost.exe]
+  TCP    0.0.0.0:49668          Dima:0                 LISTENING
+ [spoolsv.exe]
+  TCP    0.0.0.0:49689          Dima:0                 LISTENING
+ Не удается получить сведения о владельце
+  TCP    0.0.0.0:59110          Dima:0                 LISTENING
+ [lktsrv.exe]
+  TCP    0.0.0.0:59111          Dima:0                 LISTENING
+ [nidmsrv.exe]
+  TCP    0.0.0.0:59112          Dima:0                 LISTENING
+ [NIWebServiceContainer.exe]
+  TCP    127.0.0.1:1434         Dima:0                 LISTENING
+ [sqlservr.exe]
+  TCP    127.0.0.1:6942         Dima:0                 LISTENING
+ [idea64.exe]
+  TCP    127.0.0.1:49679        Dima:0                 LISTENING
+ [nimdnsResponder.exe]
+  TCP    127.0.0.1:49679        Dima:49684             ESTABLISHED
+ [nimdnsResponder.exe]
+  TCP    127.0.0.1:49684        Dima:49679             ESTABLISHED
+ [lkads.exe]
+  TCP    127.0.0.1:50606        Dima:0                 LISTENING
+ [idea64.exe]
+  TCP    127.0.0.1:63342        Dima:0                 LISTENING
+ [idea64.exe]
+  TCP    172.25.96.1:139        Dima:0                 LISTENING
+ Не удается получить сведения о владельце
+  TCP    192.168.0.108:139      Dima:0                 LISTENING
+ Не удается получить сведения о владельце
+  TCP    192.168.0.108:49424    20.199.120.85:https    ESTABLISHED
+  WpnService
+ [svchost.exe]
+  TCP    192.168.0.108:50804    wr-in-f188:5228        ESTABLISHED
+ [browser.exe]
+  TCP    192.168.0.108:54342    lb-140-82-114-26-iad:https  ESTABLISHED
+ [browser.exe]
+  TCP    192.168.0.108:54344    api:https              ESTABLISHED
+ [browser.exe]
+  TCP    192.168.0.108:54345    api:https              ESTABLISHED
+ [browser.exe]
+  TCP    192.168.0.108:54362    20.54.232.160:https    TIME_WAIT
+  TCP    192.168.0.108:54363    152.199.19.161:https   TIME_WAIT
+  TCP    192.168.0.108:54365    13.85.16.224:https     TIME_WAIT
+  TCP    192.168.0.108:54366    152.199.19.161:https   TIME_WAIT
+  TCP    192.168.0.108:54368    152.199.19.161:https   TIME_WAIT
+  TCP    192.168.0.108:54370    152.199.19.161:https   TIME_WAIT
+  TCP    192.168.0.108:54372    13.85.16.224:https     TIME_WAIT
+  TCP    192.168.0.108:54373    23.96.225.71:https     ESTABLISHED
+ [PerfWatson2.exe]
+  TCP    192.168.0.108:54380    152.199.19.161:https   TIME_WAIT
+  TCP    192.168.0.108:54381    152.199.19.161:https   TIME_WAIT
+  TCP    192.168.0.108:54382    40.126.32.69:https     TIME_WAIT
