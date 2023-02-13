@@ -4,7 +4,7 @@ create database UNIVER
 on primary
 (
 	name = N'UNIVER_mdf', filename = N'D:\DB\UNIVER_mdf.mdf',
-	size = 10240kb, maxsize = 2048Gb, filegrowth=10Kb
+	size = 10240kb, maxsize = unlimited, filegrowth=1024Kb
 ),
 (
 	name = N'UNIVER_ndf', filename = N'D:\DB\UNIVER_ndf.ndf',

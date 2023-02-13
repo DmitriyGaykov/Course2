@@ -1,10 +1,15 @@
+import java.util.logging.Logger;
+
 public abstract class Person {
+    private static final Logger logger = Logger.getLogger(Person.class.getName());
     protected  String name;
     protected  int age;
 
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
+
+        logger.info("Person created: " + this.toString());
     }
 
     public String getName() {

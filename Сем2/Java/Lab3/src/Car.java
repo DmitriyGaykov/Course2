@@ -1,5 +1,8 @@
+import java.util.logging.Logger;
+
 public abstract class Car
 {
+    private static final Logger logger = Logger.getLogger(Car.class.getName());
     protected String name;
     protected int speed;
     protected int fillConsumption;
@@ -9,6 +12,8 @@ public abstract class Car
         this.speed = speed;
         this.fillConsumption = fillConsumption;
         this.carType = carType;
+
+        logger.info("Car created: " + this.toString());
     }
 
     public String getName() {

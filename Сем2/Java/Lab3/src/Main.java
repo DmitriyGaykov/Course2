@@ -1,7 +1,11 @@
+import java.util.logging.Logger;
+
 public class Main {
+    private static final Logger logger = Logger.getLogger(Main.class.getName());
     public static void main(String[] args) {
         try
         {
+            logger.info("Program started");
             ITaxi toyota = new Toyota(1000);
             ITaxi ferrari = new Ferrari(2000);
             ITaxi ferrari2 = new Ferrari(2000);
@@ -29,16 +33,21 @@ public class Main {
             System.out.println(p2);
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            logger.warning(e.getMessage());
         }
+        logger.info("Program finished");
     }
     static class Point
     {
+        private static final Logger logger = Logger.getLogger(Point.class.getName());
         public int a;
         public int b;
         public Point(int a, int b)
         {
             this.a = a;
             this.b = b;
+
+            logger.info("Point created: " + this.toString());
         }
 
         @Override
