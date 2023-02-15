@@ -79,6 +79,7 @@ void CChildView::OnPaint()
 	PrintExpression(50, 16 * SIZE, dc, V1.Transp(), L"*", A, V1.Transp() * A);
 	PrintExpression(1000, 16 * SIZE, dc, V1.Transp()* A, L"*", V2, p);
 
+	auto vecV1V2 = VectorMult(V1, V2);
 	PrintExpression(1000, 50, dc, V1, L"x", V2, vecV1V2);
 
 	auto scalV1V2 = ScalarMult(V1, V2);
