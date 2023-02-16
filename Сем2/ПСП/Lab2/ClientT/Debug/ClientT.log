@@ -1,0 +1,5 @@
+﻿  Main.cpp
+D:\курс_2\Сем2\ПСП\Lab2\ClientT\Main.cpp(13,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\курс_2\Сем2\ПСП\Lab2\ClientT\Main.cpp(48,7): warning C4101: t2: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\Lab2\ClientT\Main.cpp(47,7): warning C4101: t1: неиспользованная локальная переменная
+  ClientT.vcxproj -> D:\курс_2\Сем2\ПСП\Lab2\ServerT\Debug\ClientT.exe

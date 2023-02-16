@@ -60,7 +60,6 @@ void PrintMatrix(CDC& dc, int x, int y, CMatrix& M)
 {
 	int countRows = M.rows();
 	int countCols = M.cols();
-	CRect* rect;
 	int size = SIZE;
 	const wchar_t* wchNum;
 

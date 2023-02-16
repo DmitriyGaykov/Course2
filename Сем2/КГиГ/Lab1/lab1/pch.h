@@ -9,5 +9,10 @@
 
 // Добавьте сюда заголовочные файлы для предварительной компиляции
 #include "framework.h"
-#include "stdafx.h";
+//#include "stdafx.h";
+#include "Lib.h";
+#include "CMatrix.h";
+#include <Windows.h>;
+#include <math.h>;
+
 #endif //PCH_H

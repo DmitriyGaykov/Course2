@@ -213,6 +213,7 @@
     <ResourceCompile Include="lab1.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="res\lab1.rc2" />
   </ItemGroup>
   <ItemGroup>

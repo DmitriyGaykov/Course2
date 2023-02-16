@@ -16,7 +16,7 @@ public:
 
 // Атрибуты
 public:
-
+	CPaintDC* dc; // контекст устройства для рисования
 // Операции
 public:
 
@@ -32,5 +32,8 @@ public:
 protected:
 	afx_msg void OnPaint();
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnClickMatrix();
+	afx_msg void OnMenu();
 };
 

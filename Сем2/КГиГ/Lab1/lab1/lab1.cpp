@@ -143,6 +143,8 @@ protected:
 // Реализация
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnMenu();
 };
 
 CAboutDlg::CAboutDlg() noexcept : CDialogEx(IDD_ABOUTBOX)
@@ -155,6 +157,7 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
+	ON_COMMAND(25, &CAboutDlg::OnMenu)
 END_MESSAGE_MAP()
 
 // Команда приложения для запуска диалога
@@ -168,3 +171,9 @@ void Clab1App::OnAppAbout()
 
 
 
+
+
+void CAboutDlg::OnMenu()
+{
+	// TODO: добавьте свой код обработчика команд
+}
