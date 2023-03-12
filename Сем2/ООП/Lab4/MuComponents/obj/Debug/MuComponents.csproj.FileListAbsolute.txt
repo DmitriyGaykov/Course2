@@ -1,0 +1,10 @@
+D:\курс_2\Сем2\ООП\Lab4\MuComponents\bin\Debug\MuComponents.dll
+D:\курс_2\Сем2\ООП\Lab4\MuComponents\bin\Debug\MuComponents.pdb
+D:\курс_2\Сем2\ООП\Lab4\MuComponents\obj\Debug\MuComponents.csproj.AssemblyReference.cache
+D:\курс_2\Сем2\ООП\Lab4\MuComponents\obj\Debug\MyComponent.baml
+D:\курс_2\Сем2\ООП\Lab4\MuComponents\obj\Debug\MyComponent.g.cs
+D:\курс_2\Сем2\ООП\Lab4\MuComponents\obj\Debug\MuComponents_MarkupCompile.cache
+D:\курс_2\Сем2\ООП\Lab4\MuComponents\obj\Debug\MuComponents.g.resources
+D:\курс_2\Сем2\ООП\Lab4\MuComponents\obj\Debug\MuComponents.csproj.CoreCompileInputs.cache
+D:\курс_2\Сем2\ООП\Lab4\MuComponents\obj\Debug\MuComponents.dll
+D:\курс_2\Сем2\ООП\Lab4\MuComponents\obj\Debug\MuComponents.pdb

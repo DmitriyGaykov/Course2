@@ -1,9 +1,9 @@
-public class MiniCupper extends Car
+public class MiniCupper extends PassengerCar
                         implements ITaxi
 {
     private int price;
     public MiniCupper(int price) {
-        super("Minicupper", 70, 2, CarType.PASSENGER);
+        super("Minicupper", 70, 2);
         this.price = price;
     }
     public int getPrice() {

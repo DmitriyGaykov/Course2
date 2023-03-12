@@ -1,9 +1,9 @@
-public class Toyota extends Car
+public class Toyota extends PassengerCar
                     implements ITaxi
 {
     private int price;
     public Toyota(int price) {
-        super("Toyota", 100, 4, CarType.PASSENGER);
+        super("Toyota", 100, 4);
         this.price = price;
     }
     public int getPrice() {

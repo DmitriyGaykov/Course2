@@ -1,6 +1,5 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.stream.Collectors;
+
 public class Manager extends Person {
     private TaxiPark park;
     public Manager(String name, int age) {
@@ -13,6 +12,7 @@ public class Manager extends Person {
     public int priceOfAllCars()
     {
         int price = 0;
+
         for (ITaxi taxi : park.getPark())
         {
             price += taxi.getPrice();
@@ -24,7 +24,7 @@ public class Manager extends Person {
     public void sortCarsByFillConsumption()
     {
         var cars = park.getPark();
-        cars.sort((car1, car2) -> ((Car)car1).getFillConsumption() - ((Car)car2).getFillConsumption());
+        cars = cars.stream().sorted().collect(Collectors.toList());
     }
 
     public Car findCarBySpeed(int speedStart, int speedEnd) throws Exception {

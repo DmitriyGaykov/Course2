@@ -77,6 +77,7 @@
             this.SearchYearTB.Size = new System.Drawing.Size(162, 30);
             this.SearchYearTB.TabIndex = 3;
             this.SearchYearTB.TextChanged += new System.EventHandler(this.ChangedText);
+            this.SearchYearTB.TextChanged += new EventHandler(this.CheckOfNumbers);
             // 
             // label3
             // 

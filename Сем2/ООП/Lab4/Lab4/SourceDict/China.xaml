@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+    
+    <v:String x:Key="App-Name">服装店</v:String>
+    <v:String x:Key="Button-Add">添加商品</v:String>
+    <v:String x:Key="Button-Edit">编辑</v:String>
+    <v:String x:Key="Button-Del">删除</v:String>
+    <v:String x:Key="Button-Back">返回</v:String>
+    <v:String x:Key="Filtre-By-Color">按颜色过滤</v:String>
+    <v:String x:Key="Button-Search">搜索：</v:String>
+    <v:String x:Key="Button-Diap-Price">输入价格范围：</v:String>
+    <v:String x:Key="Button-Look-Prods">查看商品</v:String>
+
+
+    <v:String x:Key="Start-Text">添加商品 =)</v:String>
+    <v:String x:Key="Point-Name">商品名称：</v:String>
+    <v:String x:Key="Point-Color">商品颜色：</v:String>
+    <v:String x:Key="Point-Price">商品价格：</v:String>
+    <v:String x:Key="Point-Desc">商品描述：</v:String>
+    <v:String x:Key="Point-Country">生产国家：</v:String>
+    <v:String x:Key="Point-Img">上传图片！</v:String>
+    <v:String x:Key="Point-Sale">折扣：</v:String>
+    <v:String x:Key="Point-Size">尺码：</v:String>
+    <v:String x:Key="Button-Cancel">取消</v:String>
+
+    <v:String x:Key="Theme-White">明亮</v:String>
+    <v:String x:Key="Theme-Dark">黑暗</v:String>
+    <v:String x:Key="Theme-Sweet">甜</v:String>
+
+    <v:String x:Key="Filtres-Text">过滤器</v:String>
+
+</ResourceDictionary>

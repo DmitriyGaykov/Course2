@@ -28,10 +28,10 @@ void main()
 
 		/////////////////////////////////////////////////////////////
 
-		SOCKADDR_IN serv;                    // параметры  сокета сервера
-		serv.sin_family = AF_INET;           // используется IP-адресация  
-		serv.sin_port = htons(2000);                   // TCP-порт 2000
-		serv.sin_addr.s_addr = inet_addr("127.0.0.1");  // адрес сервера
+		SOCKADDR_IN serv;                    
+		serv.sin_family = AF_INET;            
+		serv.sin_port = htons(2000);                   
+		serv.sin_addr.s_addr = inet_addr("127.0.0.1");  
 
 		if ((connect(cC, (sockaddr*)&serv, sizeof(serv))) == SOCKET_ERROR)
 			throw  SetErrorMsgText("connect:", WSAGetLastError());
@@ -40,9 +40,9 @@ void main()
 		cout << "Server | Ip address: " << inet_ntoa(serv.sin_addr)
 				   << " | Port: " << ntohs(serv.sin_port) << endl;
 
-		string obuf = "client: Hello world   ";   //буфер вывода
+		string obuf = "client: Hello world   ";   
 		string temp;
-		int  lobuf = 0;                    //количество отправленных  
+		int  lobuf = 0;                    
 		const short times = 1000;
 		int t1;
 		int t2;
@@ -52,12 +52,14 @@ void main()
 
 		for (short i = 0; i < times; i++)
 		{
-			temp = obuf + to_string(i);
+			temp = "Message " + to_string(i);
 			if ((lobuf = sendto(cC, temp.c_str(), strlen(temp.c_str()) + 1, NULL, (sockaddr*)&serv, sizeof(serv))) == SOCKET_ERROR)
 				throw  SetErrorMsgText("recv:", WSAGetLastError());
 
 			if ((lb = recvfrom(cC, ibuf, sizeof(ibuf), NULL, (sockaddr*)&serv, &lc)) == SOCKET_ERROR)
 				throw  SetErrorMsgText("recv:", WSAGetLastError());
+
+			cout << endl << ibuf << endl;
 		}
 
 		///////////////////////////////////////////////////////////////
@@ -73,7 +75,7 @@ void main()
 	{
 		cout << endl << "WSAGetLastError: " << errorMsgText;
 	}
-
+	system("pause");
 }
 
 string  SetErrorMsgText(string msgText, int code)

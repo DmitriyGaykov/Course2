@@ -1,9 +1,9 @@
-public class RangeRover extends Car
+public class RangeRover extends SUVCar
                         implements ITaxi
 {
     private int price;
     public RangeRover(int price) {
-        super("Range Rover", 150, 6, CarType.SUV);
+        super("Range Rover", 150, 6);
         this.price = price;
     }
     public int getPrice() {

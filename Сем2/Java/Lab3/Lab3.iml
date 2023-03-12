@@ -7,5 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Jackson" level="project" />
+    <orderEntry type="library" name="ai.tock.bot.engine.jackson" level="project" />
   </component>
 </module>

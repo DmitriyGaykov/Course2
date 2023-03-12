@@ -4,8 +4,10 @@ using lab3.Search;
 using lab3.Sorting;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
-
+//^(375|\\+375)?(29|25|44|33)\\d{7}$
+// ^[a-zA-Z0-9_-]{6,16}$
 namespace Lab1
 {
     public partial class Form1 : Form
@@ -107,17 +109,15 @@ namespace Lab1
             }
             MessageBox.Show("Íåóñïåøíî. Íå õâàòàåò äàííûõ");
         }
-
-        private void CheckOnNumber(object sender, KeyEventArgs e)
+        private void CheckOfNumbers(object obj, EventArgs e)
         {
-            if (e.KeyCode is Keys.Enter)
-            {
-                var textBox = sender as TextBox;
+            var text = obj as TextBox;
+            var arr = text.Text.ToArray();
 
-                if (!Checker.CheckOnNumber(textBox.Text, 0))
-                {
-                    textBox.Text = string.Empty;
-                }
+            if (arr.Any(el => el is not (>= '0' and <= '9')))
+            {
+                text.Text = string.Join("", arr.Where(el => el is (>= '0' and <= '9')).ToArray());
+                text.SelectionStart = text.Text.Length;
             }
         }
 
@@ -237,18 +237,6 @@ namespace Lab1
         {
             About about = new();
             about.Show();
-        }
-
-        private void CheckOfNumbers(object obj, EventArgs e)
-        {
-            var text = obj as TextBox;
-            var arr = text.Text.ToArray();
-
-            if (arr.Any(el => el is not (>= '0' and <= '9')))
-            {
-                text.Text = string.Join("", arr.Where(el => el is (>= '0' and <= '9')).ToArray());
-                text.SelectionStart = text.Text.Length;
-            }
         }
 
         private void ClickOnBack(object sender, EventArgs e)

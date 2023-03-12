@@ -105,7 +105,7 @@ namespace Lab1
             this.SizeTextBox.Size = new System.Drawing.Size(214, 30);
             this.SizeTextBox.TabIndex = 3;
             this.SizeTextBox.TextChanged += new System.EventHandler(this.ClickTextBox);
-            this.SizeTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CheckOnNumber);
+            this.SizeTextBox.TextChanged += new EventHandler(this.CheckOfNumbers);
             // 
             // LableTitle
             // 

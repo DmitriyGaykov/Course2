@@ -69,10 +69,20 @@ Way antAlgorithm(
 
 void main()
 {
+	const int INF = SHRT_MAX;
 	setlocale(LC_ALL, "Ru");
-	size_t nIters = 100;
-	size_t N = 10;
-	Matrix cities = createMatrix(N);
+	size_t nIters = 1000;
+	size_t N = 5;
+
+	Matrix cities = 
+	{ 
+		{INF,12, 27, INF, 6 },
+		{6, INF, 21, 62 ,78 },
+		{8, 18, INF, 86, 55},
+		{23, 52, 24, INF, 18},
+		{87, 72, 52, 19, INF}
+	};
+
 	outputMatrix(cities);
 
 	Matrix pheromons = cities;
@@ -175,6 +185,7 @@ Way antAlgorithm(
 	{	
 		propabs.clear();
 		notv[current] = false;
+
 		fillPropabs(graph, pheramons, propabs, notv, alpha, beta, current);
 
 		if (find(notv.begin(), notv.end(), true) == notv.end())

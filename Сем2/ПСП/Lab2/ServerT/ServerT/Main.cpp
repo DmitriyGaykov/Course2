@@ -1,7 +1,7 @@
 #pragma comment(lib, "WS2_32.lib") 
 #pragma warning(disable: 4996)
 #include "Winsock2.h"
-
+#include <algorithm>
 #include "pch.h"
 
 using namespace std;
@@ -27,10 +27,10 @@ void main()
 			throw  SetErrorMsgText("socket:", WSAGetLastError());
 		/////////////////////////////////////////////////////////////
 
-		SOCKADDR_IN serv;                     // параметры  сокета sS
-		serv.sin_family = AF_INET;           // используется IP-адресация  
-		serv.sin_port = htons(2000);          // порт 2000
-		serv.sin_addr.s_addr = inet_addr("127.0.0.1");   // любой собственный IP-адрес 
+		SOCKADDR_IN serv;                     
+		serv.sin_family = AF_INET;            
+		serv.sin_port = htons(2000);          
+		serv.sin_addr.s_addr = inet_addr("127.0.0.1");    
 
 		if (bind(sS, (LPSOCKADDR)&serv, sizeof(serv)) == SOCKET_ERROR)
 			throw  SetErrorMsgText("bind:", WSAGetLastError());
@@ -39,10 +39,10 @@ void main()
 		if (listen(sS, SOMAXCONN) == SOCKET_ERROR)
 			throw  SetErrorMsgText("listen:", WSAGetLastError());
 
-		SOCKET cS;	                 // сокет для обмена данными с клиентом 
-		SOCKADDR_IN clnt;             // параметры  сокета клиента
-		memset(&clnt, 0, sizeof(clnt)); // обнулить память
-		int lclnt = sizeof(clnt);    // размер SOCKADDR_IN
+		SOCKET cS;	              
+		SOCKADDR_IN clnt;            
+		memset(&clnt, 0, sizeof(clnt)); 
+		int lclnt = sizeof(clnt);   
 
 		while (true)
 		{
@@ -50,8 +50,8 @@ void main()
 				throw  SetErrorMsgText("accept:", WSAGetLastError());
 
 			int lc = sizeof(clnt);
-			char ibuf[50];                  //буфер ввода 
-			int  lb = 0;                    //количество принятых байт
+			char ibuf[50 * 1000];                  
+			int  lb = 0;                    
 
 			const int times = 1000;
 			int t1;

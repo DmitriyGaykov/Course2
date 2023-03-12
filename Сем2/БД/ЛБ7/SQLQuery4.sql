@@ -1,0 +1,28 @@
+--4. Получить пересечение двух множеств строк, созданных в результате выполнения запросов пункта 3. Объяснить результат.
+--Использовать оператор INTERSECT.
+
+use UNIVER
+
+SELECT
+	G.PROFESSION,
+	P.SUBJECT,
+	AVG(P.NOTE) as [Средняя оценка]
+FROM
+	GROUPS G
+	JOIN STUDENT S ON G.IDGROUP = S.IDGROUP
+	JOIN PROGRESS P ON S.IDSTUDENT = P.IDSTUDENT
+WHERE G.FACULTY = N'ИДИП'
+GROUP BY G.PROFESSION, P.SUBJECT
+
+INTERSECT
+
+SELECT
+	G.PROFESSION,
+	P.SUBJECT,
+	AVG(P.NOTE) as [Средняя оценка]
+FROM
+	GROUPS G
+	JOIN STUDENT S ON G.IDGROUP = S.IDGROUP
+	JOIN PROGRESS P ON S.IDSTUDENT = P.IDSTUDENT
+WHERE G.FACULTY = N'ТОВ'
+GROUP BY G.PROFESSION, P.SUBJECT

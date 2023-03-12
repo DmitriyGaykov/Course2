@@ -1,7 +1,8 @@
 ﻿
 // ChildView.h: интерфейс класса CChildView
 //
-
+#include <iostream>
+using std::string;
 
 #pragma once
 
@@ -34,6 +35,12 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnClickMatrix();
-	afx_msg void OnMenu();
+	afx_msg void OnExpression();
+	afx_msg void OnVect();
+	afx_msg void OnScalar();
+	afx_msg void OnCos();
+	afx_msg void OnSphere();
+	afx_msg void OnMod();
+	void hideOther(string text);
 };
 

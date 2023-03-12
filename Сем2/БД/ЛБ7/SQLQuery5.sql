@@ -1,0 +1,28 @@
+--5. Получить разницу между множеством строк, созданных в результате запросов пункта 3. Объяснить результат. 
+--Использовать оператор EXCEPT.
+
+use UNIVER
+
+SELECT
+	G.PROFESSION,
+	P.SUBJECT,
+	AVG(P.NOTE) as [Средняя оценка]
+FROM
+	GROUPS G
+	JOIN STUDENT S ON G.IDGROUP = S.IDGROUP
+	JOIN PROGRESS P ON S.IDSTUDENT = P.IDSTUDENT
+WHERE G.FACULTY = N'ИДИП'
+GROUP BY G.PROFESSION, P.SUBJECT
+
+EXCEPT
+
+SELECT
+	G.PROFESSION,
+	P.SUBJECT,
+	AVG(P.NOTE) as [Средняя оценка]
+FROM
+	GROUPS G
+	JOIN STUDENT S ON G.IDGROUP = S.IDGROUP
+	JOIN PROGRESS P ON S.IDSTUDENT = P.IDSTUDENT
+WHERE G.FACULTY = N'ТОВ'
+GROUP BY G.PROFESSION, P.SUBJECT

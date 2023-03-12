@@ -1,0 +1,178 @@
+﻿<Window x:Class="Lab4.Forms.Adder.AddForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:Lab4.Forms.Adder"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="AddForm" Height="800" Width="450">
+    <Grid Style="{ DynamicResource Main-Back-Grid }">
+        <Border Style="{ DynamicResource Border-Product }"
+                BorderThickness="1" 
+                CornerRadius="3" 
+                MinWidth="300" 
+                Padding="4" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                ScrollViewer.VerticalScrollBarVisibility="auto">
+            <StackPanel>
+                <TextBlock Text="{ DynamicResource Start-Text }" FontSize="30" />
+
+                <StackPanel Orientation="Horizontal" Margin="0 10">
+                    <TextBlock Text="{ DynamicResource Point-Name }"
+                               MinWidth="140"
+                               MaxWidth="150"
+                               FontSize="15"
+                               FontFamily="Arial" 
+                               Foreground="#464646" 
+                                />
+                    <TextBox  Name="Product_Name"
+                              MinWidth="140"
+                              MaxWidth="150"
+                              FontSize="15"
+                              FontFamily="Arial" 
+                              Foreground="#464646" 
+                              Style="{ StaticResource out-point }"
+                               />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 10">
+                    <TextBlock Text="{ DynamicResource Point-Color }"
+                               MinWidth="140"
+                               MaxWidth="150"
+                               FontSize="15"
+                               FontFamily="Arial" 
+                               Foreground="#464646" 
+                                />
+                    <TextBox  Name="Product_Color"
+                              MinWidth="140"
+                              MaxWidth="150"
+                              FontSize="15"
+                              FontFamily="Arial" 
+                              Foreground="#464646" 
+                              Style="{ StaticResource out-point }"
+                               />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 10">
+                    <TextBlock Text="{ DynamicResource Point-Price }"
+                               MinWidth="140"
+                               MaxWidth="150"
+                               FontSize="15"
+                               FontFamily="Arial" 
+                               Foreground="#464646" 
+                                />
+                    <TextBox  Name="Product_Price"
+                              MinWidth="140"
+                              MaxWidth="150"
+                              FontSize="15"
+                              FontFamily="Arial" 
+                              Foreground="#464646"
+                              Style="{ StaticResource out-point }"
+                               />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 10">
+                    <TextBlock Text="{ DynamicResource Point-Desc }"
+                               MinWidth="140"
+                               MaxWidth="150"
+                               FontSize="15"
+                               FontFamily="Arial" 
+                               Foreground="#464646" 
+                                />
+                    <TextBox  Name="Product_Description"
+                              MinWidth="140"
+                              MaxWidth="150"
+                              FontSize="15"
+                              FontFamily="Arial" 
+                              Foreground="#464646" 
+                              Height="70"
+                              Style="{ StaticResource out-point }"
+                               />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 10">
+                    <TextBlock Text="{ DynamicResource Point-Country }"
+                               MinWidth="140"
+                               MaxWidth="150"
+                               FontSize="15"
+                               FontFamily="Arial" 
+                               Foreground="#464646"
+                               TextWrapping="Wrap"
+                                />
+                    <TextBox  Name="Product_Country"
+                              MinWidth="140"
+                              MaxWidth="150"
+                              FontSize="15"
+                              FontFamily="Arial" 
+                              Foreground="#464646"
+                              Style="{ StaticResource out-point }"
+                               />
+                </StackPanel>
+
+                <Button Content="{ DynamicResource Point-Img }"
+                        Click="ClickOnLoudImg"
+                        MaxWidth="170"
+                        HorizontalAlignment="Left"/>
+
+                <Image Name="Product_Image"  MaxWidth="90" Margin="0 4"/>
+
+                <StackPanel Orientation="Horizontal" Margin="0 10">
+                    <TextBlock Text="{ DynamicResource Point-Sale }"
+                               MinWidth="140"
+                               MaxWidth="150"
+                               FontSize="15"
+                               FontFamily="Arial" 
+                               Foreground="#464646" 
+                                />
+                    <TextBox  Name="Product_Sale"
+                              MinWidth="140"
+                              MaxWidth="150"
+                              FontSize="15"
+                              FontFamily="Arial" 
+                              Foreground="#464646" 
+                              Style="{ StaticResource out-point }"
+                               />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 10">
+                    <TextBlock Text="{ DynamicResource Point-Size }"
+                               MinWidth="140"
+                               MaxWidth="150"
+                               FontSize="15"
+                               FontFamily="Arial" 
+                               Foreground="#464646" 
+                                />
+                    <TextBox  Name="Product_Size"
+                              MinWidth="140"
+                              MaxWidth="150"
+                              FontSize="15"
+                              FontFamily="Arial" 
+                              Foreground="#464646"
+                              Style="{ StaticResource out-point }"
+                               />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Content="{ DynamicResource Button-Add }"
+                            Click="AddProduct"
+                            Background="#1201a1"
+                            Foreground="White"
+                            Padding="3"
+                            />
+                    <Button Content="{ DynamicResource Button-Cancel }"
+                            
+                            Padding="3"
+                            Foreground="White"
+                            Click="OnCancle"
+                            Margin="50 0 0 0"
+                            Style="{ StaticResource MultiTrigger }"/>
+                            
+                            
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

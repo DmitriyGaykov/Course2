@@ -1,0 +1,16 @@
+D:\курс_2\Сем2\ООП\Lab4\Library\bin\Debug\net7.0-windows\Library.deps.json
+D:\курс_2\Сем2\ООП\Lab4\Library\bin\Debug\net7.0-windows\Library.dll
+D:\курс_2\Сем2\ООП\Lab4\Library\bin\Debug\net7.0-windows\Library.pdb
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\Library.csproj.AssemblyReference.cache
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\UserControl1.g.cs
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\Library_MarkupCompile.cache
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\UserControl1.baml
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\Library.g.resources
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\Library.GeneratedMSBuildEditorConfig.editorconfig
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\Library.AssemblyInfoInputs.cache
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\Library.AssemblyInfo.cs
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\Library.csproj.CoreCompileInputs.cache
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\Library.dll
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\refint\Library.dll
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\Library.pdb
+D:\курс_2\Сем2\ООП\Lab4\Library\obj\Debug\net7.0-windows\ref\Library.dll

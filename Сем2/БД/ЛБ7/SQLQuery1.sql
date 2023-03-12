@@ -1,0 +1,41 @@
+--1. На основе таблиц FACULTY, GROUPS, STUDENT и PROGRESS разра-ботать SELECT-запрос,
+--в котором выводят-ся специальность, дисциплины и средние оценки при сдаче экзаменов на факультете ТОВ. 
+--Использовать группировку по полям FACULTY, PROFESSION, SUBJECT.
+-- Добавить в запрос конструкцию ROLLUP и проанализировать результат. 
+
+SELECT 
+  F.FACULTY, 
+  PF.PROFESSION_NAME, 
+  P.SUBJECT, 
+  AVG(P.NOTE) AS AVG_GRADE 
+FROM 
+  FACULTY F
+  JOIN GROUPS G on G.FACULTY = F.FACULTY
+  JOIN STUDENT S on S.IDGROUP = G.IDGROUP
+  JOIN PROGRESS P on P.IDSTUDENT = S.IDSTUDENT
+  JOIN PROFESSION PF on PF.PROFESSION = G.PROFESSION 
+WHERE 
+  F.FACULTY = 'ИДиП' 
+GROUP BY
+  F.FACULTY, 
+  PF.PROFESSION_NAME, 
+  P.SUBJECT
+
+SELECT 
+  F.FACULTY, 
+  PF.PROFESSION_NAME, 
+  P.SUBJECT, 
+  AVG(P.NOTE) AS AVG_GRADE 
+FROM 
+  FACULTY F
+  JOIN GROUPS G on G.FACULTY = F.FACULTY
+  JOIN STUDENT S on S.IDGROUP = G.IDGROUP
+  JOIN PROGRESS P on P.IDSTUDENT = S.IDSTUDENT
+  JOIN PROFESSION PF on PF.PROFESSION = G.PROFESSION 
+WHERE 
+  F.FACULTY = 'ИДиП' 
+GROUP BY
+ROLLUP(
+  F.FACULTY, 
+  PF.PROFESSION_NAME, 
+  P.SUBJECT )

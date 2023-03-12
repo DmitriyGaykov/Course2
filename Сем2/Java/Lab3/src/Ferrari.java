@@ -1,9 +1,9 @@
-public class Ferrari extends Car
+public class Ferrari extends SuperCar
                      implements ITaxi
 {
     private int price;
     public Ferrari(int price) {
-        super("Ferrari", 200, 8, CarType.SUPERCAR);
+        super("Ferrari", 200, 8);
         this.price = price;
     }
     @Override
