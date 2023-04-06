@@ -1,5 +1,12 @@
 ﻿  Main.cpp
 D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(13,1): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
-D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(58,8): warning C4101: t2: неиспользованная локальная переменная
-D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(57,8): warning C4101: t1: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(72,5): warning C4101: n10000: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(71,5): warning C4101: n8000: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(69,5): warning C4101: n4000: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(60,8): warning C4101: t2: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(66,12): warning C4101: n1000: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(67,5): warning C4101: n2000: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(59,8): warning C4101: t1: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(70,5): warning C4101: n7000: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\Lab2\ServerT\ServerT\Main.cpp(68,5): warning C4101: n3000: неиспользованная локальная переменная
   ServerT.vcxproj -> D:\курс_2\Сем2\ПСП\Lab2\ServerT\Debug\ServerT.exe

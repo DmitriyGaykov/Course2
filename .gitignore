@@ -1,5 +1,11 @@
 .vs
-МП/
-Разработка_и_анализ_требований/
-node-modules/
-КГиГ/
+*.rar
+**/node-modules/
+*.rarr
+*.jar
+**/Glassfish/
+*.xsd
+*.xml
+*.pch
+.idea
+*.iml

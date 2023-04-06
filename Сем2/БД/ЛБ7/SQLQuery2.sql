@@ -1,6 +1,8 @@
 --2. Выполнить SELECT-запрос из п. 1 с использованием CUBE-группировки. 
 --Проанализировать результат.
 
+use UNIVER
+
 SELECT 
   F.FACULTY, 
   PF.PROFESSION_NAME, 
@@ -19,3 +21,18 @@ CUBE(
   F.FACULTY, 
   PF.PROFESSION_NAME, 
   P.SUBJECT )
+
+-----------------------------------------------------------------
+
+use Lab2
+
+SELECT
+	S.TITLE,
+	D.TITLE,
+	AVG(I.COUNT_DETAILS) AS [Average count]
+FROM
+	INVENTORIES I
+	JOIN SUPPLIERS S ON S.IDSUPPLIER = I.IDSUPPLIER
+	JOIN DETAILS D ON D.IDDETAIL = I.IDDETAIL
+GROUP BY
+	CUBE(S.TITLE, D.TITLE)

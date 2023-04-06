@@ -1,0 +1,4 @@
+﻿  Main.cpp
+D:\курс_2\Сем2\ПСП\Lab4\Main.cpp(42,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\курс_2\Сем2\ПСП\Lab4\Main.cpp(81,8): warning C4101: buffer: неиспользованная локальная переменная
+  Lab4.vcxproj -> D:\курс_2\Сем2\ПСП\Lab4\Debug\ServerB.exe

@@ -1,0 +1,4 @@
+﻿  Main.cpp
+D:\курс_2\Сем2\ПСП\Lab4\ClientB\Main.cpp(21,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\курс_2\Сем2\ПСП\Lab4\ClientB\Main.cpp(33,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  ClientB.vcxproj -> D:\курс_2\Сем2\ПСП\Lab4\Debug\ClientB.exe

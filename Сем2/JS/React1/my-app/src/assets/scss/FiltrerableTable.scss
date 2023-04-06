@@ -1,0 +1,10 @@
+@import './App.scss';
+.filtre-table {
+    max-width: 250px;
+    width: 100%;
+    padding: 2px 3px;
+    border: 1px solid #15151580;
+    transform: translate(50%);
+    margin: 4px;
+    @include flexer(10px, column);
+}

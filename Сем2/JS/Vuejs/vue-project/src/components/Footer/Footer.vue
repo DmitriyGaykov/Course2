@@ -1,5 +1,5 @@
 <template>
-<div class="wrapper">
+<div class="wrapper" id="footer">
     <div class="head">Статьи каждую неделю</div>
     <div class="inf">Больше 90% учеников прошли полный курс и смогли<br> собрать свой первый компьютер</div>
     <div class="ConnectWithUs">

@@ -1,0 +1,22 @@
+@import './App.scss';
+.search-bar {
+    @include flexer(2px, column, center, flex-start);
+    width: 100%;
+    &>input {
+        width: 100%;
+        border-radius: 1px;
+        border: 1px solid #15151556;
+        font-size: 8px;
+        outline: none;
+    }
+    .checkbox-in-stock {
+        @include flexer(2px, row, flex-start, center);
+        span {
+            font-size: 7px;
+        }
+        input {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}

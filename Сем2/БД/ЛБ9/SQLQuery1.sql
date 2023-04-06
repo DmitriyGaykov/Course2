@@ -1,0 +1,18 @@
+DECLARE
+@A CHAR = '¿',
+@B NVARCHAR(3) = '‘»“',
+@C DATETIME=GETDATE(),
+@D TIME,
+@E INT,
+@F SMALLINT,
+@G TINYINT,
+@H NUMERIC(12,5);
+
+SET @D = GETDATE();
+
+SELECT @E = 21122001, @F = 21, @G = 1;
+
+SELECT @A —»Ã¬ŒÀ, @B —“–Œ ¿, @C ƒ¿“¿;
+
+PRINT CONVERT(NVARCHAR,@D ) + ' ' + CONVERT(NVARCHAR, @E) 
++ CONVERT(NVARCHAR, @F) + ' '+ CONVERT(NVARCHAR, @G);

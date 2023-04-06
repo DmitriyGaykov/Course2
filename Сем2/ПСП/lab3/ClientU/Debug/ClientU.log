@@ -1,0 +1,6 @@
+﻿  Main.cpp
+D:\курс_2\Сем2\ПСП\lab3\ClientU\Main.cpp(15,13): warning C4326: возвращаемый тип "main" должен быть "int", а не "void"
+D:\курс_2\Сем2\ПСП\lab3\ClientU\Main.cpp(22,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\курс_2\Сем2\ПСП\lab3\ClientU\Main.cpp(44,8): warning C4101: cbuff: неиспользованная локальная переменная
+D:\курс_2\Сем2\ПСП\lab3\ClientU\Main.cpp(45,7): warning C4101: s: неиспользованная локальная переменная
+  ClientU.vcxproj -> D:\курс_2\Сем2\ПСП\lab3\Debug\ClientU.exe

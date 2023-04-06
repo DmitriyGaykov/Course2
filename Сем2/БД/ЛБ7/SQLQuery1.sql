@@ -3,6 +3,8 @@
 --Использовать группировку по полям FACULTY, PROFESSION, SUBJECT.
 -- Добавить в запрос конструкцию ROLLUP и проанализировать результат. 
 
+use UNIVER
+
 SELECT 
   F.FACULTY, 
   PF.PROFESSION_NAME, 

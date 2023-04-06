@@ -1,0 +1,19 @@
+@import './App.scss';
+.product-table {
+    @include flexer(3px, column);
+    width: 100%;
+    .titles {
+        @include flexer(0, row, flex-start);
+        width: 100%;
+    }
+    .category {
+        width: 100%;
+        .product-row {
+            @include flexer(0, row, flex-start);
+            width: 100%;
+            span {
+                width: 50%;
+            }
+        }
+    }
+}

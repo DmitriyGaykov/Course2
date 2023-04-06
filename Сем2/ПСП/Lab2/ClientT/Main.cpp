@@ -17,6 +17,8 @@ void main()
 	SOCKET cC;
 	WSADATA wsaData;
 
+	srand(time(NULL));
+
 	try
 	{
 		//...........................................................
@@ -40,19 +42,20 @@ void main()
 		cout << "Server | Ip address: " << inet_ntoa(serv.sin_addr)
 				   << " | Port: " << ntohs(serv.sin_port) << endl;
 
-		string obuf = "client: Hello world   ";   
+		string obuf = "Message from client #";   
 		string temp;
 		int  lobuf = 0;                    
-		const short times = 1000;
+		const short times = 10;
+
 		int t1;
 		int t2;
 		int lb;
 		int lc = sizeof(serv);
 		char ibuf[50];
 
-		for (short i = 0; i < times; i++)
+		for (short i = 0; i <= times; i++)
 		{
-			temp = "Message " + to_string(i);
+			temp = obuf + to_string(i);
 			if ((lobuf = sendto(cC, temp.c_str(), strlen(temp.c_str()) + 1, NULL, (sockaddr*)&serv, sizeof(serv))) == SOCKET_ERROR)
 				throw  SetErrorMsgText("recv:", WSAGetLastError());
 
