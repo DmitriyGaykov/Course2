@@ -156,20 +156,20 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    
                     <Button Content="{ DynamicResource Button-Add }"
                             Click="AddProduct"
                             Background="#1201a1"
                             Foreground="White"
                             Padding="3"
                             />
+                    
                     <Button Content="{ DynamicResource Button-Cancel }"
-                            
                             Padding="3"
                             Foreground="White"
                             Click="OnCancle"
                             Margin="50 0 0 0"
                             Style="{ StaticResource MultiTrigger }"/>
-                            
                             
                 </StackPanel>
             </StackPanel>

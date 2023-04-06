@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Image = System.Windows.Controls.Image;
 
 namespace Lab4.Tags.Button
 {
@@ -25,7 +26,11 @@ namespace Lab4.Tags.Button
     public partial class MyButton : UserControl
     {
         public static readonly DependencyProperty RadiusProperty = DependencyProperty.Register("Radius", typeof(CornerRadius), typeof(MyButton), new PropertyMetadata(new CornerRadius(10)));
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(MyButton), new PropertyMetadata("MyButton"));
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register("Text",
+                                                                                             typeof(string), 
+                                                                                             typeof(MyButton), 
+                                                                                             new PropertyMetadata("MyButton", null, CoerceText),
+                                                                                             ValidText);
 
         public CornerRadius Radius
         {
@@ -42,6 +47,25 @@ namespace Lab4.Tags.Button
         public MyButton() : base() 
         {
             InitializeComponent();
+
+            this.CommandBindings.Add(new CommandBinding(Commands.SayHello, CommandSayHello));
+        }
+
+        public void CommandSayHello(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello world!");
+        }
+
+        private static bool ValidText(object value) => value is String s && 
+                                                       s.Length < 20;
+
+        private static object CoerceText(DependencyObject obj, object value)
+        {
+            string str = value as string;
+
+            str = str?.Replace("привет", "hello");
+
+            return str ?? "MyButton";
         }
     }
 

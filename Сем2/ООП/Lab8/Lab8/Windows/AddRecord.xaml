@@ -1,0 +1,95 @@
+﻿<Window x:Class="Lab8.Windows.AddRecord"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab8.Windows"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="AddRecord" MinHeight="484" MinWidth="450">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            
+            <Button Name="BookOrAuthor"
+                    Click="BookOrAuthor_Click"
+                    Content="Добавить книгу"
+                    Margin="10"
+                    Background="#aaee33"
+                    Padding="4"
+                    />
+
+            <StackPanel Name="BookForm">
+                <DockPanel>
+                    <TextBlock HorizontalAlignment="Left"
+                               Text="Название книги:"
+                               Width="100"
+                               Margin="10"/>
+                    <TextBox Name="TitleTextBlock"
+                             Width="150"
+                             Margin="10"/>
+                </DockPanel>
+
+                <DockPanel>
+                    <TextBlock HorizontalAlignment="Left"
+                               Text="ФИ автора:"
+                               Width="100"
+                               Margin="10"
+                               Height="30"/>
+                    <ListView Name="AuthorFNTextBlock"
+                              Width="150"
+                              Height="30"
+                              Margin="10"/>
+                </DockPanel>
+
+                <StackPanel>
+                    <Button Name="LoadImage"
+                            Click="LoadImage_Click"
+                            Content="Загрузить фото"
+                            Margin="10"/>
+
+                    <Image Name="ImageBook"
+                           MaxWidth="150"
+                           />
+                </StackPanel>
+
+                <Button x:Name="AddBookRecord"
+                        Click="AddBookRecord_Click"
+                        Content="Добавить"
+                        Background="#eeffdd"
+                        Margin="10"/>
+            </StackPanel>
+
+            <StackPanel Name="AuthorForm"
+                        Visibility="Hidden">
+                <DockPanel>
+                    <TextBlock HorizontalAlignment="Left"
+                               Text="Фамилия и имя:"
+                               Width="100"
+                               Margin="10"/>
+                    <TextBox Name="FullNameTextBlock"
+                             Width="150"
+                             Margin="10"/>
+                </DockPanel>
+
+                <DockPanel>
+                    <TextBlock HorizontalAlignment="Left"
+                               Text="Инициалы и фамилия:"
+                               Width="100"
+                               Margin="10"/>
+                    <TextBox Name="AliasTextBlock"
+                             Width="150"
+                             Margin="10"/>
+                </DockPanel>
+
+                <Button x:Name="AddAuthorRecord"
+                    Click="AddAuthorRecord_Click"
+                    Content="Добавить"
+                    Background="#eeffdd"
+                    Margin="10"/>
+                
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

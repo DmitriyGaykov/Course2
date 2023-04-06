@@ -1,0 +1,97 @@
+﻿<Window x:Class="Lab8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab8"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow"
+        MinWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="60*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0">
+            
+            <Button Content="Книги"
+                    Name="ShowTable"
+                    Click="ShowTable_Click"
+                    Width="200"
+                    HorizontalAlignment="Center"
+                    Background="AliceBlue"
+                    Margin="10"/>
+
+                
+            <Button Name="AddRecord"
+                    Content="Добавить запись"
+                    Click="AddRecord_Click"
+                    Width="250"/>
+    
+        </StackPanel>
+
+        <DataGrid Name="BooksTable"
+                  Grid.Column="1"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  CanUserResizeColumns="False"
+                  CanUserDeleteRows="False"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Book Id"
+                                    Binding="{ Binding Id }"
+                                    Width="25*"
+                                    IsReadOnly="True"/>
+
+                <DataGridTextColumn Header="Title"
+                                    Binding="{ Binding Title }"
+                                    Width="25*"
+                                    IsReadOnly="True"/>
+
+                <DataGridTextColumn Header="Author Id"
+                                    Binding="{ Binding AuthorId }"
+                                    Width="25*"
+                                    IsReadOnly="True"/>
+
+                <DataGridTemplateColumn Header="Image"
+                                        Width="200">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{ Binding Src }"
+                                   Width="200"
+                                   Height="200"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Name="AuthorsTable"
+                  Grid.Column="1"
+                  AutoGenerateColumns="False"
+                  Visibility="Hidden"
+                  CanUserAddRows="False"
+                  CanUserResizeColumns="False"
+                  CanUserDeleteRows="False"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Author's Id"
+                                    Binding="{ Binding Id }"
+                                    Width="33*"
+                                    IsReadOnly="True"/>
+
+                <DataGridTextColumn Header="FullName"
+                                    Binding="{ Binding FullName }"
+                                    Width="33*"
+                                    IsReadOnly="True"/>
+
+                <DataGridTextColumn Header="Alias"
+                                    Binding="{ Binding Alias }"
+                                    Width="33*"
+                                    IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

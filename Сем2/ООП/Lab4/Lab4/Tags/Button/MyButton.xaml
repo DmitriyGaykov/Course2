@@ -11,8 +11,8 @@
         <Grid.Resources>
             <local:DoubleToCornerRadius x:Key="ToCornerRadius"/>
         </Grid.Resources>
-        
-        <Button>
+
+        <Button Command="{ x:Static local:Commands.SayHello }">
             <Button.Template>
                 <ControlTemplate>
                     <Border CornerRadius="{ Binding Radius,
@@ -32,8 +32,8 @@
                         <TextBlock
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
-                            Text="{ Binding Text, 
-                                            RelativeSource={ RelativeSource AncestorType={x:Type local:MyButton} } }"/>
+                            Text="{ Binding Text,
+                                    RelativeSource={ RelativeSource AncestorType={x:Type local:MyButton} } }"/>
                     </Border>
                 </ControlTemplate>
             </Button.Template>

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab4.Forms.OutputWindow"
         xmlns:my="clr-namespace:Lab4.Tags.Button"
+        xmlns:my2="clr-namespace:Lab4.Tags.MyTextBox"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
         Title="Products" Height="450" Width="800">
@@ -63,7 +64,7 @@
 
             <StackPanel Grid.Column="4" 
                          Grid.Row="0" >
-                
+
                 <Button x:Name="Back"
                         Content="{ DynamicResource Button-Back }" 
                         Style="{ DynamicResource Back }" 
@@ -93,10 +94,13 @@
                         Grid.Row="1">
                 <StackPanel x:Name="Filtres">
 
-                    <my:MyButton Text="{ DynamicResource Filtres-Text }"
+                    <my:MyButton Text="привет"
                                  Radius="3"
                                  Margin="0 0 0 10"
                                  />
+
+                    <my2:MyTextBox WritingBackground="Red"
+                                   Margin="0 0 0 10"/>
 
                     <ComboBox x:Name="FiltreByColor" 
                           DataContext="{ DynamicResource Filtre-By-Color }"

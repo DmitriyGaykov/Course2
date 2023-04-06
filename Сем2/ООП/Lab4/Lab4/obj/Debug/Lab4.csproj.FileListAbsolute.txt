@@ -53,3 +53,5 @@ D:\курс_2\Сем2\ООП\Lab4\Lab4\bin\Debug\MuComponents.pdb
 D:\курс_2\Сем2\ООП\Lab4\Lab4\obj\Debug\Tags\Button\MyButton.g.cs
 D:\курс_2\Сем2\ООП\Lab4\Lab4\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\курс_2\Сем2\ООП\Lab4\Lab4\obj\Debug\Tags\Button\MyButton.baml
+D:\курс_2\Сем2\ООП\Lab4\Lab4\obj\Debug\Tags\MyTextBox\MyTextBox.g.cs
+D:\курс_2\Сем2\ООП\Lab4\Lab4\obj\Debug\Tags\MyTextBox\MyTextBox.baml
